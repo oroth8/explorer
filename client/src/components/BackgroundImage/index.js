@@ -25,7 +25,7 @@ class BackgroundImage extends React.Component {
 
   imageSearch=()=>{
     Axios.get(
-      "https://api.nasa.gov/planetary/apod?api_key=6hT3i7BhxuW4QSsb5AmPXN42UJfKo32RBW8Yyufs").then(results =>{
+      "https://api.nasa.gov/planetary/apod?api_key="+process.env.API_KEY).then(results =>{
         this.setState({
           src: results.data.url,
           title: results.data.title,
