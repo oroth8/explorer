@@ -1,4 +1,4 @@
-# Employee Directory
+# Space Exploration Game
 ## Table of Contents 
  * [About](#About) 
  * [Installation](#Installation) 
@@ -7,12 +7,13 @@
  * [License](#License) 
   
 ## About 
- In this project we provide a intuitional user inerface that allows the user to find information about employee that work in the same company.  They are able to filter the employees by location and sort them by first name, last name and time at compnay.
+
+
  ![](Screenshot.png) 
 ## Installation 
- 1. Clone this repository at [GitHub](https://github.com/jalbert12485/employee-directory.git) 
+ 1. Clone this repository at [GitHub]() 
 ```sh 
-git clone https://github.com/jalbert12485/employee-directory.git
+git clone 
  ``` 
 2. Install packages using 
 ```sh 
@@ -25,10 +26,11 @@ npm start
  
  
 ## Usage 
- In order to use this project as a user, you will go to the [deployed project](https://agile-island-64595.herokuapp.com/).  When there, you will see the full list of company employees.  By choosing options in the dropdown menu, you can filter or sort your results accordingly.
+ In order to use this project as a user, you will go to the [deployed project]().  
  
 ## Contributing 
- If you would like to contribute to this package, please contact the author via [email](mailto:jalbert@carthage.edu).  Provide any details about your proposed chagnes so that your contribution can be made. 
+ If you would like to contribute to this package, please contact the author via [email]().  Provide any details about your proposed chagnes so that your contribution can be made. 
+ 
 ## License 
  This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means. 
  
