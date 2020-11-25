@@ -3,7 +3,7 @@ import "./style.css";
 import Level1 from "./Level1";
 import Level2 from "./Level2";
 import Options from "../Options";
-import Character from "../Character";
+// import Character from "../charactCharacter";
 
 
 
@@ -59,9 +59,9 @@ function Level()  {
         return (
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                 <Options displayed={displayedModal}/>
-                <Character displayed={displayedModal}/>
+                {/* <Character displayed={displayedModal}/> */}
                 <Level1 displayed={displayedModal}/>
-                <img style={avatarState} src="./img/avatar.png" alt="Character"/>
+                <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
             </div>);
   };
 

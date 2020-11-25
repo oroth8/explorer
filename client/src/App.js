@@ -1,7 +1,8 @@
 import React from "react";
-// import BackgroundImage from "./components/BackgroundImage";
+import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CharacterCreator from "./components/Character/CharacterCreator"
 
 // Quiz Components
 import Quiz from "./components/Quiz";
@@ -37,6 +38,8 @@ function App() {
             <Route exact path="/" component={Level} />
             <Route exact path="/level" component={Level} />
             <Route exact path="/register" component={Register} />
+            
+            <Route exact path="/characterCreation" component={CharacterCreator} />
             <Route exact path="/login" component={Login} />
             <Route exacth path="/na">
               <Quiz questions={NAquestions} />
