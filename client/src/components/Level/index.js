@@ -1,23 +1,18 @@
-import React from "react";
+import React, { useState} from "react";
 import "./style.css";
 import Level1 from "./Level1";
-import Level2 from "./Level2";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import Options from "../Options";
 
-const style={
-  backgroundImage: {
-    position: "fixed",
-    top: "0",
-    height: "100vh",
-    width: "100%"
-  }
-};
+
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Level()  {
 
+  const [displayedModal, setDisplayedModal]=useState({
+    display: "Options"
+  });
 
-  const [avatarState, setAvatarState]=React.useState({
+  const [avatarState, setAvatarState]=useState({
     position: "fixed",
     top: "20%",
     left: "40%",
@@ -31,11 +26,39 @@ function Level()  {
     let left=e.pageX-20+"px";
     setAvatarState({...avatarState, top, left});
   };
+
+  let handleKey= (e)=>{
+    switch(e.key){
+      case "o":
+      if(displayedModal.display==="Options"){
+        setDisplayedModal({...displayedModal, display: "none"});
+      }else{
+        setDisplayedModal({...displayedModal, display: "Options"});
+      }
+      break;
+      case "c":
+        if(displayedModal.display==="Character"){
+          setDisplayedModal({...displayedModal, display: "none"});
+        }else{
+          setDisplayedModal({...displayedModal, display: "Character"});
+        }
+        break;
+        case "l":
+          if(displayedModal.display==="Location"){
+            setDisplayedModal({...displayedModal, display: "none"});
+          }else{
+            setDisplayedModal({...displayedModal, display: "Location"});
+          }
+          break;
+        default: break;
+    }
+  }
  
         return (
-            <div onClick={(e) => (getLocation(e))}>
-                <Level1 />
-                <img style={avatarState} src="./img/avatar.png"/>
+            <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
+                <Options displayed={displayedModal}/>
+                <Level1 displayed={displayedModal}/>
+                <img style={avatarState} src="./img/avatar.png" alt="Character"/>
           </div>);
   };
 
