@@ -12,10 +12,9 @@ import BackgroundImage from "./components/BackgroundImage";
 function App(){
 
 
-
-  // Send data to EmployeeList to be rendered, then renders final results.
     return (
       <BackgroundImage />
+      <CharacterCreator />
     );
 
 }
