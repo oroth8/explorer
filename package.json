@@ -27,6 +27,6 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.16",
-    "react-router-dom": "^5.2.0"
+    "uuid": "^8.3.1"
   }
 }
