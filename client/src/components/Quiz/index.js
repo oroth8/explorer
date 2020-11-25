@@ -21,6 +21,16 @@ function Quiz() {
                 { answerText: "Montana", isCorrect: false }
             ],
             questionImg: "../img/denali.jpg"
+        },
+        {
+            questionText: "What body of water borders North America to the West?",
+            answerChoices: [
+                { answerText: "Atlantic Ocean", isCorrect: false },
+                { answerText: "Gulf of Mexico", isCorrect: false },
+                { answerText: "Pacific Ocean", isCorrect: true },
+                { answerText: "Indian Ocean", isCorrect: false }
+            ],
+            questionImg: "../img/NA.jpg"
         }
     ]
 
