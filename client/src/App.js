@@ -3,6 +3,7 @@ import React from "react";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import Quiz from "./components/Quiz";
+const NAquestions = require("./NAquestions.json");
 
 
 
@@ -21,7 +22,9 @@ function App(){
       <Router>
           <Route exact path="/" component={Level} />
           <Route exact path="/level" component={Level} />
-          <Route exact path="/quiz" component={Quiz} />
+          <Route exact path="/NA">
+            <Quiz questions={NAquestions} />
+          </Route>
     </Router>
     );
 
