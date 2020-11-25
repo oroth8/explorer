@@ -11,6 +11,16 @@ function Quiz() {
                 { answerText: "Los Angeles", isCorrect: false},
                 { answerText: "Mexico City", isCorrect: true }
             ]
+        },
+        {
+            questionText: "The tallest mountain in North America, Denali (pictured below), can be found in what US state?",
+            answerChoices: [
+                { answerText: "Colorado", isCorrect: false },
+                { answerText: "Alaska", isCorrect: true },
+                { answerText: "Washington", isCorrect: false },
+                { answerText: "Montana", isCorrect: false }
+            ],
+            questionImg: "../img/denali.jpg"
         }
     ]
 
@@ -32,7 +42,7 @@ function Quiz() {
     }
 
     return (
-		<div className='quiz'>
+		<div className='quiz container'>
 			{showScore ? (
 				<div className='score-section'>
 					You scored {score} out of {testQuestions.length}!
@@ -44,6 +54,7 @@ function Quiz() {
 							<span>Question {currentQuestion + 1}</span>/{testQuestions.length}
 						</div>
 						<div className='question-text'>{testQuestions[currentQuestion].questionText}</div>
+                        <img src={testQuestions[currentQuestion].questionImg} />
 					</div>
 					<div className='answer-section'>
 						{testQuestions[currentQuestion].answerChoices.map((answerOption) => (
