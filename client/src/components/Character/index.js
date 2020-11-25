@@ -23,15 +23,19 @@ const style={
 
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
-function Location(props){
+function Character(props){
 
   const [displayOptions, setDisplayOptions]=useState({
+    position: "fixed",
+    top: "40%",
+    left: "10%",
+    maxWidth: "80%",
     zIndex: "2",
     display: "block"
   });
 
     useEffect(()=>{
-    if(props.displayed.display==="Location"){
+    if(props.displayed.display==="Character"){
       setDisplayOptions({...displayOptions, display: "block"});
     }else{
       setDisplayOptions({...displayOptions, display: "none"});
@@ -44,19 +48,13 @@ function Location(props){
 
         return (
 
-          <div className="row" >
-          <div className="card col-lg-4 col-xs-6 mr-auto ml-auto mt-4" style={displayOptions} >
+ 
+          <div className="card" style={displayOptions} onClick={(e)=>{e.stopPropagation();}}>
           {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
           <div className="card-body">
-            <h5> Options</h5>
-              <ul style={style.list}> 
-              {style.options.map((option)=>(
-                <li ><a style={style.a} href={option.href}>
-                {option.name}
-                </a></li>
-              ))}
-              </ul>
-          </div>
+            <h5> Character Name</h5>
+            <p> Stuff about the character </p>
+              
           </div>
           </div>
 
@@ -66,4 +64,4 @@ function Location(props){
 
 
 
-export default Options;
+export default Character;

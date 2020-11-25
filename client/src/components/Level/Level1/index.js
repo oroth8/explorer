@@ -4,10 +4,12 @@ import imageMap from "./map.json";
 import Location from "./Location"
 
 const style={
+  container: {
+    position: "relative",
+    height: "auto",
+    border: "2px solid blue"
+  },
   backgroundImage: {
-    position: "fixed",
-    top: "0",
-    height: "100vh",
     width: "100%"
   },
   header: {
@@ -39,13 +41,14 @@ let getLandingSpot=(name, id) =>{
         return (
           <React.Fragment>
             <Location displayed={props.displayed} location={location}/>
+            <div style={style.container}>
           <img src="./img/levelimgs/earthlvl.jpg" style={style.backgroundImage} alt="Level 1"/>
-          <h2 style={style.header}>{location.name}</h2>
           {imageMap.map((item)=> (
             <div style={item.style} onClick={()=> {
               getLandingSpot(item.name, item.id);
             }}></div>
           ))}
+          </div>
           </React.Fragment>
         );
   }

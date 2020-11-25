@@ -26,6 +26,10 @@ const style={
 function Options(props){
 
   const [displayOptions, setDisplayOptions]=useState({
+    position: "fixed",
+    top: "40%",
+    left: "40%",
+    maxWidth: "80%",
     zIndex: "2",
     display: "block"
   });
@@ -44,19 +48,18 @@ function Options(props){
 
         return (
 
-          <div className="row" >
-          <div className="card col-lg-4 col-xs-6 mr-auto ml-auto mt-4" style={displayOptions} >
+ 
+          <div className="card" style={displayOptions} onClick={(e)=>{e.stopPropagation();}}>
           {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
           <div className="card-body">
             <h5> Options</h5>
-              <ul style={style.list}> 
+              
               {style.options.map((option)=>(
-                <li ><a style={style.a} href={option.href}>
+                <p><a style={style.a} href={option.href}>
                 {option.name}
-                </a></li>
+                </a></p>
               ))}
-              </ul>
-          </div>
+              
           </div>
           </div>
 

@@ -1,13 +1,16 @@
 import React from "react";
 import "./style.css";
 import imageMap from "./map.json";
+import Location from "./Location"
 
 const style={
+  container: {
+    position: "relative",
+    height: "auto",
+    border: "2px solid blue"
+  },
   backgroundImage: {
-    position: "fixed",
-    top: "0",
-    width: "100%",
-    height: "auto"
+    width: "100%"
   },
   header: {
     backgroundColor: "white",
@@ -21,7 +24,7 @@ const style={
 
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
-function Level2()  {
+function Level2(props)  {
   
 const [location, setLocation]=React.useState({
   "name":"Earth",
@@ -37,13 +40,15 @@ let getLandingSpot=(name, id) =>{
 
         return (
           <React.Fragment>
+            <Location displayed={props.displayed} location={location}/>
+            <div style={style.container}>
           <img src="./img/levelimgs/solarlvl.jpg" style={style.backgroundImage} alt="Level 2"/>
-          <h2 style={style.header}>You are in {location.name}!</h2>
-          {imageMap.map((item,index)=> (
-            <div style={item.style} onClick={(e)=> {
+          {imageMap.map((item)=> (
+            <div style={item.style} onClick={()=> {
               getLandingSpot(item.name, item.id);
             }}></div>
           ))}
+          </div>
           </React.Fragment>
         );
   }
