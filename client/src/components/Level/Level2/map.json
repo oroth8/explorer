@@ -1,0 +1,85 @@
+[    {
+    "name": "Sun",
+    "id": "0",
+    "style": {  
+    "position": "absolute",
+    "top": "0",
+    "left": "0",
+    "height": "100%",
+    "width": "7%"
+
+}},{
+    "name": "Mercury",
+    "id": "1",
+    "style": {  
+    "position": "absolute",
+    "top": "0",
+    "left": "7%",
+    "height": "100%",
+    "width": "4%"
+
+}},{
+    "name": "Venus",
+    "id": "2",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "11%",
+    "height": "100%",
+    "width": "4%"
+
+}},{
+    "name": "Earth",
+    "id": "3",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "15%",
+    "height": "100%",
+    "width": "5%"
+}},{
+    "name": "Mars",
+    "id": "5",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "20%",
+    "height": "100%",
+    "width": "5%"
+}},{
+    "name": "Jupiter",
+    "id": "6",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "25%",
+    "height": "100%",
+    "width": "25%"
+}},{
+    "name": "Saturn",
+    "id": "7",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "50%",
+    "height": "100%",
+    "width": "20%"
+}},{
+    "name": "Uranus",
+    "id": "8",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "70%",
+    "height": "100%",
+    "width": "14%"
+}},{
+    "name": "Neptune",
+    "id": "9",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "84%",
+    "height": "100%",
+    "width": "16%"
+}}]

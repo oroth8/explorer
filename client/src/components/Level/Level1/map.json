@@ -1,0 +1,86 @@
+[    {
+    "name": "Earth",
+    "id": "0",
+    "style": {  
+    "position": "absolute",
+    "top": "0",
+    "left": "0",
+    "height": "100%",
+    "width": "100%",
+    "zIndex": "0"
+
+}},{
+    "name": "North America",
+    "id": "1",
+    "style": {  
+    "position": "absolute",
+    "top": "0",
+    "left": "18%",
+    "height": "42%",
+    "width": "19%"
+
+}},{
+    "name": "South America",
+    "id": "2",
+    "style": {  
+    "position": "absolute",
+    "top": "42%",
+    "left": "24%",
+    "height": "43%",
+    "width": "17%"
+
+}},{
+    "name": "Africa",
+    "id": "3",
+    "style": {  
+    "position": "absolute",
+    "top": "30%",
+    "left": "44%",
+    "height": "42%",
+    "width": "23%"
+}},{
+    "name": "Europe",
+    "id": "4",
+    "style": {  
+    "position": "absolute",
+    "top": "8%",
+    "left": "47%",
+    "height": "20%",
+    "width": "13%"
+}},{
+    "name": "Asia",
+    "id": "5",
+    "style": {  
+    "position": "absolute",
+    "top": "0%",
+    "left": "60%",
+    "height": "30%",
+    "width": "23%"
+}},{
+    "name": "Asia",
+    "id": "6",
+    "style": {  
+    "position": "absolute",
+    "top": "30%",
+    "left": "68%",
+    "height": "15%",
+    "width": "15%"
+}},{
+    "name": "Australia",
+    "id": "7",
+    "style": {  
+    "position": "absolute",
+    "top": "58%",
+    "left": "78%",
+    "height": "22%",
+    "width": "13%"
+}},{
+    "name": "Antartica",
+    "id": "8",
+    "style": {  
+    "position": "absolute",
+    "top": "87%",
+    "left": "37%",
+    "height": "13%",
+    "width": "32%"
+}}]

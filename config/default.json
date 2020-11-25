@@ -1,0 +1,5 @@
+{
+    "jwtSecret": "nasagame",
+    "mongoURI": "mongodb+srv://Project3:nasaGame@cluster0.8myrz.mongodb.net/nasagame?retryWrites=true&w=majority"
+
+}
