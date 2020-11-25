@@ -7,7 +7,8 @@ const characterSchema = new Schema({
   characterImage: String,
   currentYear: Number,
   credits: Number,
-  shipId: Number,
+  shipIdArray: [Number],
+  levelsCompletedArray:[Number],
   userId: Number
 });
 
