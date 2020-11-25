@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import {getNewCharacterPortrait} from "../utils/API"
-
+import {saveCharacter} from "../utils/API"
+import c from "config";
 export default function CharacterCreator() { 
 
   const [character, setCharacter] = useState({
@@ -22,14 +23,18 @@ export default function CharacterCreator() {
   function getNewPortrait(){
     getNewCharacterPortrait()
     .then(res=>{
-       setCharacter({characterImage:res.data.results[0].picture.large})
+      //  setCharacter({...character, characterImage:res.data.results[0].picture.large})
       }
     );
   }
-  function saveCharacter(e){
+
+  function submitCharacter(e){
     e.preventDefault();
-    if(e.target.name.value && e.target.name.value)
-      setCharacter({name:e.target.name.value, age:e.target.age.value})
+    if(e.target.name.value && e.target.name.value){
+      // console.log(character)
+      // setCharacter({...character,name:"Bill"});  //, age:e.target.age.value
+      // saveCharacter(character);
+    }
     else alert("Need a name!");
   }
 
@@ -38,7 +43,7 @@ export default function CharacterCreator() {
   return (
     <div className="row creation-box">
         <div className="col col-lg-4">
-          <form onSubmit={saveCharacter}>
+          <form onSubmit={submitCharacter}>
             <p><label htmlFor="name">Character Name:</label></p><p><input type="text" id="name"/></p>
             <p><label htmlFor="age">Age:</label></p><p><input type="number" maxLength="3" size="3" id="age" defaultValue="23"/></p>
             <p><button type="submit">Submit</button></p>

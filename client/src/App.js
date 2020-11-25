@@ -2,7 +2,7 @@ import React from "react";
 import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import CharacterCreator from "./components/Character/CharacterCreator"
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";

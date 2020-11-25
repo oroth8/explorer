@@ -1,10 +1,9 @@
-//  Connect to db
-// const db = require('../models');
-const db = 'hello';
+const db = require('../models/Character');
 
 // Export Controller Methods
 module.exports = {
     create: function(req, res) {
-        res.json(db);
+        // db.CharacterCreator.create(req.body)
+        console.log(req.body);
     }
 };
