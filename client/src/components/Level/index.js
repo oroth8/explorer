@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 import Level1 from "./Level1";
+import Level2 from "./Level2";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 const style={
   backgroundImage: {
@@ -8,12 +10,6 @@ const style={
     top: "0",
     height: "100vh",
     width: "100%"
-  },
-  avatar: {
-    position: "fixed",
-    top: "20%",
-    left: "40%",
-    width: "5%"
   }
 };
 
@@ -34,21 +30,14 @@ function Level()  {
     let top=e.pageY-10+"px";
     let left=e.pageX-20+"px";
     setAvatarState({...avatarState, top, left});
-
-
-  }
-
-
-      
-  
+  };
+ 
         return (
-          <div onClick={(e) => {getLocation(e)}}>
-          <Level1  />
-
-          <img style={avatarState} src="./img/avatar.png"/>
-          </div>
-        );
-  }
+            <div onClick={(e) => (getLocation(e))}>
+                <Level1 />
+                <img style={avatarState} src="./img/avatar.png"/>
+          </div>);
+  };
 
 
 
