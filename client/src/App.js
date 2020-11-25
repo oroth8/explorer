@@ -2,6 +2,7 @@ import React from "react";
 // import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route} from "react-router-dom";
+import Quiz from "./components/Quiz";
 
 
 
@@ -20,6 +21,7 @@ function App(){
       <Router>
           <Route exact path="/" component={Level} />
           <Route exact path="/level" component={Level} />
+          <Route exact path="/quiz" component={Quiz} />
     </Router>
     );
 
