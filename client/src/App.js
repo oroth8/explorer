@@ -3,6 +3,10 @@ import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CharacterCreator from "./components/Character/CharacterCreator"
+
+// Quiz Components
+import Quiz from "./components/Quiz";
+
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
@@ -20,6 +24,9 @@ if (localStorage.token) {
 
 // Our main background output
 
+// Questions
+const NAquestions = require("./NAquestions.json");
+
 function App() {
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
@@ -34,6 +41,9 @@ function App() {
             
             <Route exact path="/characterCreation" component={CharacterCreator} />
             <Route exact path="/login" component={Login} />
+            <Route exacth path="/na">
+              <Quiz questions={NAquestions} />
+            </Route>
           </Switch>
         </Router>
       </AlertState>
