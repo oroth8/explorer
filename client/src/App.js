@@ -13,6 +13,9 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alert from "./components/layout/Alerts";
 
+// main
+import Main from "./pages/Main";
+
 // Put login token in local storage
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -32,6 +35,7 @@ function App() {
             <Route exact path="/level" component={Level} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/main" component={Main} />
           </Switch>
         </Router>
       </AlertState>
