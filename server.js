@@ -3,6 +3,7 @@
 // Dependencies
 const express = require('express');
 const routes = require('./routes');
+const mongoose = require("mongoose");
 
 // Express instance
 const app = express();
@@ -13,6 +14,11 @@ const PORT = process.env.PORT || 9001;
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/space", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 // If our node environment is production we will serve up our static assets from the build folder
 if (process.env.NODE_ENV === 'production') {
