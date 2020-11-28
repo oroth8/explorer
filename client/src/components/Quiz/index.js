@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {getQuizQuestions} from "../utils/API";
+
+
+
 
 function Quiz({ questions }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [quizQuestions, setQuestions] = useState([])
+  let questionArr = [];
+
+  const getQuestions = () => {
+    getQuizQuestions().then(function(response) {
+      questionArr = response.data;
+      setQuestions(questionArr);
+    })
+  }
+
+  useEffect(() => {
+    getQuestions();
+  }, [])
+
+  console.log(quizQuestions);
 
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
@@ -22,15 +41,16 @@ function Quiz({ questions }) {
     <div className="quiz-section container">
       {showScore ? (
         <div className="score-section">
-          You scored {score} out of {questions.length}!
+          You scored {score} out of {quizQuestions.length}!
         </div>
       ) : (
         <>
           <div className="question-section">
             <div className="q-count">
-              <span>Question {currentQuestion + 1}</span>/{questions.length}
+              <span>Question {currentQuestion + 1}</span>/{quizQuestions.length}
             </div>
             <div className="q-text">
+              {console.log(quizQuestions[currentQuestion])}
               {questions[currentQuestion].questionText}
             </div>
             <img src={questions[currentQuestion].questionImg} />
