@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const config = require("config");
 // const db = process.env.mongoURI;
-let db;
+let db = "mongodb://localhost/nasagame"
 
-if (process.env.NODE_ENV !== "production") {
-  db = config.get("mongoURI");
-} else {
-  db = process.env.MONGO_URI;
-}
+// if (process.env.NODE_ENV !== "production") {
+//   db = config.get("mongoURI");
+// } else {
+//   db = process.env.MONGO_URI;
+// }
 
 const connectDB = async () => {
   try {
