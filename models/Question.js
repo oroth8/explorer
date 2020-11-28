@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Schmea = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const questionSchema = new Schema({
   level: { type: String },
