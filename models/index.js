@@ -1,5 +1,5 @@
 module.exports = {
-    Character: require("./character"),
+    // Character: require("./character"),
     Users: require("./Users"),
     Question: require("./Question")
 }
