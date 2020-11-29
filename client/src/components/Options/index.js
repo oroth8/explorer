@@ -13,6 +13,10 @@ const style={
       "name":"View Character", 
       "href":"/viewCharacter"
     },
+    {
+      "name":"Login", 
+      "href":"/login"
+    },
     // {
     //   "name":"Buy Ship", 
     //   "href":"/buyShip"

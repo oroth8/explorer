@@ -3,12 +3,13 @@ import "./style.css";
 import Options from "../Options"
 import {loadCharacter} from "../utils/API"
 import BuyShip from "../Ship/BuyShip"
-// import AuthContext from "../../context/auth/authContext";
+import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
 
 
 export default function ViewCharacter(props) { 
-
+  const {user} = AuthContext;
+  console.log(user);;
   let userId=0;
   const [state, dispatch] = useCharacterContext();
   console.log(state);

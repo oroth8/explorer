@@ -11,10 +11,12 @@ import BuyShip from "./components/Ship/BuyShip"
 import Quiz from "./components/Quiz";
 // Character Context 
 import {CharProvider} from "./context/character/CharacterContext"
+
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
+
 // auth components
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -25,41 +27,35 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-
-
 // Our main background output
 
 // Questions
 const NAquestions = require("./NAquestions.json");
 
 function App() {
-  
-const [characterState, setCharacter] = useState({name:"default", characterImage:""});
+  const [characterState, setCharacter] = useState({name:"default", characterImage:""});
 
-  // function updateCharacter(charObj){
-  //   setCharacter(charObj);
-  // }
-  // Send data to EmployeeList to be rendered, then renders final results.
+    // Send data to EmployeeList to be rendered, then renders final results.
   return (
     <AuthState>
       <AlertState>
+      <CharProvider>
         <Router>
           <Alert />
           <Switch>
             <Route exact path="/" component={Level} />
             <Route exact path="/level" component={Level} />
             <Route exact path="/register" component={Register} />
-            <CharProvider>
               <Route exact path="/viewCharacter" component={ViewCharacter} />
               <Route exact path="/characterCreation" component={CharacterCreator} />
               <Route exact path="/buyShip" component={BuyShip} />
-            </CharProvider> 
             <Route exact path="/login" component={Login} />
             <Route exacth path="/na">
               <Quiz questions={NAquestions} />
-            </Route>
+            </Route>            
           </Switch>
         </Router>
+        </CharProvider> 
       </AlertState>
     </AuthState>
   );
