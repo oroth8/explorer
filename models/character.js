@@ -8,7 +8,7 @@ const characterSchema = new Schema({
   currentYear:{type: Number, default:2021},
   birthYear: {type:Number, default:2001},
   credits: Number,
-  shipIdArray: [Number],
+  shipIdArray: [String],
   levelsCompletedArray:[Number],
   userId: Number
 });

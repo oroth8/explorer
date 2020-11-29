@@ -9,32 +9,35 @@ export default function ViewCharacter(props) {
 
   let userId=0;
   const [state, dispatch] = useCharacterContext();
+  console.log(state);
+  const getCharacter=userId=>{
+    dispatch({type:"LOADING"});
+    loadCharacter(0)
+    .then(res=>{
+      dispatch({type:"UPDATE_CHARACTER", char:res.data})
+    })
+  };
 
   useEffect(()=>{
-    // If we're still using the default values for Charactercontext, then the img will not be 
-    // set yet. In that case, we need to load the character
-    if(!state.characterImage) loadCharacter(userId)
-    .then(data=>{
-      if(!data.data); //Go to create a character, do not pass go
-      else dispatch({type:"update", char:data.data})
-    })
+    getCharacter();
   },[]);
 
-
+  if(!state.loaded) return (<></>);
+  else 
   return (
     <div className="container desk-box">
     <div className="container" id="license">
       <div className="smudge"></div>
         <div className="row">
           <div className="col-5" id="photo">
-            <img src={state.characterImage} />
+            <img src={state.data.characterImage} />
           </div>
           <div className="col-7">
           <ul className="stats">
-          <li>Name: {state.name}</li>
-            <li>Age: {state.age}</li>
-            <li>Born:{state.birthYear}</li>
-            <li>Ship Class: {state.shipId} </li>               
+          <li>Name: {state.data.name}</li>
+            <li>Age: {state.data.age}</li>
+            <li>Born:{state.data.birthYear}</li>
+            <li>Ship Class: {state.data.shipIdArray[0]} </li>               
             </ul>
           </div>
         </div>
@@ -45,7 +48,7 @@ export default function ViewCharacter(props) {
           UPDATED {state.currentYear}
         </div>
     </div>
-    <a href="/characterCreation">Creator</a>
+    <a href="/buyShip">Creator</a>
 </div>  
   );
 }

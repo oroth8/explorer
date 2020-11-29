@@ -5,9 +5,20 @@ const { Provider } = CharacterContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case "update":
-    console.log(action.char.data);
-    return action.char.data;
+  case "UPDATE_CHARACTER":
+    console.log(action.char);
+    return{
+      ...state,
+      ...action.char,
+      loaded:true
+    }
+  case "LOADING":
+    return{
+      ...state,
+      loaded:false
+    };
+  
+
   default:
     throw new Error(`Invalid action type: ${action.type}`);
   }
