@@ -1,6 +1,8 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
+import Options from "../Options"
 import {loadCharacter} from "../utils/API"
+import BuyShip from "../Ship/BuyShip"
 // import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
 
@@ -21,10 +23,12 @@ export default function ViewCharacter(props) {
   useEffect(()=>{
     getCharacter();
   },[]);
-
+let display={display:"TopRight"};
   if(!state.loaded) return (<></>);
   else 
   return (
+    <>
+    <BuyShip />
     <div className="container desk-box">
     <div className="container" id="license">
       <div className="smudge"></div>
@@ -49,7 +53,9 @@ export default function ViewCharacter(props) {
         </div>
     </div>
     <a href="/buyShip">Creator</a>
+    <Options displayed={display}/>
 </div>  
+</>
   );
 }
 

@@ -19,7 +19,7 @@ export default function BuyShip() {
         setShipArray(data.data.data);
     })
     
-    getCharacter();
+    if(!charState.loaded) getCharacter();
     
   },[]);
   
@@ -45,17 +45,25 @@ export default function BuyShip() {
 
   return(
     <div className="container air-field">
+      <div className="row">
+        
+      <div className="col-6">
       Ships Owned:
     {
     bought.map(elem=>(
         <ShipItem key={elem.id} data={elem} />
     ))}
+    </div>
+    <div className="col-6">
     Ships for Sale:
     {
     others.map(elem=>(
         <ShipItem key={elem.id} data={elem} />
     ))}
+    </div>
+    </div>
     </div>  
+    
       );
   }
   else return (<></>);
