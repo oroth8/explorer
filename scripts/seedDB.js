@@ -14,6 +14,37 @@ const locationSeed = [
     name: "North America",
     description: "The northern half of the supercontinent of America",
     imgageUrl: ""
+  },
+  {
+    name: "Africa",
+    description: "Continent of Africa",
+    imgageUrl: ""
+  },
+  {
+    name: "South America",
+    description: "The southern half of the supercontinent of America",
+    imgageUrl: ""
+  },
+  {
+    name: "Europe",
+    description: "Continent of Europe",
+    imgageUrl: ""
+  },  {
+    name: "Asia",
+    description: "Continent of Asia",
+    imgageUrl: ""
+  },{
+    name: "Antartica",
+    description: "Continent of Anatartica",
+    imgageUrl: ""
+  },{
+    name: "Australia",
+    description: "Continent of Australia",
+    imgageUrl: ""
+  },{
+    name: "Earth",
+    description: "The plane we live on",
+    imgageUrl: ""
   }
 ];
 

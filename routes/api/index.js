@@ -1,7 +1,16 @@
 const router = require("express").Router();
-const genericRoutes = require("./generic");
+const Location = require("../../models/location.js");
 
-// generic routes
-router.use("/generic", genericRoutes);
+
+
+
+router.get("/location/:location", (req,res)=>{
+    Location.find({ name: req.params.location})
+    .then( results => res.json(results));
+});
+
+
+
+
 
 module.exports = router;
