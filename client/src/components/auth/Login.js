@@ -10,8 +10,10 @@ const Login = (props) => {
   const { loginUser, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
+    
+    
     if (isAuthenticated) {
-      props.history.push("/");
+     // props.history.push("/");
     }
     if (error === "Invalid Credentials") {
       setAlert(error, "danger");
@@ -19,6 +21,9 @@ const Login = (props) => {
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
+
+  
+  console.log(authContext.user);
 
   const [user, setUser] = useState({
     email: "",

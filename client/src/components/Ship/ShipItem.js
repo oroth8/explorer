@@ -1,4 +1,4 @@
-import img from "./img/sideBiplane.svg"
+
  export default function ShipItem(props) {
      console.log(props.data.topImage);
      if(props.data.topImage)
