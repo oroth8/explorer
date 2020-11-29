@@ -1,0 +1,13 @@
+.air-field{
+    margin-top:2em;
+}
+
+.ship-item{
+    width:200px;
+    height:200px;
+    border:1px solid black;
+    background-size:contain;
+    background-repeat: no-repeat;    
+    box-shadow: 5px 5px 7px black;
+    margin-bottom:.5em;
+}

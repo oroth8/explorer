@@ -45,6 +45,7 @@ export default function ViewCharacter(props) {
           UPDATED {state.currentYear}
         </div>
     </div>
+    <a href="/characterCreation">Creator</a>
 </div>  
   );
 }

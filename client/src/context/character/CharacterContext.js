@@ -14,7 +14,7 @@ const reducer = (state, action) => {
 };
 
 const CharProvider = ({ value = {}, ...props }) => {
-  const [state, dispatch] = useReducer(reducer, { char: value });
+  const [state, dispatch] = useReducer(reducer, value);
 
   return <Provider value={[state, dispatch]} {...props} />;
 };

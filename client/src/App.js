@@ -2,8 +2,11 @@ import React, {useState} from "react";
 import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// Character components
 import CharacterCreator from "./components/Character/CharacterCreator"
 import ViewCharacter from "./components/Character/ViewCharacter";
+// Ship Components
+import BuyShip from "./components/Ship/BuyShip"
 // Quiz Components
 import Quiz from "./components/Quiz";
 // Character Context 
@@ -31,11 +34,11 @@ const NAquestions = require("./NAquestions.json");
 
 function App() {
   
-const [characterState, setCharacter] = useState({name:"default"});
+const [characterState, setCharacter] = useState({name:"default", characterImage:""});
 
-  function updateCharacter(charObj){
-    setCharacter(charObj);
-  }
+  // function updateCharacter(charObj){
+  //   setCharacter(charObj);
+  // }
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
     <AuthState>
@@ -49,6 +52,7 @@ const [characterState, setCharacter] = useState({name:"default"});
             <CharProvider>
               <Route exact path="/viewCharacter" component={ViewCharacter} />
               <Route exact path="/characterCreation" component={CharacterCreator} />
+              <Route exact path="/buyShip" component={BuyShip} />
             </CharProvider> 
             <Route exact path="/login" component={Login} />
             <Route exacth path="/na">

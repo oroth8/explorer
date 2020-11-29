@@ -4,18 +4,16 @@ import {getNewCharacterPortrait} from "../utils/API"
 import {saveCharacter} from "../utils/API"
 import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
-export default function CharacterCreator() { 
-
-  
+export default function CharacterCreator() {   
   const authContext = useContext(AuthContext);
-  
   const [state, dispatch] = useCharacterContext();
-
+  console.log(state);
    useEffect(()=>{
     if(!state.characterImage) getNewPortrait();
   },[])
 
   function getNewPortrait(){
+    state.characterImage="";
     getNewCharacterPortrait()
     .then(res=>{       
         let charObj={characterImage:res.data.results[0].picture.large}
@@ -54,8 +52,8 @@ export default function CharacterCreator() {
     <div className="row creation-box">
         <div className="col col-lg-4">
           <form onSubmit={submitCharacter}>
-            <p><label htmlFor="name">Character Name:</label></p><p><input onChange={inputHandler} type="text" name="name" id="name"/></p>
-            <p><label htmlFor="age">Age:</label></p><p><input type="number" onChange={inputHandler} name="age" maxLength="3" size="3" id="age" defaultValue="23"/></p>
+            <p><label htmlFor="name">Character Name:</label></p><p><input onChange={inputHandler} type="text" name="name" id="name" defaultValue={state.name}/></p>
+            <p><label htmlFor="age">Age:</label></p><p><input type="number" onChange={inputHandler} name="age" maxLength="3" size="3" id="age" defaultValue={state.age}/></p>
             <p><button type="submit">Submit</button></p>
           </form>
         </div>

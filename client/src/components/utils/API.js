@@ -9,3 +9,7 @@ export async function saveCharacter(characterObj){
 export async function loadCharacter(userId){
     return axios.get("/api/character/load/"+userId); 
 }
+
+export async function loadShips(){
+    return axios.get("/api/ship/loadAll"); 
+}
