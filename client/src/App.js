@@ -1,13 +1,28 @@
+
 import React from "react";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CharacterCreator from "./components/Character/CharacterCreator";
 
+
+
+
+import React, {useState} from "react";
+import BackgroundImage from "./components/BackgroundImage";
+import Level from "./components/Level";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// Character components
+import CharacterCreator from "./components/Character/CharacterCreator"
+import ViewCharacter from "./components/Character/ViewCharacter";
+// Ship Components
+import BuyShip from "./components/Ship/BuyShip";
 // Pages
 import Landing from "./pages/Landing";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
+// Character Context 
+import {CharProvider} from "./context/character/CharacterContext"
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
@@ -33,8 +48,11 @@ if (localStorage.token) {
 const NAquestions = require("./NAquestions.json");
 
 function App() {
-  // Send data to EmployeeList to be rendered, then renders final results.
+  const [characterState, setCharacter] = useState({name:"default", characterImage:""});
+
+    // Send data to EmployeeList to be rendered, then renders final results.
   return (
+
     <div className="App">
       <GlobalStyle />
       <AuthState>
@@ -61,6 +79,7 @@ function App() {
         </AlertState>
       </AuthState>
     </div>
+
   );
 }
 
