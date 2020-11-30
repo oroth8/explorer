@@ -5,10 +5,12 @@ import {saveCharacter} from "../utils/API"
 import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
 import Login from "../auth/Login"
-import ViewCharacter from "./ViewCharacter"
+import Options from "../Options"
+
 export default function CharacterCreator() {   
   const authContext = useContext(AuthContext);
   const [state, dispatch] = useCharacterContext();
+  const [page, setPage] = useState("loading");
 
   let userId;
   let submitted=false;
@@ -16,31 +18,48 @@ export default function CharacterCreator() {
     authContext.loadUser()
     .then(()=>{
       if(authContext.isAuthenticated){
+        console.log('Logged in');
+        setPage("create")
         userId=authContext.user._id;    
         getCurrentCharacter(userId);
         dispatch({type:"LOADING"})
       }
+    //  else setPage("login")
       });
     },[authContext.isAuthenticated]);
+
 
     function getCurrentCharacter(userId){
       loadCharacter(userId)   
       .then(res=>{
-         if(res.data.data.characterImage)
-           dispatch({type:"UPDATE_CHARACTER", char:res.data.data})
-         // getNewPortrait(); 
+        console.log({res});
+        
+         if(res.data.data)
+           setPage("view")
+         else {
+          let charObj={name:"Name", age:20}
+          dispatch({type:"UPDATE_CHARACTER", char:charObj})
+          getNewPortrait(); 
+         }
       }); 
     }
 
   function getNewPortrait(){
     state.characterImage="";
+    
+    dispatch({type:"LOADING"})
+    setPage("loading")
     getNewCharacterPortrait()
-    .then(res=>{       
-        // let charObj={characterImage:res.data.results[0].picture.large}
+    .then(res=>{    
+        setPage("create")   
         dispatch({type:"UPDATE_PORTRAIT", url:res.data.results[0].picture.large})
       }
     );
   }
+
+
+
+
   function inputHandler(e){
     const {name, value} = e.target;
     if(name==="age"){
@@ -61,11 +80,7 @@ export default function CharacterCreator() {
     if(e.target.name.value && e.target.age.value){
       let birth=state.currentYear-e.target.age.value;
       let charObj={name:e.target.name.value, age:e.target.age.value, birthYear:birth}
-      
-      //dispatch({type:"UPDATE_CHARACTER", char:charObj})
-     console.log('saving');
-     console.log(state);
-     
+           
       saveCharacter(state)
       .then(res=>{
         console.log(res);
@@ -75,8 +90,12 @@ export default function CharacterCreator() {
     else alert("Need a name!");
   }
 
-  if(!authContext.isAuthenticated)
-    return(<Login />)
+  let display={display:"TopRight"};
+
+
+  if(page==="login") return(<Login />);
+  else if(page==="loading") return(<>Loading</>);  
+  else if(page==="view") return (<>< />);
   else return (
   <div className="container mt-2">
     <div className="row creation-box">
@@ -94,6 +113,8 @@ export default function CharacterCreator() {
           <button id="change-portrait" onClick={getNewPortrait}>Choose new Portrait</button>
         </div>
     </div>
+    
+    <Options displayed={display}/>
   </div>
 );
 }

@@ -4,7 +4,7 @@ const db = require('../models/Character');
 module.exports = {
     create: function(req, res) {
 
-        db.update(req.body)
+        db.create(req.body)
         .then((data)=>{
             res.json({resp:data})
         })

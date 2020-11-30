@@ -6,11 +6,21 @@ import BuyShip from "../Ship/BuyShip"
 import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
 import Login from "../auth/Login"
-
+import CharacterCreator from "./CharacterCreator"
 export default function ViewCharacter(props) { 
   let userId;
   const [state, dispatch] = useCharacterContext();
   const authContext = useContext(AuthContext);
+
+  console.log({authContext});
+  useEffect(()=>{
+    
+    if(authContext.isAuthenticated) {
+      console.log(authContext.user);
+      
+      getCharacter(authContext.user._id);}
+     
+  },[authContext.isAuthenticated]);
 
   
   const getCharacter=id=>{
@@ -18,28 +28,20 @@ export default function ViewCharacter(props) {
     
     loadCharacter(id)
     .then(res=>{
-      dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      if(res.data){
+        dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      }
     })
   };
 
-  useEffect(()=>{
-     authContext.loadUser()
-     .then(()=>{
-       if(authContext.isAuthenticated){
-          userId=authContext.user._id;          
-          getCharacter(userId);
-       }
-     });
-  },[authContext.isAuthenticated]);
-
-let display={display:"TopRight"};
+  let display={display:"TopRight"};
   if(!authContext.isAuthenticated)
   return(
     <Login />
   )
-  else if(!state.loaded) return (<></>);
-  else 
-  return (
+  else if(!state.loaded) return (<>Loading</>);
+//  else if(page==="create") return (<CharacterCreator />)
+  else return (
     <>
     <BuyShip />
     <div className="container desk-box">
@@ -47,7 +49,7 @@ let display={display:"TopRight"};
       <div className="smudge"></div>
         <div className="row">
           <div className="col-5" id="photo">
-            <img src={state.data.characterImage} />
+            <img src={state.data.characterImage} />s
           </div>
           <div className="col-7">
           <ul className="stats">

@@ -22,7 +22,8 @@ const reducer = (state, action) => {
   case "UPDATE_PORTRAIT":
     return{
       ...state,
-      characterImage:action.url
+      characterImage:action.url,
+      loaded:true
     };
 
   default:
