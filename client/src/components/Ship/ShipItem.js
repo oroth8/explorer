@@ -1,6 +1,5 @@
 
  export default function ShipItem(props) {
-     console.log(props.data.topImage);
      if(props.data.topImage)
         return (
         <div  key={props.data.id} className="col" style={{margin:"auto"}}>

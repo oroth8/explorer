@@ -5,10 +5,10 @@ const style={
   options: [{ 
     "name": "Main Menu",
     "href": "/"},
-    // {
-    //   "name":"Create Character", 
-    //   "href":"/characterCreation"
-    // },
+    {
+      "name":"Create Character", 
+      "href":"/characterCreation"
+    },
     {
       "name":"View Character", 
       "href":"/viewCharacter"

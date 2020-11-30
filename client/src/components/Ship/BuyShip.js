@@ -3,7 +3,6 @@ import "./style.css";
 import {loadShips} from "../utils/API"
 import ShipItem from "./ShipItem";
 import {loadCharacter} from "../utils/API"
-// import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
 
 
@@ -31,9 +30,6 @@ export default function BuyShip() {
     })
   };
   if(charState.loaded){
-    console.log(charState.data.shipIdArray);
-    // let bought=shipArray.filter(ship=>ship._id==="5fc31206388dbcd5aa78646b");
-    console.log( charState.data.shipIdArray.indexOf(shipArray[0]._id));
     let bought=shipArray.filter(ship=>{
       if(charState.data.shipIdArray.indexOf(ship._id)!==-1) return true;
       else return false;

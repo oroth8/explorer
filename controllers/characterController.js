@@ -4,7 +4,7 @@ const db = require('../models/Character');
 module.exports = {
     create: function(req, res) {
 
-        db.create(req.body)
+        db.update(req.body)
         .then((data)=>{
             res.json({resp:data})
         })
@@ -13,7 +13,8 @@ module.exports = {
         db.findOne(
             {
                 userId:req.params.id
-            }, (err, data)=>{
+            }, 
+            (err, data)=>{
                 if(err) res.json({err})
                 else res.json({data})
             }
