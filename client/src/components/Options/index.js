@@ -2,41 +2,41 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
 
-const style={
-  options: [{ 
-    "name": "Main Menu",
-    "href": "/"},
-    // {
-    //   "name":"Create Character", 
-    //   "href":"/characterCreation"
-    // },
-    {
-      "name":"View Character", 
-      "href":"/viewCharacter"
-    },
-    {
-      "name":"Login", 
-      "href":"/login"
-    },
-    // {
-    //   "name":"Buy Ship", 
-    //   "href":"/buyShip"
-    // },
-    { 
-      "name": "Logout",
-      "href": "/"}],
-      card: {
-        zIndex: "2",
-        display: "block"
-      },
-      a: {
-        color: "black"
+// const style={
+//   options: [{ 
+//     "name": "Main Menu",
+//     "href": "/"},
+//     // {
+//     //   "name":"Create Character", 
+//     //   "href":"/characterCreation"
+//     // },
+//     {
+//       "name":"View Character", 
+//       "href":"/viewCharacter"
+//     },
+//     {
+//       "name":"Login", 
+//       "href":"/login"
+//     },
+//     // {
+//     //   "name":"Buy Ship", 
+//     //   "href":"/buyShip"
+//     // },
+//     { 
+//       "name": "Logout",
+//       "href": "/"}],
+//       card: {
+//         zIndex: "2",
+//         display: "block"
+//       },
+//       a: {
+//         color: "black"
         
-      },
-      list: {
-        listStyle: "none"
-      }
-}
+//       },
+//       list: {
+//         listStyle: "none"
+//       }
+// }
 
 
 const style = {
@@ -105,28 +105,28 @@ function Options(props) {
   }
 
 
-  return (
-    <div
-      className="card"
-      style={displayOptions}
-      onClick={(e) => {
-        e.stopPropagation();
-      }}
-    >
-      {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
-      <div className="card-body">
-        <h5> Options</h5>
+//   return (
+//     <div
+//       className="card"
+//       style={displayOptions}
+//       onClick={(e) => {
+//         e.stopPropagation();
+//       }}
+//     >
+//       {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
+//       <div className="card-body">
+//         <h5> Options</h5>
 
-        {style.options.map((option) => (
-          <p>
-            <a style={style.a} href={option.href}>
-              {option.name}
-            </a>
-          </p>
-        ))}
-      </div>
-    </div>
-  );
-}
+//         {style.options.map((option) => (
+//           <p>
+//             <a style={style.a} href={option.href}>
+//               {option.name}
+//             </a>
+//           </p>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 export default Options;
