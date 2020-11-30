@@ -60,7 +60,7 @@ function Level()  {
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                 <Options displayed={displayedModal}/>
                 {/* <Character displayed={displayedModal}/> */}
-                <Level1 displayed={displayedModal}/>
+                <Level2 displayed={displayedModal}/>
                 <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
             </div>);
   };
