@@ -114,6 +114,61 @@ const questionSeed = [
     ],
     questionImg: "../img/questions/Santiago_Skyline.jpg"
   },
+  {
+    level: "Europe",
+    questionText: "What is Europe's largest country?",
+    answerChoices: [
+      { answerText: "Sweden", isCorrect: false },
+      { answerText: "Turkey", isCorrect: false },
+      { answerText: "France", isCorrect: false },
+      { answerText: "Russia", isCorrect: true },
+    ],
+    questionImg: "../img/questions/europe_map.jpg"
+  },
+  {
+    level: "Europe",
+    questionText: "Which of the following is the most populous European capital city?",
+    answerChoices: [
+      { answerText: "London", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Moscow", isCorrect: true },
+      { answerText: "Berlin", isCorrect: false },
+    ],
+    questionImg: "../img/questions/St_Basils.jpg"
+  },
+  {
+    level: "Europe",
+    questionText: "Which is the longest mountain range found in Europe alone?",
+    answerChoices: [
+      { answerText: "Balkan Mountains", isCorrect: false },
+      { answerText: "Alps", isCorrect: true },
+      { answerText: "Pyrenees", isCorrect: false },
+      { answerText: "Apennines", isCorrect: false },
+    ],
+    questionImg: "../img/questions/alps.jpg"
+  },
+  {
+    level: "Europe",
+    questionText: "What is the tallest mountain in Europe?",
+    answerChoices: [
+      { answerText: "Mont Blanc", isCorrect: false },
+      { answerText: "Shkhara", isCorrect: false },
+      { answerText: "Mount Elbrus", isCorrect: true },
+      { answerText: "Tetnuldi", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mount_elbrus.jpg"
+  },
+  {
+    level: "Europe",
+    questionText: "What building ranks as the tallest in Europe?",
+    answerChoices: [
+      { answerText: "OKO Tower", isCorrect: false },
+      { answerText: "Eurasia Tower", isCorrect: false },
+      { answerText: "Eiffel Tower", isCorrect: false },
+      { answerText: "Federation Tower", isCorrect: true },
+    ],
+    questionImg: "../img/question/eiffel.jpg"
+  },
  
   
 ];
