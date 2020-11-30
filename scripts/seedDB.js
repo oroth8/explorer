@@ -6,7 +6,7 @@ const config = require("config");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/space"
+  "mongodb+srv://Project3:nasaGame@cluster0.8myrz.mongodb.net/nasagame?retryWrites=true&w=majority"
 );
 
 // need to fill in our data
