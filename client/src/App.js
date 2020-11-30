@@ -19,6 +19,7 @@ import { CharProvider } from "./context/character/CharacterContext";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -54,7 +55,7 @@ function App() {
             <Alert />
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/level" component={Level} />
+              <PrivateRoute exact path="/level" component={Level} />
               <Route exact path="/register" component={Register} />
               <Route
                 exact
