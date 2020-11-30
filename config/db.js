@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const config = require("config");
 // const db = process.env.mongoURI;
 let db;
 
 if (process.env.NODE_ENV !== "production") {
-  db = "mongodb+srv://Project3:nasaGame@cluster0.8myrz.mongodb.net/nasagame?retryWrites=true&w=majority";
+  db = config.get("mongoURI");
 } else {
   db = process.env.MONGO_URI;
 }

@@ -1,58 +1,63 @@
-import React, { useState} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./style.css";
 import Level1 from "./Level1";
 import Level2 from "./Level2";
 import Options from "../Options";
+import AuthContext from "../../context/auth/authContext";
 // import Character from "../charactCharacter";
 
-
-
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
-function Level()  {
+function Level() {
+  const authContext = useContext(AuthContext);
+  useEffect(() => {
+    authContext.loadUser();
+    // eslint-disable-next-line
+  }, []);
 
   const [displayedModal, setDisplayedModal]=useState({
     display: "None"
   });
 
-  const [avatarState, setAvatarState]=useState({
+  const [avatarState, setAvatarState] = useState({
     position: "fixed",
     top: "20%",
     left: "40%",
     transition: "all 1s",
     width: "40px",
-    height: "20px"
+    height: "20px",
   });
 
-  let getLocation= (e) =>{
-    let top=e.pageY-10+"px";
-    let left=e.pageX-20+"px";
-    setAvatarState({...avatarState, top, left});
-  }
+  let getLocation = (e) => {
+    let top = e.pageY - 10 + "px";
+    let left = e.pageX - 20 + "px";
+    setAvatarState({ ...avatarState, top, left });
+  };
 
-  let handleKey= (e)=>{
-    switch(e.key){
+  let handleKey = (e) => {
+    switch (e.key) {
       case "o":
-      if(displayedModal.display==="Options"){
-        setDisplayedModal({...displayedModal, display: "none"});
-      }else{
-        setDisplayedModal({...displayedModal, display: "Options"});
-      }
-      break;
-      case "c":
-        if(displayedModal.display==="Character"){
-          setDisplayedModal({...displayedModal, display: "none"});
-        }else{
-          setDisplayedModal({...displayedModal, display: "Character"});
+        if (displayedModal.display === "Options") {
+          setDisplayedModal({ ...displayedModal, display: "none" });
+        } else {
+          setDisplayedModal({ ...displayedModal, display: "Options" });
         }
         break;
-        case "l":
-          if(displayedModal.display==="Location"){
-            setDisplayedModal({...displayedModal, display: "none"});
-          }else{
-            setDisplayedModal({...displayedModal, display: "Location"});
-          }
-          break;
-        default: break;
+      case "c":
+        if (displayedModal.display === "Character") {
+          setDisplayedModal({ ...displayedModal, display: "none" });
+        } else {
+          setDisplayedModal({ ...displayedModal, display: "Character" });
+        }
+        break;
+      case "l":
+        if (displayedModal.display === "Location") {
+          setDisplayedModal({ ...displayedModal, display: "none" });
+        } else {
+          setDisplayedModal({ ...displayedModal, display: "Location" });
+        }
+        break;
+      default:
+        break;
     }
   }
 
@@ -64,9 +69,13 @@ function Level()  {
   let levelChange= direction => {
     let level=Number(levelNumber.number);
     if(direction==="add"){
-      level=(level+1) %2;
+      if(level < 2){
+      level=(level+1);
+      }
     }else{
-      level=(level-1) %2;
+      if(level > 1){
+      level=(level-1);
+      }
     }
     setLevelNumber({...levelNumber, "number": level, name: `Level${level}`});
   }
@@ -76,17 +85,25 @@ function Level()  {
         return (
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                           <div className="row">
-                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
+                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Next Level</button>
                     </div>
 
                 <Options displayed={displayedModal}/>
                 {/* <Character displayed={displayedModal}/> */}
         {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
-        {levelNumber.number===0 && <Level2 displayed={displayedModal} /> }
+        {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
                 <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
             </div>);
   };
 
-
+  return (
+    <div onClick={(e) => getLocation(e)} onKeyPress={handleKey} tabIndex="0">
+      <Options displayed={displayedModal} />
+      {/* <Character displayed={displayedModal}/> */}
+      <Level2 displayed={displayedModal} />
+      <img style={avatarState} src="./img/avatar.png" alt="Character" />
+    </div>
+  );
+}
 
 export default Level;
