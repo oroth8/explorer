@@ -21,7 +21,7 @@ const Jumbotron = () => {
             <button>Register</button>
           </Link>
         ) : (
-          <Link to="/level">
+          <Link to="/play">
             <button>Play Now!</button>
           </Link>
         )}
