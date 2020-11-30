@@ -1,3 +1,8 @@
 module.exports = {
-  Location: require("./location")
-};
+    // Character: require("./character"),
+    Users: require("./Users"),
+    Question: require("./Question"),
+    Location: require("./location")
+}
+  
+
