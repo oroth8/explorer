@@ -2,37 +2,41 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
 
-// const style={
-//   options: [{ 
-//     "name": "Main Menu",
-//     "href": "/"},
-//     // {
-//     //   "name":"Create Character", 
-//     //   "href":"/characterCreation"
-//     // },
-//     {
-//       "name":"View Character", 
-//       "href":"/viewCharacter"
-//     },
-//     {
-//       "name":"Login", 
-//       "href":"/login"
-//     },
-//     // {
-//     //   "name":"Buy Ship", 
-//     //   "href":"/buyShip"
-//     // },
-//     { 
-//       "name": "Logout",
-//       "href": "/"}],
-//       card: {
-//         zIndex: "2",
-//         display: "block"
-//       },
-//       a: {
-//         color: "black"
+const style={
+  options: [{ 
+    "name": "Main Menu",
+    "href": "/"},
+    // {
+    //   "name":"Create Character", 
+    //   "href":"/characterCreation"
+    // },
+    {
+      "name":"View Character", 
+      "href":"/viewCharacter"
+    },
+    {
+      "name":"Login", 
+      "href":"/login"
+    },
+    // {
+    //   "name":"Buy Ship", 
+    //   "href":"/buyShip"
+    // },
+    { 
+      "name": "Logout",
+      "href": "/"}],
+      card: {
+        zIndex: "2",
+        display: "block"
+      },
+      a: {
+        color: "black"
         
-
+      },
+      list: {
+        listStyle: "none"
+      }
+};
 
 
 
@@ -73,6 +77,7 @@ function Options(props) {
           </div>
         );
   }
+
 
 
 

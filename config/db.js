@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 let db = "mongodb://localhost/nasagame"
 
 if (process.env.NODE_ENV !== "production") {
-  db = "mongodb://localhost/space";
+  db = "mongodb://localhost/nasagame";
 } else {
   db = process.env.MONGO_URI;
 }

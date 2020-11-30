@@ -37,6 +37,30 @@ const questionSeed = [
     ],
     questionImg: "../img/NA.jpg",
   },
+  {
+    level: "North America",
+    questionText: "Which is the largest lake of the North American continent?",
+    answerChoices: [
+      { answerText: "Lake Michigan", isCorrect: false },
+      { answerText: "Lake Superior", isCorrect: true },
+      { answerText: "Lake Tahoe", isCorrect: false },
+      { answerText: "Lake Huron", isCorrect: false }
+    ],
+    questionImg: "../img/Great_Lakes.jpg"
+  },
+  {
+    level: "North America",
+    questionText: "What is the longest mountain range in North America?",
+    answerChoices: [
+      { answerText: "Appalachian Mountains", isCorrect: false },
+      { answerText: "Canadian Rockies", isCorrect: false },
+      { answerText: "Sierra Nevada", isCorrect: false },
+      { answerText: "Rocky Mountains", isCorrect: true },
+    ],
+    questionImg: "../img/Rocky.jpg"
+  },
+ 
+  
 ];
 
 db.Question.remove({})
