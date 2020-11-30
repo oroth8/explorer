@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const config = require("config");
 // const db = process.env.mongoURI;
 let db = "mongodb://localhost/nasagame"
 
 if (process.env.NODE_ENV !== "production") {
-  db = "mongodb://localhost/nasagame";
+  db = config.get("mongoURI");
 } else {
   db = process.env.MONGO_URI;
 }

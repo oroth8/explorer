@@ -53,17 +53,15 @@ function App() {
           <Router>
             <Alert />
             <Switch>
-              <Route exact path="/" component={Level} />
+              <Route exact path="/" component={Landing} />
               <Route exact path="/level" component={Level} />
               <Route exact path="/register" component={Register} />
-
               <Route
                 exact
                 path="/characterCreation"
                 component={CharacterCreator}
               />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/landing" component={Landing} />
               <Route exacth path="/na">
                 <Quiz questions={NAquestions} />
               </Route>
