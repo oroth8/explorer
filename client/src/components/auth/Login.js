@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
+import styled from "styled-components";
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -42,39 +43,63 @@ const Login = (props) => {
   };
 
   return (
-    <div className="form-container">
-      <h1>
-        Account <span className="text-primary">Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <input
-          type="submit"
-          value="Login"
-          className="btn btn-primary btn-block"
-        />
-      </form>
-    </div>
+    <LoginStyle className="container">
+      <div className="form-container">
+        <h1>
+          Account <span>Login</span>
+        </h1>
+        <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <label htmlFor="email"></label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+              required
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password"></label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              required
+              placeholder="Password"
+            />
+          </div>
+          <input type="submit" value="Login" className="btn" />
+        </form>
+      </div>
+    </LoginStyle>
   );
 };
 
+const LoginStyle = styled.div`
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  vertical-align: center;
+  text-align: center;
+  margin-top: 30rem;
+  align-items: center;
+  h1 {
+    color: white;
+  }
+  label {
+    color: #23d997;
+    padding-right: 2rem;
+    text-align: right;
+  }
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+  }
+`;
 export default Login;
