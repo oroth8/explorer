@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import imageMap from "./map.json";
-import Location from "./Location"
+import Location from "../Location"
 
 const style={
   container: {
