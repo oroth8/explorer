@@ -11,9 +11,7 @@ const Footer = () => {
       <div class="container text-center text-md-left">
         <div class="row">
           <div class="col-md-4 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
-              Footer Content
-            </h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
             <p>
               Here you can use rows and columns to organize your footer content.
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -22,19 +20,21 @@ const Footer = () => {
 
           <hr class="clearfix w-100 d-md-none" />
           <div class="col-md-2 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
+              Developers
+            </h5>
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="https://github.com/jalbert12485">Justin Albert</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="https://github.com/oroth8">Owen Roth</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="https://github.com/k1te-m">Kevin Miller</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="https://github.com/B-Dionysus">Benjamin Dionysus</a>
               </li>
             </ul>
           </div>
@@ -42,40 +42,33 @@ const Footer = () => {
           <hr class="clearfix w-100 d-md-none" />
 
           <div class="col-md-2 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
+              Project Resources
+            </h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
+                <a href="https://github.com/oroth8/project3">Project Repo</a>
               </li>
             </ul>
           </div>
 
           <hr class="clearfix w-100 d-md-none" />
           <div class="col-md-2 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Map</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Account</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Register</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Play Now!</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Instructions</a>
               </li>
             </ul>
           </div>
