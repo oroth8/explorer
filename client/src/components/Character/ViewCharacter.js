@@ -21,7 +21,6 @@ let userId;
   useEffect(()=>{
     authContext.loadUser();
     
-    console.log(authContext.user);
     if(authContext.user){
       userId=authContext.user._id;      
       getCharacter(userId);
@@ -32,18 +31,17 @@ let userId;
     dispatch({type:"LOADING"});
     loadCharacter(userId)
     .then(res=>{
-      console.log(res.data);
-      
-      dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      if(res.data)      
+        dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      else dispatch({type:"ERROR_NO_CHARACTER"})
     })
   };
 
 let display={display:"TopRight"};
 
-
-  if(!state.loaded) return (<></>);
-  else 
-  return (
+  if(state.missing) return (<CharacterCreator />)
+  else if(!state.loaded) return (<>Loading</>);
+  else return (
     <>
     <BuyShip />
     <div className="container desk-box">

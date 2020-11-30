@@ -19,6 +19,11 @@ const reducer = (state, action) => {
       ...state,
       loaded:false
     };
+    case "ERROR_NO_CHARACTER":
+      return{
+        ...state,
+        missing:true
+      }
   case "UPDATE_PORTRAIT":
     return{
       ...state,
