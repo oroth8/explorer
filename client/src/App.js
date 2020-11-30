@@ -9,6 +9,7 @@ import ViewCharacter from "./components/Character/ViewCharacter";
 import BuyShip from "./components/Ship/BuyShip";
 // Pages
 import Landing from "./pages/Landing";
+import Play from "./components/Play";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
@@ -55,7 +56,8 @@ function App() {
             <Alert />
             <Switch>
               <Route exact path="/" component={Landing} />
-              <PrivateRoute exact path="/level" component={Level} />
+              <Route exact path="/play" component={Play} />
+              <Route exact path="/level" component={Level} />
               <Route exact path="/register" component={Register} />
               <Route
                 exact

@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nasagame");
+mongoose.connect(
+  process.env.MONGODB_URI ||
+  "mongodb+srv://Project3:nasaGame@cluster0.8myrz.mongodb.net/nasagame?retryWrites=true&w=majority"
+);
 
 const questionSeed = [
   {
@@ -182,6 +185,7 @@ db.Question.remove({})
   .catch((error) => {
     console.error(error);
   });
+
 
 
 // need to fill in our data

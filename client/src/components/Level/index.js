@@ -14,8 +14,8 @@ function Level() {
     // eslint-disable-next-line
   }, []);
 
-  const [displayedModal, setDisplayedModal] = useState({
-    display: "Options",
+  const [displayedModal, setDisplayedModal]=useState({
+    display: "None"
   });
 
   const [avatarState, setAvatarState] = useState({
@@ -59,16 +59,42 @@ function Level() {
       default:
         break;
     }
+  }
+
+  const [levelNumber, setLevelNumber] = useState({
+    number: 1
+  });
+
+  let levelChange= direction => {
+    let level=Number(levelNumber.number);
+    if(direction==="add"){
+      if(level < 2){
+      level=(level+1);
+      }
+    }else{
+      if(level > 1){
+      level=(level-1);
+      }
+    }
+    setLevelNumber({...levelNumber, "number": level, name: `Level${level}`});
+  }
+
+
+
+        return (
+            <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
+                          <div className="row">
+                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
+                    </div>
+
+                <Options displayed={displayedModal}/>
+                {/* <Character displayed={displayedModal}/> */}
+                  {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
+                  {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
+                <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
+            </div>);
   };
 
-  return (
-    <div onClick={(e) => getLocation(e)} onKeyPress={handleKey} tabIndex="0">
-      <Options displayed={displayedModal} />
-      {/* <Character displayed={displayedModal}/> */}
-      <Level2 displayed={displayedModal} />
-      <img style={avatarState} src="./img/avatar.png" alt="Character" />
-    </div>
-  );
-}
+
 
 export default Level;
