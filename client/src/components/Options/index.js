@@ -5,6 +5,22 @@ const style={
   options: [{ 
     "name": "Main Menu",
     "href": "/"},
+    // {
+    //   "name":"Create Character", 
+    //   "href":"/characterCreation"
+    // },
+    {
+      "name":"View Character", 
+      "href":"/viewCharacter"
+    },
+    {
+      "name":"Login", 
+      "href":"/login"
+    },
+    // {
+    //   "name":"Buy Ship", 
+    //   "href":"/buyShip"
+    // },
     { 
       "name": "Logout",
       "href": "/"}],
@@ -37,7 +53,10 @@ function Options(props){
     useEffect(()=>{
     if(props.displayed.display==="Options"){
       setDisplayOptions({...displayOptions, display: "block"});
-    }else{
+    }
+    else if(props.displayed.display==="TopRight")
+     setDisplayOptions({...displayOptions, top: "0%", left:"80%", right:"0%"});
+    else{
       setDisplayOptions({...displayOptions, display: "none"});
     };
 
