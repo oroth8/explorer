@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
+import styled from "styled-components";
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -43,61 +44,87 @@ const Register = (props) => {
   };
 
   return (
-    <div className="form-container">
-      <h1>
-        Account <span className="text-primary">Register</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-            minLength="6"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password2">Confrim Password</label>
-          <input
-            type="password"
-            name="password2"
-            value={password2}
-            onChange={onChange}
-            required
-            minLength="6"
-          />
-        </div>
-        <input
-          type="submit"
-          value="Register"
-          className="btn btn-primary btn-block"
-        />
-      </form>
-    </div>
+    <RegisterStyle className="container">
+      <div className="form-container">
+        <h1>
+          Account <span>Register</span>
+        </h1>
+        <form onSubmit={onSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={onChange}
+              required
+              placeholder="John"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+              required
+              placeholder="Smith"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              required
+              minLength="6"
+              placeholder="Password"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password2">Confrim Password</label>
+            <input
+              type="password"
+              name="password2"
+              value={password2}
+              onChange={onChange}
+              required
+              minLength="6"
+              placeholder="Confirm Password"
+            />
+          </div>
+          <input type="submit" value="Register" className="btn" />
+        </form>
+      </div>
+    </RegisterStyle>
   );
 };
-
+const RegisterStyle = styled.div`
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  vertical-align: center;
+  text-align: center;
+  margin-top: 30rem;
+  align-items: center;
+  h1 {
+    color: white;
+  }
+  label {
+    color: #23d997;
+    padding-right: 2rem;
+    text-align: right;
+    font-size: 2rem;
+  }
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+  }
+`;
 export default Register;

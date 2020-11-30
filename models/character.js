@@ -5,9 +5,10 @@ const characterSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, default:20 },
   characterImage: String,
-  currentYear: Number,
+  currentYear:{type: Number, default:2021},
+  birthYear: {type:Number, default:2001},
   credits: Number,
-  shipIdArray: [Number],
+  shipIdArray: [String],
   levelsCompletedArray:[Number],
   userId: Number
 });

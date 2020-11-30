@@ -22,3 +22,10 @@ export function getQuizQuestions(){
 //         return axios.get("/api/question")
 //     }
 // }
+export async function loadCharacter(userId){
+    return axios.get("/api/character/load/"+userId); 
+}
+
+export async function loadShips(){
+    return axios.get("/api/ship/loadAll"); 
+}
