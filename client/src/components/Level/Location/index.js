@@ -34,12 +34,6 @@ function Location(props){
 
   },[props.displayed]);
 
-  const [locationDetails, setLocationDetails]=useState({
-    _id: "",
-    name: "",
-    description: "",
-    imageUrl: ""
-  });
 
   useEffect(()=>{
     Axios.get(`/api/location/${props.location.name}`)  .then(function (response) {

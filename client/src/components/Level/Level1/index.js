@@ -6,8 +6,7 @@ import Location from "../Location"
 const style={
   container: {
     position: "relative",
-    height: "auto",
-    border: "2px solid blue"
+    height: "auto"
   },
   backgroundImage: {
     width: "100%"
