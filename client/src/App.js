@@ -57,7 +57,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/play" component={Play} />
-              <PrivateRoute exact path="/level" component={Level} />
+              <Route exact path="/level" component={Level} />
               <Route exact path="/register" component={Register} />
               <Route
                 exact

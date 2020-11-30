@@ -15,14 +15,14 @@ function Play(props) {
         return (
           <div className="row">
             <div className="col-md-6 col-sm-12">
-                <a href="/charactercreation"><img style={style.img} src="/img/denali.jpg" alt="Character"/></a>
+                <a href="/charactercreation"><p>Character Page</p><img style={style.img} src="/img/denali.jpg" alt="Character"/></a>
             </div>
             <div className="col-md-6 col-sm-12">
                 <div className="row">
-                  <a href="/level"><img style={style.img} src="/img/levelimgs/lvl0.jpg" alt="Level Choice"/></a>
+                  <a href="/level"><p>Level </p><img style={style.img} src="/img/levelimgs/lvl0.jpg" alt="Level Choice"/></a>
                 </div>
                 <div className="row">
-                <a href="/ship"><img style={style.img} src="/img/avatar.png" alt="Ship"/></a>
+                <a href="/ship"><p>Ship</p><img style={style.img} src="/img/avatar.png" alt="Ship"/></a>
                 </div>
             </div>
           </div>

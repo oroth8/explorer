@@ -62,8 +62,7 @@ function Level() {
   }
 
   const [levelNumber, setLevelNumber] = useState({
-    number: "0",
-    name: "Level2"
+    number: 1
   });
 
   let levelChange= direction => {
@@ -85,25 +84,17 @@ function Level() {
         return (
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                           <div className="row">
-                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Next Level</button>
+                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
                     </div>
 
                 <Options displayed={displayedModal}/>
                 {/* <Character displayed={displayedModal}/> */}
-        {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
-        {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
+                  {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
+                  {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
                 <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
             </div>);
   };
 
-  return (
-    <div onClick={(e) => getLocation(e)} onKeyPress={handleKey} tabIndex="0">
-      <Options displayed={displayedModal} />
-      {/* <Character displayed={displayedModal}/> */}
-      <Level2 displayed={displayedModal} />
-      <img style={avatarState} src="./img/avatar.png" alt="Character" />
-    </div>
-  );
-}
+
 
 export default Level;

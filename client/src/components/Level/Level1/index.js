@@ -9,7 +9,8 @@ const style={
     height: "auto"
   },
   backgroundImage: {
-    width: "100%"
+    width: "100%",
+    maxHeight: "80vh"
   },
   header: {
     backgroundColor: "white",
