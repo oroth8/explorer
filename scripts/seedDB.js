@@ -24,7 +24,7 @@ const questionSeed = [
       { answerText: "Washington", isCorrect: false },
       { answerText: "Montana", isCorrect: false },
     ],
-    questionImg: "../img/denali.jpg",
+    questionImg: "../img/questions/denali.jpg",
   },
   {
     level: "North America",
@@ -35,7 +35,7 @@ const questionSeed = [
       { answerText: "Pacific Ocean", isCorrect: true },
       { AnswerText: "Indian Ocean", isCorrect: false },
     ],
-    questionImg: "../img/NA.jpg",
+    questionImg: "../img/questions/NA.jpg",
   },
   {
     level: "North America",
@@ -46,7 +46,7 @@ const questionSeed = [
       { answerText: "Lake Tahoe", isCorrect: false },
       { answerText: "Lake Huron", isCorrect: false }
     ],
-    questionImg: "../img/Great_Lakes.jpg"
+    questionImg: "../img/questions/Great_Lakes.jpg"
   },
   {
     level: "North America",
@@ -57,7 +57,62 @@ const questionSeed = [
       { answerText: "Sierra Nevada", isCorrect: false },
       { answerText: "Rocky Mountains", isCorrect: true },
     ],
-    questionImg: "../img/Rocky.jpg"
+    questionImg: "../img/questions/Rocky.jpg"
+  },
+  {
+    level: "South America",
+    questionText: "The largest river basin in the world can be found in South America, to which river does it belong?",
+    answerChoices: [
+      { answerText: "Amazon River", isCorrect: true },
+      { answerText: "Madeira River", isCorrect: false },
+      { answerText: "River Paraguay", isCorrect: false},
+      { answerText: "Rio Tocantins", isCorrect: false},
+    ],
+    questionImg: "../img/questions/amazon_river.jpg"
+  },
+  {
+    level: "South America",
+    questionText: "Which of the below South American countries border both the Atlantic and Pacific Oceans?",
+    answerChoices: [
+      { answerText: "Brazil", isCorrect: false},
+      { answerText: "Argentina", isCorrect: false},
+      { answerText: "Chile", isCorrect: true },
+      { answerText: "Bolivia", isCorrect: false },
+    ],
+    questionImg: "../img/questions/map_SA.png"
+  },
+  {
+    level: "South America",
+    questionText: "Which of the below South American countries is landlocked (not touching an ocean)?",
+    answerChoices: [
+      { answerText: "Paraguay", isCorrect: true },
+      { answerText: "Brazil", isCorrect: false },
+      { answerText: "Argentina", isCorrect: false },
+      { answerText: "Venezuela", isCorrect: false },
+    ],
+    questionImg: "../img/questions/map_SA.png"
+  },
+  {
+    level: "South America",
+    questionText: "The tallest waterfall in the world can be found in South America. What is it's name?",
+    answerChoices: [
+      { answerText: "Iguazu Falls", isCorrect: false },
+      { answerText: "Angel Falls", isCorrect: true },
+      { answerText: "Salto Grande", isCorrect: false },
+      { answerText: "Tequendama Falls", isCorrect: false },
+    ],
+    questionImg: "../img/questions/angel_falls.png"
+  },
+  {
+    level: "South America",
+    questionText: "What is the most spoken language in South America?",
+    answerChoices: [
+      { answerText: "Spanish", isCorrect: true },
+      { answerText: "Portuguese", isCorrect: false },
+      { answerText: "English", isCorrect:  false },
+      { answerText: "French", isCorrect: false },
+    ],
+    questionImg: "../img/questions/Santiago_Skyline.jpg"
   },
  
   
