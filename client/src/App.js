@@ -1,12 +1,4 @@
 
-import React from "react";
-import Level from "./components/Level";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CharacterCreator from "./components/Character/CharacterCreator";
-
-
-
-
 import React, {useState} from "react";
 import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";

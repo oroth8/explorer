@@ -36,31 +36,9 @@ const style={
       list: {
         listStyle: "none"
       }
-}
-
-
-const style = {
-  options: [
-    {
-      name: "Main Menu",
-      href: "/",
-    },
-    {
-      name: "Logout",
-      href: "/",
-    },
-  ],
-  card: {
-    zIndex: "2",
-    display: "block",
-  },
-  a: {
-    color: "black",
-  },
-  list: {
-    listStyle: "none",
-  },
 };
+
+
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Options(props) {
@@ -84,8 +62,6 @@ function Options(props) {
       
 
         return (
-
- 
           <div className="card" style={displayOptions} onClick={(e)=>{e.stopPropagation();}}>
           {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
           <div className="card-body">
@@ -99,34 +75,10 @@ function Options(props) {
               
           </div>
           </div>
-
-      
         );
   }
 
 
-  return (
-    <div
-      className="card"
-      style={displayOptions}
-      onClick={(e) => {
-        e.stopPropagation();
-      }}
-    >
-      {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
-      <div className="card-body">
-        <h5> Options</h5>
 
-        {style.options.map((option) => (
-          <p>
-            <a style={style.a} href={option.href}>
-              {option.name}
-            </a>
-          </p>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default Options;
