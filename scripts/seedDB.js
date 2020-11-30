@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const config = require("config");
 
 // This file empties the Books collection and inserts the books below
 
