@@ -19,11 +19,6 @@ const PORT = process.env.PORT || 9001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/space", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
-
 // If our node environment is production we will serve up our static assets from the build folder
 if (process.env.NODE_ENV === "production") {
   // The react app is called 'client' and we are accessing the build folder that is initialized in the postbuild scripts.
