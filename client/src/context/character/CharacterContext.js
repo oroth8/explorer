@@ -4,9 +4,11 @@ const CharacterContext = createContext();
 const { Provider } = CharacterContext;
 
 const reducer = (state, action) => {
+  console.log('action');
+  console.log(action);
+  
   switch (action.type) {
   case "UPDATE_CHARACTER":
-    console.log(action.char);
     return{
       ...state,
       ...action.char,
@@ -17,7 +19,12 @@ const reducer = (state, action) => {
       ...state,
       loaded:false
     };
-  
+  case "UPDATE_PORTRAIT":
+    return{
+      ...state,
+      characterImage:action.url,
+      loaded:true
+    };
 
   default:
     throw new Error(`Invalid action type: ${action.type}`);

@@ -50,6 +50,8 @@ function App() {
       <GlobalStyle />
       <AuthState>
         <AlertState>
+          
+      <CharProvider>
           <Router>
             <Alert />
             <Switch>
@@ -61,12 +63,18 @@ function App() {
                 path="/characterCreation"
                 component={CharacterCreator}
               />
+              <Route
+                exact
+                path="/viewCharacter"
+                component={ViewCharacter}
+              />
               <Route exact path="/login" component={Login} />
               <Route exacth path="/na">
                 <Quiz questions={NAquestions} />
               </Route>
             </Switch>
           </Router>
+          </CharProvider>
         </AlertState>
       </AuthState>
     </div>
