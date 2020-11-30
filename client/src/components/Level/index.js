@@ -11,7 +11,7 @@ import Options from "../Options";
 function Level()  {
 
   const [displayedModal, setDisplayedModal]=useState({
-    display: "Options"
+    display: "None"
   });
 
   const [avatarState, setAvatarState]=useState({
@@ -55,12 +55,34 @@ function Level()  {
         default: break;
     }
   }
- 
+
+  const [levelNumber, setLevelNumber] = useState({
+    number: "0",
+    name: "Level2"
+  });
+
+  let levelChange= direction => {
+    let level=Number(levelNumber.number);
+    if(direction==="add"){
+      level=(level+1) %2;
+    }else{
+      level=(level-1) %2;
+    }
+    setLevelNumber({...levelNumber, "number": level, name: `Level${level}`});
+  }
+
+
+
         return (
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
+                          <div className="row">
+                    <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Previous Level</button> <button onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
+                    </div>
+
                 <Options displayed={displayedModal}/>
                 {/* <Character displayed={displayedModal}/> */}
-                <Level2 displayed={displayedModal}/>
+        {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
+        {levelNumber.number===0 && <Level2 displayed={displayedModal} /> }
                 <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
             </div>);
   };
