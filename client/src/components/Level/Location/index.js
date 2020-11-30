@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
+import Axios from "axios";
 
 
 
@@ -16,6 +17,13 @@ function Location(props){
     display: "block"
   });
 
+  const [locationDetails, setLocationDetails]=useState({
+    _id: "",
+    name: "",
+    description: "",
+    imageUrl: ""
+  });
+
     useEffect(()=>{
     if(props.displayed.display==="Location"){
       setDisplayOptions({...displayOptions, display: "block"});
@@ -26,7 +34,18 @@ function Location(props){
 
   },[props.displayed]);
 
-      
+
+  useEffect(()=>{
+    Axios.get(`/api/location/${props.location.name}`)  .then(function (response) {
+      setLocationDetails({...locationDetails, name: response.data[0].name, description: response.data[0].description, imageUrl: response.data[0].imageUrl});
+      console.log(locationDetails);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+
+  },[props.location.name]);
 
         return (
 
@@ -36,6 +55,8 @@ function Location(props){
           <div className="card-body">
             <h5> Location</h5>
               <p> {props.location.name} </p>
+              <img src={locationDetails.imageUrl} />
+              <p> {locationDetails.description} </p>
           </div>
           </div>
 
