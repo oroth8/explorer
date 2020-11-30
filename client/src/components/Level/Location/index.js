@@ -55,6 +55,7 @@ function Location(props){
           <div className="card-body">
             <h5> Location</h5>
               <p> {props.location.name} </p>
+              <img src={locationDetails.imageUrl} />
               <p> {locationDetails.description} </p>
           </div>
           </div>
