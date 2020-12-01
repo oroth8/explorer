@@ -6,7 +6,6 @@ const questions = require("../../NAquestions.json");
 
 
 function Quiz(props) {
-  console.log(props);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
