@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import BackgroundImage from "./components/BackgroundImage";
+// import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
-import CharacterCreator from "./components/Character/CharacterCreator";
+import CharacterCreator from "./components/Character/CharacterCreate";
 import ViewCharacter from "./components/Character/ViewCharacter";
 // Character Context
 import CharacterState from "./context/character/CharacterState";
 // Ship Components
-import BuyShip from "./components/Ship/BuyShip";
+// import BuyShip from "./components/Ship/BuyShip";
 // Pages
 import Landing from "./pages/Landing";
 import Play from "./components/Play";
@@ -21,7 +21,7 @@ import Quiz from "./components/Quiz";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
-import PrivateRoute from "./components/routing/PrivateRoute";
+// import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -53,6 +53,7 @@ function App() {
       <GlobalStyle />
       <AuthState>
         <AlertState>
+<<<<<<< HEAD
           
       <CharacterState>
           <Router>
@@ -79,6 +80,29 @@ function App() {
             </Switch>
           </Router>
           </CharacterState>
+=======
+          <CharProvider>
+            <Router>
+              <Alert />
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/play" component={Play} />
+                <Route exact path="/level" component={Level} />
+                <Route exact path="/register" component={Register} />
+                <Route
+                  exact
+                  path="/characterCreation"
+                  component={CharacterCreator}
+                />
+                <Route exact path="/viewCharacter" component={ViewCharacter} />
+                <Route exact path="/login" component={Login} />
+                <Route exacth path="/na">
+                  <Quiz questions={NAquestions} />
+                </Route>
+              </Switch>
+            </Router>
+          </CharProvider>
+>>>>>>> main
         </AlertState>
       </AuthState>
     </div>

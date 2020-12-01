@@ -1,13 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
-import Options from "../Options"
-import {loadCharacter} from "../utils/API"
-import BuyShip from "../Ship/BuyShip"
+import Options from "../Options";
+import BuyShip from "../Ship/BuyShip";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 import CharacterCreator from "./CharacterCreator"
 export default function ViewCharacter(props) { 
-  // const [state, dispatch] = useCharacterContext();
   const authContext = useContext(AuthContext);
   const characterContext = useContext(CharacterContext);
  
@@ -24,7 +22,7 @@ let userId;
 
   },[authContext.loading]);
 
-let display={display:"TopRight"};
+  let display = { display: "TopRight" };
 
   if(characterContext.missing) return (<CharacterCreator />)
   else if(!characterContext.loaded) return (<>Loading</>);
@@ -46,6 +44,8 @@ let display={display:"TopRight"};
             <li>Ship Class: {characterContext.data.shipIdArray[0]} </li>               
             </ul>
           </div>
+          <a href="/buyShip">Creator</a>
+          <Options displayed={display} />
         </div>
         <div className="row license-text">
           LICENSE
@@ -60,4 +60,3 @@ let display={display:"TopRight"};
 </>
   );
 }
-
