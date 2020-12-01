@@ -1,5 +1,5 @@
 {
-  "name": "employee-directory",
+  "name": "project3",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,9 +11,9 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "author": "Justin Albert",
+  "authors": "Owen Roth, Justin Albert, Benjamin Dionysus, Kevin Miller",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
