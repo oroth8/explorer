@@ -62,6 +62,13 @@ function Level() {
           setDisplayedModal({ ...displayedModal, display: "Location" });
         }
         break;
+        case "q":
+          if (displayedModal.display === "Quiz") {
+            setDisplayedModal({ ...displayedModal, display: "none" });
+          } else {
+            setDisplayedModal({ ...displayedModal, display: "Quiz" });
+          }
+          break;
       default:
         break;
     }

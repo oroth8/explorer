@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {getQuizQuestions} from "../utils/API";
+const questions = require("../../NAquestions.json");
 
 
 
 
-function Quiz({ questions }) {
+function Quiz(props) {
+  console.log(props);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
@@ -37,8 +39,34 @@ function Quiz({ questions }) {
     }
   };
 
+  const [displayOptions, setDisplayOptions]=useState({
+    position: "fixed",
+    top: "10%",
+    left: "10%",
+    maxWidth: "80%",
+    zIndex: "2",
+    display: "block"
+  });
+
+
+
+    useEffect(()=>{
+    if(props.displayed.display==="Quiz"){
+      setDisplayOptions({...displayOptions, display: "block"});
+    }else{
+      setDisplayOptions({...displayOptions, display: "none"});
+    };
+
+
+  },[props.displayed]);
+
+
+
+
+
+
   return (
-    <div className="quiz-section container">
+    <div className="quiz-section container" style={displayOptions}>
       {showScore ? (
         <div className="score-section">
           You scored {score} out of {quizQuestions.length}!
