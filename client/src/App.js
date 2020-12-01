@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
-import CharacterCreator from "./components/Character/CharacterCreator";
+import CharacterCreator from "./components/Character/CharacterCreate";
 import ViewCharacter from "./components/Character/ViewCharacter";
 // Ship Components
 // import BuyShip from "./components/Ship/BuyShip";
