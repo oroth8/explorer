@@ -4,15 +4,14 @@ import Axios from "axios";
 
 const style={
   locationimg:{
-    float: "left",
-    width: "150px",
-    height: "auto",
-    marginRight: "20px",
-    marginBottom: "20px",
-    marginTop: "40px"
+    width: "100%",
+    height: "auto"
   },
   paragraph: {
     color: "black"
+  },
+  list: {
+    listStyle: "none"
   }
 }
 
@@ -29,15 +28,8 @@ function Location(props){
     display: "block"
   });
 
-  const [locationDetails, setLocationDetails]=useState({
-    _id: "",
-    name: "",
-    description: "",
-    imageUrl: ""
-  });
-
     useEffect(()=>{
-    if(props.displayed.display==="Location"){
+    if(props.displayed.display==="Character"){
       setDisplayOptions({...displayOptions, display: "block"});
     }else{
       setDisplayOptions({...displayOptions, display: "none"});
@@ -47,17 +39,6 @@ function Location(props){
   },[props.displayed]);
 
 
-  useEffect(()=>{
-    Axios.get(`/api/location/${props.location.name}`)  .then(function (response) {
-      setLocationDetails({...locationDetails, name: response.data[0].name, description: response.data[0].description, imageUrl: response.data[0].imageUrl});
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-
-  },[props.location.name]);
-
         return (
 
       
@@ -65,11 +46,13 @@ function Location(props){
           {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
           <div className="card-body">
 
-              <h4> <strong>{props.location.name}</strong> </h4>
-            <div>
-              <img style={style.locationimg} src={locationDetails.imageUrl} />
-
-              <p style={style.paragraph}> {locationDetails.description} </p>
+              <h4> <strong>Character Name</strong> </h4>
+            <div className="row">
+              <div className="col-md-6 col-sm-12">
+              <img  style={style.locationimg} src="/img/charimg.jpg" />
+              </div>
+              <div className="col-md-6 col-sm-12"><ul> <li> <strong>Stat 1:</strong> Stat Value</li> <li> <strong>Stat 2:</strong> Stat Value</li><li> <strong>Stat 3:</strong> Stat Value</li></ul>
+              </div>
             </div>  
 
           </div>
