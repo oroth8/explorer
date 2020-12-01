@@ -42,7 +42,7 @@ let getLandingSpot=(name, id) =>{
           <React.Fragment>
             <Location displayed={props.displayed} location={location}/>
             <div style={style.container}>
-          <img src="./img/levelimgs/lvl0.jpg" style={style.backgroundImage} alt="Level 1"/>
+          <img src="./img/levelimgs/lvl0.png" style={style.backgroundImage} alt="Level 1"/>
           {imageMap.map((item)=> (
             <div style={item.style} onClick={(e)=> {
               getLandingSpot(item.name, item.id);
