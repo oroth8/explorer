@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import aircraft from "./aircraft.svg";
 
 const Nav = () => {
   const authContext = useContext(AuthContext);
@@ -18,7 +19,9 @@ const Nav = () => {
 
   return (
     <NavStyle>
-      <h1 id="logo">Explorer-placeholder</h1>
+      <Link to="/">
+        <img id="logo" src={aircraft} alt="aircraft" />
+      </Link>
       <ul>
         <li>
           <Link to="instructions">Instructions</Link>
