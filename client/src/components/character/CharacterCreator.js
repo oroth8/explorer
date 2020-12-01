@@ -8,6 +8,7 @@ const CharacterCreator = () => {
   const authContext = useContext(AuthContext);
   const [state, dispatch] = useCharacterContext();
   let currentYear = 2021;
+  // Hey
   let userId;
   useEffect(() => {
     authContext.loadUser();
