@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import BackgroundImage from "./components/BackgroundImage";
+// import BackgroundImage from "./components/BackgroundImage";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
 import CharacterCreator from "./components/Character/CharacterCreator";
 import ViewCharacter from "./components/Character/ViewCharacter";
 // Ship Components
-import BuyShip from "./components/Ship/BuyShip";
+// import BuyShip from "./components/Ship/BuyShip";
 // Pages
 import Landing from "./pages/Landing";
 import Play from "./components/Play";
@@ -20,7 +20,7 @@ import { CharProvider } from "./context/character/CharacterContext";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
-import PrivateRoute from "./components/routing/PrivateRoute";
+// import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -52,31 +52,26 @@ function App() {
       <GlobalStyle />
       <AuthState>
         <AlertState>
-          
-      <CharProvider>
-          <Router>
-            <Alert />
-            <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/play" component={Play} />
-              <Route exact path="/level" component={Level} />
-              <Route exact path="/register" component={Register} />
-              <Route
-                exact
-                path="/characterCreation"
-                component={CharacterCreator}
-              />
-              <Route
-                exact
-                path="/viewCharacter"
-                component={ViewCharacter}
-              />
-              <Route exact path="/login" component={Login} />
-              <Route exacth path="/na">
-                <Quiz questions={NAquestions} />
-              </Route>
-            </Switch>
-          </Router>
+          <CharProvider>
+            <Router>
+              <Alert />
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/play" component={Play} />
+                <Route exact path="/level" component={Level} />
+                <Route exact path="/register" component={Register} />
+                <Route
+                  exact
+                  path="/characterCreation"
+                  component={CharacterCreator}
+                />
+                <Route exact path="/viewCharacter" component={ViewCharacter} />
+                <Route exact path="/login" component={Login} />
+                <Route exacth path="/na">
+                  <Quiz questions={NAquestions} />
+                </Route>
+              </Switch>
+            </Router>
           </CharProvider>
         </AlertState>
       </AuthState>
