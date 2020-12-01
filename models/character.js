@@ -10,7 +10,7 @@ const characterSchema = new Schema({
   credits: Number,
   shipIdArray: [String],
   levelsCompletedArray:[Number],
-  userId: Number
+  userId: String
 });
 
 const Character = mongoose.model("Character", characterSchema);

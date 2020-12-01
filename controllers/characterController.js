@@ -10,6 +10,10 @@ module.exports = {
         })
     },
     load: function(req, res){
+        console.log('loading');
+        
+        console.log(req.params)
+        
         db.findOne(
             {
                 userId:req.params.id
