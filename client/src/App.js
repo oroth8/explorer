@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
 import CharacterCreator from "./components/Character/CharacterCreator";
 import ViewCharacter from "./components/Character/ViewCharacter";
+// Character Context
+import CharacterState from "./context/character/CharacterState";
 // Ship Components
 import BuyShip from "./components/Ship/BuyShip";
 // Pages
@@ -13,8 +15,7 @@ import Play from "./components/Play";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
-// Character Context
-import { CharProvider } from "./context/character/CharacterContext";
+// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
@@ -53,7 +54,7 @@ function App() {
       <AuthState>
         <AlertState>
           
-      <CharProvider>
+      <CharacterState>
           <Router>
             <Alert />
             <Switch>
@@ -77,7 +78,7 @@ function App() {
               </Route>
             </Switch>
           </Router>
-          </CharProvider>
+          </CharacterState>
         </AlertState>
       </AuthState>
     </div>

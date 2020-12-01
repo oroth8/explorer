@@ -3,10 +3,12 @@ import "./style.css";
 import {getNewCharacterPortrait} from "../utils/API"
 import {saveCharacter} from "../utils/API"
 import AuthContext from "../../context/auth/authContext";
-import {useCharacterContext} from "../../context/character/CharacterContext"
+import CharacterContext from "../../context/character/CharacterContext"
+//import {useCharacterContext} from "../../context/character/CharacterContext"
 export default function CharacterCreator() {   
   const authContext = useContext(AuthContext);
-  const [state, dispatch] = useCharacterContext();
+  const characterContext = useContext(CharacterContext);
+  // const [state, dispatch] = useCharacterContext();
     let currentYear=2021;
     let userId;
    useEffect(()=>{
