@@ -5,7 +5,7 @@ import { loadCharacter } from "../utils/API";
 import BuyShip from "../Ship/BuyShip";
 import AuthContext from "../../context/auth/authContext";
 import { useCharacterContext } from "../../context/character/CharacterContext";
-import CharacterCreator from "./CharacterCreator";
+import CharacterCreator from "./CharacterCreate";
 export default function ViewCharacter(props) {
   const [state, dispatch] = useCharacterContext();
   const authContext = useContext(AuthContext);
