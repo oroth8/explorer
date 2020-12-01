@@ -5,6 +5,13 @@ import Level2 from "./Level2";
 import Options from "../Options";
 import AuthContext from "../../context/auth/authContext";
 import LevelChar from "./LevelChar";
+import { withTheme } from "styled-components";
+
+const style={
+  a:{
+    color: "white"
+  }
+};
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Level() {
@@ -84,7 +91,9 @@ function Level() {
         return (
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                           <div className="row">
-                    <button className="col-6 mr-auto" onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Previous Level</button> <button className="col-6 ml-auto pr-2" onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
+                    <button className="col-4" onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Previous Level</button> 
+                    <button className="col-4" onClick={(e)=>{ e.stopPropagation();}}><a style={style.a} href="/na">Earn Money!</a></button>
+                    <button className="col-4" onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
                     </div>
 
                 <Options displayed={displayedModal}/>
