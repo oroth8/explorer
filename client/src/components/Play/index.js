@@ -19,6 +19,9 @@ function Play(props) {
               <div className="row">
                 <a href="/viewcharacter"><h4>View Character</h4><img style={style.img} src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/11572307115_1194957269_o.jpg" alt="Character"/></a>
               </div>
+              <div className="row">
+                <a href="/earn"><h4>Test Your Knowledge and Earn Space Cash!</h4><img style={style.img} src="../img/questions/denali.jpg"/></a>
+              </div>
             </div>
             <div className="col-md-6 col-sm-12">
                 <div className="row">
@@ -29,7 +32,6 @@ function Play(props) {
                 </div>
             </div>
           </div>
-
         );
   }
 
