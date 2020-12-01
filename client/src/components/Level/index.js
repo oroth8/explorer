@@ -5,7 +5,6 @@ import Level2 from "./Level2";
 import Options from "../Options";
 import AuthContext from "../../context/auth/authContext";
 import LevelChar from "./LevelChar";
-import { withTheme } from "styled-components";
 
 const style={
   a:{
