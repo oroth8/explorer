@@ -12,7 +12,7 @@ const style={
 
 
 
-function Play(props) {
+function Play({questions}) {
         return (
           <div className="row">
             <div className="col-md-6 col-sm-12">
