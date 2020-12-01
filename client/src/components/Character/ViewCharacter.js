@@ -5,29 +5,43 @@ import {loadCharacter} from "../utils/API"
 import BuyShip from "../Ship/BuyShip"
 import AuthContext from "../../context/auth/authContext";
 import {useCharacterContext} from "../../context/character/CharacterContext"
-
+import Login from "../auth/Login"
 
 export default function ViewCharacter(props) { 
-  const {user} = AuthContext;
-  console.log(user);;
-  let userId=0;
   const [state, dispatch] = useCharacterContext();
-  console.log(state);
+  const authContext = useContext(AuthContext);
+  
+    
+  //
+
+  // let userId=authContext.user._id;
+  // console.log(userId);
+let userId;
+
+  useEffect(()=>{
+    authContext.loadUser();
+    
+    if(authContext.user){
+      userId=authContext.user._id;      
+      getCharacter(userId);
+    }      
+  },[authContext.loading]);
+
   const getCharacter=userId=>{
     dispatch({type:"LOADING"});
-    loadCharacter(0)
+    loadCharacter(userId)
     .then(res=>{
-      dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      if(res.data)      
+        dispatch({type:"UPDATE_CHARACTER", char:res.data})
+      else dispatch({type:"ERROR_NO_CHARACTER"})
     })
   };
 
-  useEffect(()=>{
-    getCharacter();
-  },[]);
 let display={display:"TopRight"};
-  if(!state.loaded) return (<></>);
-  else 
-  return (
+
+  if(state.missing) return (<CharacterCreator />)
+  else if(!state.loaded) return (<>Loading</>);
+  else return (
     <>
     <BuyShip />
     <div className="container desk-box">
