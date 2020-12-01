@@ -11,7 +11,7 @@ const style={
 }
 
 
-// Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
+
 function Play(props) {
         return (
           <div className="row">
