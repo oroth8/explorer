@@ -5,25 +5,24 @@ const questions = require("../../NAquestions.json");
 
 
 
-function Quiz(props) {
+function Quiz({questions}) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [quizQuestions, setQuestions] = useState([])
-  let questionArr = [];
+  // const [quizQuestions, setQuestions] = useState([])
+  // let questionArr = [];
 
-  const getQuestions = () => {
-    getQuizQuestions().then(function(response) {
-      questionArr = response.data;
-      setQuestions(questionArr);
-    })
-  }
+  // const getQuestions = () => {
+  //   getQuizQuestions().then(function(response) {
+  //     questionArr = response.data;
+  //     setQuestions(questionArr);
+  //   })
+  // }
 
-  useEffect(() => {
-    getQuestions();
-  }, [])
+  // useEffect(() => {
+  //   getQuestions();
+  // }, [])
 
-  console.log(quizQuestions);
 
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
@@ -38,46 +37,49 @@ function Quiz(props) {
     }
   };
 
-  const [displayOptions, setDisplayOptions]=useState({
-    position: "fixed",
-    top: "10%",
-    left: "10%",
-    maxWidth: "80%",
-    zIndex: "2",
-    display: "block"
-  });
+  // const [displayOptions, setDisplayOptions]=useState({
+  //   position: "fixed",
+  //   top: "10%",
+  //   left: "10%",
+  //   maxWidth: "80%",
+  //   zIndex: "2",
+  //   display: "block"
+  // });
 
 
 
-    useEffect(()=>{
-    if(props.displayed.display==="Quiz"){
-      setDisplayOptions({...displayOptions, display: "block"});
-    }else{
-      setDisplayOptions({...displayOptions, display: "none"});
-    };
+  //   useEffect(()=>{
+  //   if(props.displayed.display==="Quiz"){
+  //     setDisplayOptions({...displayOptions, display: "block"});
+  //   }else{
+  //     setDisplayOptions({...displayOptions, display: "none"});
+  //   };
 
 
-  },[props.displayed]);
+  // },[props.displayed]);
 
 
-
-
-
-
-  return (
-    <div className="quiz-section container" style={displayOptions}>
+  if (questions.length == 0) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    )
+  } else if (questions.length > 0) {
+    return (
+      <div className="quiz-section container" >
       {showScore ? (
         <div className="score-section">
-          You scored {score} out of {quizQuestions.length}!
+          You scored {score} out of {questions.length}!
         </div>
       ) : (
         <>
           <div className="question-section">
             <div className="q-count">
-              <span>Question {currentQuestion + 1}</span>/{quizQuestions.length}
+              <span>Question {currentQuestion + 1}</span>/{questions.length}
             </div>
             <div className="q-text">
-              {console.log(quizQuestions[currentQuestion])}
+              {console.log(questions[currentQuestion])}
               {questions[currentQuestion].questionText}
             </div>
             <img src={questions[currentQuestion].questionImg} />
@@ -92,7 +94,9 @@ function Quiz(props) {
         </>
       )}
     </div>
-  );
+    )
+  }
+
 }
 
 export default Quiz;
