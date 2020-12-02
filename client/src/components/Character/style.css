@@ -21,6 +21,21 @@
     text-decoration:none;
     border:3px solid grey;
 }
+#menucard{
+    position:relative;
+    top:10%;    
+    width:26em;
+    height:20em;
+    border:1px solid black;
+    border-radius: 3em;
+    overflow:hidden;
+    font-size:larger;    
+    background:antiquewhite;
+    box-shadow: 5px 5px 16px black;
+    color:black;
+    text-decoration:none;
+    border:3px solid grey;
+}
 .smudge{
     position:absolute;
     top:0;left:0;
