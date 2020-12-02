@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
-import CharacterCreator from "./components/Character/CharacterCreate";
+import CharacterCreate from "./components/Character/CharacterCreate";
 import ViewCharacter from "./components/Character/ViewCharacter";
+// Character Context
+import CharacterState from "./context/character/CharacterState";
 // Ship Components
 // import BuyShip from "./components/Ship/BuyShip";
 // Pages
@@ -13,8 +15,7 @@ import Play from "./components/Play";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
-// Character Context
-import { CharProvider } from "./context/character/CharacterContext";
+// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
@@ -41,10 +42,10 @@ if (localStorage.token) {
 const NAquestions = require("./NAquestions.json");
 
 function App() {
-  const [characterState, setCharacter] = useState({
-    name: "default",
-    characterImage: "",
-  });
+  // const [characterState, setCharacter] = useState({
+  //   name: "default",
+  //   characterImage: "",
+  // });
 
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
@@ -52,27 +53,32 @@ function App() {
       <GlobalStyle />
       <AuthState>
         <AlertState>
-          <CharProvider>
-            <Router>
-              <Alert />
-              <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route exact path="/play" component={Play} />
-                <Route exact path="/level" component={Level} />
-                <Route exact path="/register" component={Register} />
-                <Route
-                  exact
-                  path="/characterCreation"
-                  component={CharacterCreator}
-                />
-                <Route exact path="/viewCharacter" component={ViewCharacter} />
-                <Route exact path="/login" component={Login} />
-                <Route exacth path="/na">
-                  <Quiz questions={NAquestions} />
-                </Route>
-              </Switch>
-            </Router>
-          </CharProvider>
+          
+      <CharacterState>
+          <Router>
+            <Alert />
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/play" component={Play} />
+              <Route exact path="/level" component={Level} />
+              <Route exact path="/register" component={Register} />
+              <Route
+                exact
+                path="/characterCreation"
+                component={CharacterCreate}
+              />
+              <Route
+                exact
+                path="/viewCharacter"
+                component={ViewCharacter}
+              />
+              <Route exact path="/login" component={Login} />
+              <Route exacth path="/na">
+                <Quiz questions={NAquestions} />
+              </Route>
+            </Switch>
+          </Router>
+          </CharacterState>
         </AlertState>
       </AuthState>
     </div>

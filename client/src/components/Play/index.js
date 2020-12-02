@@ -1,4 +1,4 @@
-
+import License from "../Character/components/License"
 import React from 'react';
 import "./style.css";
 
@@ -17,7 +17,9 @@ function Play(props) {
           <div className="row">
             <div className="col-md-6 col-sm-12">
               <div className="row">
-                <a href="/viewcharacter"><h4>View Character</h4><img style={style.img} src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/11572307115_1194957269_o.jpg" alt="Character"/></a>
+                <a href="/viewcharacter"><h4>View Character</h4>
+                  <License />
+                </a>
               </div>
             </div>
             <div className="col-md-6 col-sm-12">
