@@ -1,70 +1,47 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./style.css";
-import { getNewCharacterPortrait } from "../utils/API";
 import { saveCharacter } from "../utils/API";
 import AuthContext from "../../context/auth/authContext";
-import { useCharacterContext } from "../../context/character/CharacterContext";
-const CharacterCreator = () => {
+import CharacterContext from "../../context/character/CharacterContext";
+const CharacterCreate = () => {
   const authContext = useContext(AuthContext);
-  const [state, dispatch] = useCharacterContext();
-  let currentYear = 2021;
-  // Hey eaht
+  const characterContext = useContext(CharacterContext);
   let userId;
   useEffect(() => {
-    authContext.loadUser();
-
     if (authContext.user) {
       userId = authContext.user._id;
-      getNewPortrait();
+      if(characterContext.missing)
+        characterContext.updateUserId(userId);
+        characterContext.getPortrait();
     }
+    else 
+    authContext.loadUser();
+
   }, [authContext.loading]);
 
-  function getNewPortrait() {
-    state.characterImage = "";
-    getNewCharacterPortrait().then((res) => {
-      let charObj = { characterImage: res.data.results[0].picture.large };
-      dispatch({ type: "UPDATE_CHARACTER", char: charObj });
-    });
-  }
   function inputHandler(e) {
     const { name, value } = e.target;
     if (name === "age") {
-      let birth = currentYear - value;
-      let charObj = {
-        age: value,
-        birthYear: birth,
-        currentYear: currentYear,
-        userId: authContext.user._id,
-      };
-      dispatch({ type: "UPDATE_CHARACTER", char: charObj });
-    } else {
-      let charObj = {
-        name: value,
-        currentYear: currentYear,
-        userId: authContext.user._id,
-      };
-      dispatch({ type: "UPDATE_CHARACTER", char: charObj });
+        characterContext.updateAge(value);
+    }
+    else if(name==="name") {
+        characterContext.updateName(value);
     }
   }
+  // When the user clicked the button, give them a different picture via a simple API call
+  function getNewPortrait(){    
+    characterContext.getPortrait();
+  }
   function submitCharacter(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (e.target.name.value && e.target.age.value) {
-      let birth = currentYear - e.target.age.value;
-      let charObj = {
-        name: e.target.name.value,
-        age: e.target.age.value,
-        birthYear: birth,
-        currentYear: currentYear,
-        userId: authContext.user._id,
-      };
-      dispatch({ type: "UPDATE_CHARACTER", charObj });
-
-      saveCharacter(state).then((data) => {
-        console.log(data);
-      });
+        characterContext.saveChar();
     } else alert("Need a name!");
   }
-
+  console.log(characterContext.missing);
+  
+  if(!characterContext.loaded && !characterContext.missing) return (<>LOADING</>);
+  else
   return (
     <div className="container mt-5">
       <div className="row creation-box">
@@ -78,7 +55,7 @@ const CharacterCreator = () => {
               type="text"
               name="name"
               id="name"
-              defaultValue={state.name}
+              defaultValue={characterContext.data.name}
             />
             <p>
               <label htmlFor="age">Age:</label>
@@ -90,7 +67,7 @@ const CharacterCreator = () => {
               maxLength="3"
               size="3"
               id="age"
-              defaultValue={state.age}
+              defaultValue={characterContext.data.age}
             />
             <p>
               <button type="submit">Submit</button>
@@ -99,9 +76,9 @@ const CharacterCreator = () => {
         </div>
         <div className="col col-lg-8">
           <div className="col">
-            <img src={state.characterImage} alt="Character Portrait" />
+            <img src={characterContext.data.characterImage} alt="Character Portrait" />
           </div>
-          <button id="change-portrait" onClick={getNewPortrait}>
+          <button id="change-portrait" onClick={getNewPortrait} >
             Choose new Portrait
           </button>
         </div>
@@ -110,4 +87,4 @@ const CharacterCreator = () => {
   );
 };
 
-export default CharacterCreator;
+export default CharacterCreate;

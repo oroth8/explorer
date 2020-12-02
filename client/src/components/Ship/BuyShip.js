@@ -13,7 +13,7 @@ export default function BuyShip() {
     .then(data=>{
         setShipArray(data.data.data);
     })        
-  },[shipArray]);
+  },[]);
 
   if(shipArray){
     let bought=shipArray.filter(ship=>{

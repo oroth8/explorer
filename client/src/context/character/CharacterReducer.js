@@ -4,28 +4,45 @@ export default (state, action) => {
   
   switch (action.type) {
   case "UPDATE_CHARACTER":
+    console.log("Updated");
+    console.log(action.char);
     return{
       ...state,
-      ...action.char,
-      loaded:true
+      ...action.char.data,
+      loaded:true,
+      missing:false
     }
+    break;
   case "LOADING":
     return{
       ...state,
       loaded:false
     };
     case "ERROR_NO_CHARACTER":
+      console.log("NO CHAR");
+      
       return{
         ...state,
         missing:true
       }
   case "UPDATE_PORTRAIT":
-    return{
+    return{ 
       ...state,
-      characterImage:action.url,
-      loaded:true
+      data:{characterImage:action.url}
     };
-
+  case "UPDATE_USER":
+    return{ 
+      ...state,
+      userId:action.id
+    }
+  case "UPDATE_CHARACTER_PROPERTY":
+    let temp=state.data;
+    temp[action.name]=action.newData      
+    return{       
+      ...state,
+      data:temp
+    };
+      
   default:
     throw new Error(`Invalid action type: ${action.type}`);
   }
