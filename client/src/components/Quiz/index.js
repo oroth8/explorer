@@ -3,6 +3,7 @@ import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 import "./style.css"
 import Nav from "../layout/Nav";
+import { Link } from "react-router-dom"
 
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
@@ -38,6 +39,10 @@ function Quiz({ questions }) {
     }
   };
 
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   if (questions.length === 0) {
     return (
       <div>
@@ -50,12 +55,17 @@ function Quiz({ questions }) {
         <Nav />
         <div className="quiz-section container-fluid">
           {showScore ? (
-            <div className="score-section">
+            <div className="score-section container">
               <div className="row">
-                You scored {score} out of {questions.length}!
-                <a href="/earn" onClick={characterContext.saveChar}>
-                  <button>Back</button>
-                </a>
+                <p>You scored {score} out of {questions.length}!</p>
+              </div>
+              <div className="row">
+                <p>Your correct answers earned you {numberWithCommas(score * 1000000)} credits!</p>
+              </div>
+              <div className="row">
+                <Link to="/earn" onClick={characterContext.saveChar}>
+                  <button id="back">Back</button>
+                </Link>
               </div>
             </div>
           ) : (
