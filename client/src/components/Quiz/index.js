@@ -15,6 +15,7 @@ function Quiz({ questions }) {
   
 
   let userId;
+  const { credits } = characterContext.data;
 
   useEffect(() => {
     authContext.loadUser();
@@ -25,7 +26,7 @@ function Quiz({ questions }) {
     }
   }, [authContext.loading]);
 
-  console.log(characterContext.data.credits);
+  console.log(characterContext);
   
 
 
@@ -37,6 +38,10 @@ function Quiz({ questions }) {
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
+      characterContext.updateCredits();
+      characterContext.saveChar();
+      
+      console.log(credits);
     }
 
     const nextQuestion = currentQuestion + 1;
