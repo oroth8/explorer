@@ -11,11 +11,14 @@ const Jumbotron = () => {
     <JumboStyle className="jumbotron jumbotron-fluid">
       <TS className="container">
         <span className="display-4">
-          {!user ? "Explorer Game" : `Hello ${user.name},`}
+          {!user ? "EXPLORER" : `Hello ${user.name},`}
         </span>
-        <p className="lead">This is text about the game</p>
+        <p className="lead">
+          Get ready to explore the world by navigating through NASA related
+          questions and fun.
+        </p>
         {/* <hr className="my-4"></hr> */}
-        <p id="text">Begin your journey today...</p>
+        <p id="text">Begin your educational journey today...</p>
         {!user ? (
           <Link to="register">
             <button>Register</button>
