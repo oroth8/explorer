@@ -1,15 +1,79 @@
 .quiz-section {
     color: white;
-    width: 50%;
+    width: 100%;
     margin: auto;
     background-color: #566573;
     border: 3px solid #23d997;
+    text-align: center;
+    margin-top: 10px;
+    
 }
 .quizImg {
-    width: 50%;
-    padding-bottom: 5px;
+    width: 325px;
+    height: 200px;
     margin: auto;
+    padding-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #23d997;
+    object-fit: cover, scale-down;
 }
 .ans-section {
+    padding-top: 0px;
     padding-bottom: 7px;
+    max-width: 100%;
 }
+
+.ans-section button {
+    font-size: 10px;
+    padding: 5px;
+}
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .quizImg{
+        width: 350px;
+        height: 250px;
+        margin: auto;
+        object-fit: cover, scale-down;
+    }
+    .ans-section button {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .ans-section {
+        padding-top: 0px;
+        padding-bottom: 7px;
+        max-width: 100%;
+    }
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    body {
+        font-size: 15px;
+    }
+    .quizImg{
+        width: 450px;
+        height: 350px;
+        margin: auto;
+        object-fit: cover, scale-down;
+    }
+    .ans-section button {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .ans-section {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        max-width: 100%;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }

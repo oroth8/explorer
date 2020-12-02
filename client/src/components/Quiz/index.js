@@ -46,7 +46,7 @@ function Quiz({ questions }) {
     );
   } else if (questions.length > 0) {
     return (
-      <div className="quiz-section container">
+      <div className="quiz-section container-fluid">
         {showScore ? (
           <div className="score-section">
             <div className="row">
@@ -59,22 +59,42 @@ function Quiz({ questions }) {
         ) : (
           <>
             <div className="question-section">
-              <div className="q-count">
-                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              <div className="row">
+                <div className="col-sm-12">
+                  <div className="q-count">
+                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                  </div>
+                </div>
               </div>
-              <div className="q-text">
-                {questions[currentQuestion].questionText}
+              <div className="row">
+                <div className="col-sm-12">
+                  <div className="q-text">
+                    {questions[currentQuestion].questionText}
+                  </div>
+                </div>
               </div>
-              <img src={questions[currentQuestion].questionImg} />
+              <div className="row">
+                <div className="col-sm-12">
+                  <img src={questions[currentQuestion].questionImg} className="quizImg"/>
+                </div>
+              </div>
             </div>
-            <div className="ans-section">
-              {questions[currentQuestion].answerChoices.map((answerOption) => (
-                <button
-                  onClick={() => handleUserAnswer(answerOption.isCorrect)}
-                >
-                  {answerOption.answerText}
-                </button>
-              ))}
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="ans-section">
+                  <div className="row">
+                    <div className="d-inline col-sm-12">
+                      {questions[currentQuestion].answerChoices.map((answerOption) => (
+                        <button
+                          onClick={() => handleUserAnswer(answerOption.isCorrect)}
+                        >
+                          {answerOption.answerText}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </>
         )}
