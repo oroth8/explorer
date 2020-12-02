@@ -92,33 +92,16 @@ const Footer = () => {
 
       <ul class="list-unstyled list-inline text-center">
         <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
-            <i class="fab fa-facebook-f"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-            <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-dribbble mx-1">
-            <i class="fab fa-dribbble"> </i>
+          <a
+            href="https://github.com/oroth8/project3"
+            class="btn-floating btn-github mx-1"
+          >
+            <i class="fab fa-github"> </i>
           </a>
         </li>
       </ul>
 
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:</div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright</div>
     </FooterStyle>
   );
 };
@@ -128,6 +111,12 @@ const FooterStyle = styled.footer`
     color: white;
   }
   i {
+    color: white;
+    &:hover {
+      color: #23d997;
+    }
+  }
+  .footer-copyright {
     color: white;
   }
 `;
