@@ -24,7 +24,6 @@ let userId;
 
   },[authContext.loading]);
 
-  let display = { display: "TopRight" };
 
   if(characterContext.missing) return (<CharacterCreate />)
   else if(!characterContext.loaded) return (<>Loading</>);
@@ -32,9 +31,7 @@ let userId;
     <> 
     <BuyShip />
     <div className="container desk-box">
-      <License rotate={35}/>
-    <a href="/buyShip">Creator</a>
-    <Options displayed={display}/>
+      <License />
 </div>  
 </>
   );
