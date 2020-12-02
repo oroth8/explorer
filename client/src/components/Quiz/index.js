@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import { loadCharacter } from "../utils/API";
 import AuthContext from "../../context/auth/authContext";
-import { useCharacterContext } from "../../context/character/CharacterContext";
+import CharacterContext from "../../context/character/CharacterContext";
 
 
 
 
 function Quiz({ questions }) {
-  const [state, dispatch] = useCharacterContext();
+  const characterContext = useContext(CharacterContext);
   const authContext = useContext(AuthContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -21,30 +21,22 @@ function Quiz({ questions }) {
 
     if (authContext.user) {
       userId = authContext.user._id;
-      getCharacter(userId);
+      characterContext.loadChar(userId);
     }
   }, [authContext.loading]);
 
-  console.log(authContext);
+  console.log(characterContext.data.credits);
   
 
 
 
-  const getCharacter = (userId) => {
-    dispatch({ type: "LOADING" });
-    loadCharacter(userId).then((res) => {
-      if (res.data) dispatch({ type: "UPDATE_CHARACTER", char: res.data });
-      else dispatch({ type: "ERROR_NO_CHARACTER" });
-    });
-  };
+ 
   
   
 
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
-      console.log(authContext);
-      console.log(state);
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -75,7 +67,6 @@ function Quiz({ questions }) {
                 <span>Question {currentQuestion + 1}</span>/{questions.length}
               </div>
               <div className="q-text">
-                {console.log(questions[currentQuestion])}
                 {questions[currentQuestion].questionText}
               </div>
               <img src={questions[currentQuestion].questionImg} />
