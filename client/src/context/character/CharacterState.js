@@ -113,12 +113,9 @@ const CharacterState = (props) => {
         updateAge,
         updateName,
         updateUserId,
-<<<<<<< HEAD
         buyShip,
         sellShip,
-=======
         updateCredits,
->>>>>>> main
         missing:state.missing,
         loaded:state.loaded
       }}
