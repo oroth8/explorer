@@ -1,16 +1,27 @@
 import License from "../Character/components/License"
+<<<<<<< HEAD
 import React from 'react';
+=======
+import CharacterContext from "../../context/character/CharacterContext"
+import React, {useContext} from 'react';
+import "./style.css";
+>>>>>>> main
 
 
 
+function Play(props) {  
+  const characterContext = useContext(CharacterContext);
+  let charText="View Character";
+  if(characterContext.missing) charText="Create Character"
 
-
-
-function Play() {
         return (
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <a href="/viewcharacter"> <License /></a>
+              <div className="row">
+        <a href="/viewcharacter"><h4>{charText}</h4>
+                  <License />
+                </a>
+              </div>
             </div>
 
 
