@@ -34,10 +34,6 @@ function Play({ questions }) {
 
           <div className="row mb-4">
           <div className="col-md-6 col-sm-12">
-            <a href="/ship"><Ship /></a>
-          </div>
-
-          <div className="col-md-6 col-sm-12">
             <a href="/earn"><Quiz /></a>
           </div>
 
