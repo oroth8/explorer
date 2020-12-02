@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from "react";
-import {getQuizQuestions} from "../utils/API";
-const questions = require("../../NAquestions.json");
+import React, { useEffect, useState, useContext } from "react";
+import { loadCharacter } from "../utils/API";
+import AuthContext from "../../context/auth/authContext";
+import CharacterContext from "../../context/character/CharacterContext";
 
-
-
-
-function Quiz(props) {
+function Quiz({ questions }) {
+  const characterContext = useContext(CharacterContext);
+  const authContext = useContext(AuthContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [quizQuestions, setQuestions] = useState([])
-  let questionArr = [];
 
-  const getQuestions = () => {
-    getQuizQuestions().then(function(response) {
-      questionArr = response.data;
-      setQuestions(questionArr);
-    })
-  }
+  let userId;
+  const { credits } = characterContext.data;
 
   useEffect(() => {
-    getQuestions();
-  }, [])
+    authContext.loadUser();
 
-  console.log(quizQuestions);
+    if (authContext.user) {
+      userId = authContext.user._id;
+      characterContext.loadChar(userId);
+    }
+  }, [authContext.loading]);
 
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
+      characterContext.updateCredits();
+      characterContext.saveChar();
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -38,61 +37,49 @@ function Quiz(props) {
     }
   };
 
-  const [displayOptions, setDisplayOptions]=useState({
-    position: "fixed",
-    top: "10%",
-    left: "10%",
-    maxWidth: "80%",
-    zIndex: "2",
-    display: "block"
-  });
-
-
-
-    useEffect(()=>{
-    if(props.displayed.display==="Quiz"){
-      setDisplayOptions({...displayOptions, display: "block"});
-    }else{
-      setDisplayOptions({...displayOptions, display: "none"});
-    };
-
-
-  },[props.displayed]);
-
-
-
-
-
-
-  return (
-    <div className="quiz-section container" style={displayOptions}>
-      {showScore ? (
-        <div className="score-section">
-          You scored {score} out of {quizQuestions.length}!
-        </div>
-      ) : (
-        <>
-          <div className="question-section">
-            <div className="q-count">
-              <span>Question {currentQuestion + 1}</span>/{quizQuestions.length}
+  if (questions.length == 0) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  } else if (questions.length > 0) {
+    return (
+      <div className="quiz-section container">
+        {showScore ? (
+          <div className="score-section">
+            <div className="row">
+              You scored {score} out of {questions.length}!
+              <a href="/earn" onClick={characterContext.saveChar}>
+                <button>Back</button>
+              </a>
             </div>
-            <div className="q-text">
-              {console.log(quizQuestions[currentQuestion])}
-              {questions[currentQuestion].questionText}
+          </div>
+        ) : (
+          <>
+            <div className="question-section">
+              <div className="q-count">
+                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              </div>
+              <div className="q-text">
+                {questions[currentQuestion].questionText}
+              </div>
+              <img src={questions[currentQuestion].questionImg} />
             </div>
-            <img src={questions[currentQuestion].questionImg} />
-          </div>
-          <div className="ans-section">
-            {questions[currentQuestion].answerChoices.map((answerOption) => (
-              <button onClick={() => handleUserAnswer(answerOption.isCorrect)}>
-                {answerOption.answerText}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  );
+            <div className="ans-section">
+              {questions[currentQuestion].answerChoices.map((answerOption) => (
+                <button
+                  onClick={() => handleUserAnswer(answerOption.isCorrect)}
+                >
+                  {answerOption.answerText}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
 }
 
 export default Quiz;

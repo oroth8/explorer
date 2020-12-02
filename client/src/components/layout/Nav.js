@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
-import aircraft from "./aircraft.svg";
+import logo from "./Logo.svg";
 
 const Nav = () => {
   const authContext = useContext(AuthContext);
@@ -20,17 +20,11 @@ const Nav = () => {
   return (
     <NavStyle>
       <Link to="/">
-        <img id="logo" src={aircraft} alt="aircraft" />
+        <img id="logo" src={logo} alt="aircraft" />
       </Link>
       <ul>
-        <li>
+        <li className="instructions">
           <Link to="instructions">Instructions</Link>
-        </li>
-        <li>
-          <Link to="options">Options</Link>
-        </li>
-        <li>
-          <Link to="account">My Account</Link>
         </li>
         <li>
           {!user ? (
@@ -46,7 +40,7 @@ const Nav = () => {
   );
 };
 const NavStyle = styled.nav`
-  min-height: 10vh;
+  max-height: 15vh;
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -56,38 +50,42 @@ const NavStyle = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  .instructions {
+    &:hover {
+      color: #23d997;
+    }
+  }
   a {
     color: white;
     text-decoration: none;
+    font-size: 2rem;
   }
   ul {
     display: flex;
     list-style: none;
-  }
-  #logo {
-    font-size: 1.5rem;
-    color: white;
   }
   li {
     padding-left: 10rem;
     position: relative;
   }
   @media (max-width: 1300px) {
-    flex-direction: column;
+    flex-direction: row;
     padding: 2rem 1rem;
     #logo {
       display: inline-block;
-      margin: 2rem;
+      margin-top: 1rem;
     }
     ul {
-      padding: 2rem;
+      padding-right: 1rem;
       justify-content: space-around;
       width: 100%;
+      margin-top: 1rem;
     }
     li {
       padding: 0;
       color: white;
       font-size: 1.5rem;
+      margin-left: 1.5rem;
     }
   }
 `;
