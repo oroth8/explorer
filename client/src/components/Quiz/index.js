@@ -27,8 +27,6 @@ function Quiz({ questions }) {
       setScore(score + 1);
       characterContext.updateCredits();
       characterContext.saveChar();
-
-      console.log(credits);
     }
 
     const nextQuestion = currentQuestion + 1;
