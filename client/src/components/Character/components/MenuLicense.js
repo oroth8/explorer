@@ -30,7 +30,7 @@ export default function License(props) {
     if(characterContext.missing) charText="Create Character";
     
 return(
-    <div className="container" id="license">
+    <div className="container" id="menucard">
         <img style={style.backgroundimg} src="./img/space.jpg" alt="Space"/>
         
     <div className="row">

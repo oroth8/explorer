@@ -12,6 +12,7 @@ import CharacterState from "./context/character/CharacterState";
 // Pages
 import Landing from "./pages/Landing";
 import Play from "./components/Play";
+import BuyShip from "./components/Ship/BuyShip";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
@@ -110,6 +111,7 @@ function App() {
                 />
                 <Route exact path="/viewCharacter" component={ViewCharacter} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/ship" component={BuyShip} />
                 <Route exact path="/earn">
                   <Earn questions={quizQuestions} />
                 </Route>
