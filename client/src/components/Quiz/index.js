@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { loadCharacter } from "../utils/API";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
+import "./style.css"
 
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
