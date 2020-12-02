@@ -54,10 +54,23 @@ const CharacterState = (props) => {
     dispatch({type:"UPDATE_USER", id:id})
   }
   const updateAge=(age)=>{
-    let birth=2021-age;
-    
+    let birth=2021-age;    
     dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"age", newData:age})
     dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"birthYear", newData:birth})
+  }
+  const setCredits=(creds)=>{
+    dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"credits", newData:creds})
+  }
+  const setCurrentYear=(year)=>{
+    dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"currentYear", newData:year})
+  }
+  const buyShip=shipId=>{
+    dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:shipId})
+    saveChar();  
+  }
+  const sellShip=shipId=>{
+    dispatch({type:"UPDATE_SHIPARRAY", action:"remove", newData:shipId})  
+    saveChar();  
   }
   const saveChar = ()=>{
     console.log("saving:");
@@ -73,7 +86,7 @@ const CharacterState = (props) => {
     getNewCharacterPortrait()
     .then(res=>{
       if(res.data)      
-        dispatch({type:"UPDATE_PORTRAIT", url:res.data.results[0].picture.large})
+        dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"characterImage", newData:res.data.results[0].picture.large})
     });
   }
   return (
@@ -91,9 +104,13 @@ const CharacterState = (props) => {
         loadChar,
         saveChar,
         getPortrait,
+        setCredits,
+        setCurrentYear, 
         updateAge,
         updateName,
         updateUserId,
+        buyShip,
+        sellShip,
         missing:state.missing,
         loaded:state.loaded
       }}

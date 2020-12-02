@@ -24,15 +24,17 @@ let userId;
 
   },[authContext.loading]);
 
-
+  let turnStyle={transform:'rotate(36deg)', pointerEvents:"none"};
   if(characterContext.missing) return (<CharacterCreate />)
   else if(!characterContext.loaded) return (<>Loading</>);
   else return (
     <> 
     <BuyShip />
     <div className="container desk-box">
-      <License />
-</div>  
+      <div style={turnStyle}>
+        <License />
+      </div>
+    </div>  
 </>
   );
 }
