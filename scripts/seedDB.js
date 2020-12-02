@@ -368,7 +368,7 @@ const questionSeed = [
       { answerText: "Russia", isCorrect: false },
       { answerText: "None", isCorrect: true },
     ],
-    questionImg: ""
+    questionImg: "../img/questions/plane.jpg"
   },
   {
     level: "Antarctica",
