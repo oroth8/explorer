@@ -63,7 +63,10 @@ function Quiz({ questions }) {
       <div className="quiz-section container">
         {showScore ? (
           <div className="score-section">
-            You scored {score} out of {questions.length}!
+            <div className="row">
+              You scored {score} out of {questions.length}!
+              <a href="/earn" onClick={characterContext.saveChar}><button>Back</button></a>
+            </div> 
           </div>
         ) : (
           <>
