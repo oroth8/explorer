@@ -40,40 +40,47 @@ if (localStorage.token) {
 
 // Our main background output
 
-
-
 function App() {
-  const [characterState, setCharacter] = useState({
-    name: "default",
-    characterImage: "",
-  });
-  const [quizQuestions, setQuizQuestions] = useState([{
-    level: "",
-    questionText: "",
-    answerChoices: [{ answerText: "", isCorrect: false }],
-    questionImg: "",
-  }])
+  const [quizQuestions, setQuizQuestions] = useState([
+    {
+      level: "",
+      questionText: "",
+      answerChoices: [{ answerText: "", isCorrect: false }],
+      questionImg: "",
+    },
+  ]);
 
   const getQuiz = () => {
-    getQuizQuestions().then(function(response){
+    getQuizQuestions().then(function (response) {
       setQuizQuestions(response.data);
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     getQuiz();
-  }, [])
+  }, []);
 
-  const naQuestions = quizQuestions.filter(questions => questions.level === "North America");
-  const saQuestions = quizQuestions.filter(questions => questions.level === "South America");
-  const euQuestions = quizQuestions.filter(questions => questions.level === "Europe");
-  const asQuestions = quizQuestions.filter(questions => questions.level === "Asia");
-  const afQuestions = quizQuestions.filter(questions => questions.level === "Africa");
-  const auQuestions = quizQuestions.filter(questions => questions.level === "Australia");
-  const anQuestions = quizQuestions.filter(questions => questions.level === "Antarctica");
-
-  
-
+  const naQuestions = quizQuestions.filter(
+    (questions) => questions.level === "North America"
+  );
+  const saQuestions = quizQuestions.filter(
+    (questions) => questions.level === "South America"
+  );
+  const euQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Europe"
+  );
+  const asQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Asia"
+  );
+  const afQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Africa"
+  );
+  const auQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Australia"
+  );
+  const anQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Antarctica"
+  );
 
   // const [characterState, setCharacter] = useState({
   //   name: "default",

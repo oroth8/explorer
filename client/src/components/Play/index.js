@@ -6,12 +6,12 @@ import CharacterContext from "../../context/character/CharacterContext";
 import React, {useContext} from 'react';
 import "./style.css";
 
-const style = {
-  img: {
-    width: "80%",
-    height: "auto"
-  }
-}
+// const style = {
+//   img: {
+//     width: "80%",
+//     height: "auto"
+//   }
+// }
 
 
 function Play({ questions }) {
@@ -48,8 +48,5 @@ function Play({ questions }) {
 
         );
   }
-
-
-
 
 export default Play;
