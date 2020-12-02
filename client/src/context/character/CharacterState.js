@@ -76,6 +76,10 @@ const CharacterState = (props) => {
         dispatch({type:"UPDATE_PORTRAIT", url:res.data.results[0].picture.large})
     });
   }
+  const updateCredits = () => {
+    let newCredits = state.data.credits + 1000000;
+    dispatch({type: "UPDATE_CHARACTER_PROPERTY", name: "credits", newData: newCredits })
+  }
   return (
     <CharacterContext.Provider
       value={{
@@ -94,6 +98,7 @@ const CharacterState = (props) => {
         updateAge,
         updateName,
         updateUserId,
+        updateCredits,
         missing:state.missing,
         loaded:state.loaded
       }}
