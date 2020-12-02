@@ -65,8 +65,8 @@ const CharacterState = (props) => {
   const setCurrentYear=(year)=>{
     dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"currentYear", newData:year})
   }
-  const buyShip=shipId=>{
-    dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:shipId})
+  const buyShip=(shipId, level, creds)=>{
+    dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:[shipId, level, creds]})
     saveChar();  
   }
   const sellShip=shipId=>{

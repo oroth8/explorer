@@ -5,7 +5,7 @@ import Level2 from "./Level2";
 import Options from "../Options";
 import AuthContext from "../../context/auth/authContext";
 import LevelChar from "./LevelChar";
-
+import CharacterContext from "../../context/character/CharacterContext";
 const style={
   white: {
     color: "white"
@@ -16,6 +16,7 @@ const style={
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Level() {
   const authContext = useContext(AuthContext);
+  const characterContext = useContext(CharacterContext);
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -82,7 +83,7 @@ function Level() {
   let levelChange= direction => {
     let level=Number(levelNumber.number);
     if(direction==="add"){
-      if(level < 2){
+      if(level < characterContext.data.maxLevel){
       level=(level+1);
       }
     }else{
