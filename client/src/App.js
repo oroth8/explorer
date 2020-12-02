@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import Level from "./components/Level";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Character components
-import CharacterCreator from "./components/Character/CharacterCreate";
+import CharacterCreate from "./components/Character/CharacterCreate";
 import ViewCharacter from "./components/Character/ViewCharacter";
+// Character Context
+import CharacterState from "./context/character/CharacterState";
 // Ship Components
 // import BuyShip from "./components/Ship/BuyShip";
 // Pages
@@ -13,8 +15,7 @@ import Play from "./components/Play";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
-// Character Context
-import { CharProvider } from "./context/character/CharacterContext";
+// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
@@ -74,6 +75,10 @@ function App() {
   
 
 
+  // const [characterState, setCharacter] = useState({
+  //   name: "default",
+  //   characterImage: "",
+  // });
 
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
