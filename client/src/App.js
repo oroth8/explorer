@@ -55,9 +55,7 @@ function App() {
 
   const getQuiz = () => {
     getQuizQuestions().then(function(response){
-      console.log(response.data);
       setQuizQuestions(response.data);
-      console.log(quizQuestions)
     })
   }
 
