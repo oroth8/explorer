@@ -339,62 +339,59 @@ const questionSeed = [
   },
   {
     level: "Antarctica",
-    questionText: "",
+    questionText: "Which of these animals would you NOT find in Antarctica?",
     answerChoices: [
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
+      { answerText: "Polar Bears", isCorrect: true },
+      { answerText: "Seals", isCorrect: false },
+      { answerText: "Whales", isCorrect: false },
+      { answerText: "Penguins", isCorrect: false },
+    ],
+    questionImg: "../img/questions/penguins.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Antarctica is the coldest continent on Earth. It is also the world's:",
+    answerChoices: [
+      { answerText: "Largest", isCorrect: false },
+      { answerText: "Smallest", isCorrect: false },
+      { answerText: "Windiest", isCorrect: true },
+      { answerText: "Inhabited", isCorrect: false },
+    ],
+    questionImg: "../img/questions/antarctica.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Antarctica is claimed by what Country?",
+    answerChoices: [
+      { answerText: "United Kingdom", isCorrect: false },
+      { answerText: "United States of America", isCorrect: false },
+      { answerText: "Russia", isCorrect: false },
+      { answerText: "None", isCorrect: true },
     ],
     questionImg: ""
   },
   {
     level: "Antarctica",
-    questionText: "",
+    questionText: "Many scientists travel to Antarctica for research. How many research stations are on the continent?",
     answerChoices: [
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
+      { answerText: "10-25", isCorrect: false },
+      { answerText: "25-50", isCorrect: false },
+      { answerText: "50-100", isCorrect: false },
+      { answerText: "100+", isCorrect: true },
     ],
-    questionImg: ""
+    questionImg: "../img/questions/research.jpg"
   },
   {
     level: "Antarctica",
-    questionText: "",
+    questionText: "What is the coldest temperature ever recorded in Antarctica?",
     answerChoices: [
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
+      { answerText: "-128.5 degrees F", isCorrect: true },
+      { answerText: "-105.2 degrees F", isCorrect: false },
+      { answerText: "-179.6 degrees F", isCorrect: false },
+      { answerText: "-83.6 degrees F", isCorrect: false },
     ],
-    questionImg: ""
+    questionImg: "../img/questions/glaciers.jpg"
   },
-  {
-    level: "Antarctica",
-    questionText: "",
-    answerChoices: [
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-    ],
-    questionImg: ""
-  },
-  {
-    level: "Antarctica",
-    questionText: "",
-    answerChoices: [
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-      { answerText: "", isCorrect: },
-    ],
-    questionImg: ""
-  },
-
- 
-  
 ];
 
 db.Question.remove({})
@@ -447,7 +444,7 @@ const locationSeed = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png",
   },
   {
-    name: "Antartica",
+    name: "Antarctica",
     description:
       "Antarctica (/ænˈtɑːrtɪkə/ or /æntˈɑːrktɪkə/ (About this soundlisten)) is Earth's southernmost continent. It contains the geographic South Pole and is situated in the Antarctic region of the Southern Hemisphere, almost entirely south of the Antarctic Circle, and is surrounded by the Southern Ocean. At 14,200,000 square kilometres (5,500,000 square miles), it is the fifth-largest continent and nearly twice the size of Australia. At 0.00008 people per square kilometre, it is by far the least densely populated continent. About 98% of Antarctica is covered by ice that averages 1.9 km (1.2 mi; 6,200 ft) in thickness, which extends to all but the northernmost reaches of the Antarctic Peninsula.  Antarctica, on average, is the coldest, driest, and windiest continent, and has the highest average elevation of all the continents.[6] Most of Antarctica is a polar desert, with annual precipitation of 200 mm (7.9 in) along the coast and far less inland; there has been no rain there for almost 2 million years, yet 80% of the world freshwater reserves are stored there, enough to raise global sea levels by about 60 metres (200 ft) if all of it were to melt. The temperature in Antarctica has reached −89.2 °C (−128.6 °F) (or even −94.7 °C (−135.8 °F) as measured from space[8]), though the average for the third quarter (the coldest part of the year) is −63 °C (−81 °F). Anywhere from 1,000 to 5,000 people reside throughout the year at research stations scattered across the continent. Organisms native to Antarctica include many types of algae, bacteria, fungi, plants, protista, and certain animals, such as mites, nematodes, penguins, seals and tardigrades. Vegetation, where it occurs, is tundra.",
     imageUrl:
