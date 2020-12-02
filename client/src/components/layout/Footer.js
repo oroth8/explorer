@@ -13,8 +13,9 @@ const Footer = () => {
           <div class="col-md-4 mx-auto">
             <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
             <p>
-              Here you can use rows and columns to organize your footer content.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              This is a React.js full stack web game that is designed to take
+              the user on an educational journey while interacting with the NASA
+              API to gain explorative knowledge.
             </p>
           </div>
 
