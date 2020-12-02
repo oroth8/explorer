@@ -48,7 +48,10 @@ h2{
     }
     a{
         font-size: 1.1rem;
+        color: white;
+        &:hover{
         color: #23d997;
+        }
     }
     span{
         font-weight: bold;

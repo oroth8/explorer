@@ -1,7 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, Fragment } from "react";
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 import styled from "styled-components";
+import Nav from "../layout/Nav";
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -43,38 +44,41 @@ const Login = (props) => {
   };
 
   return (
-    <LoginStyle className="container">
-      <div className="form-container">
-        <h1>
-          Account <span>Login</span>
-        </h1>
-        <form onSubmit={onSubmit}>
-          <div className="form-group">
-            <label htmlFor="email"></label>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={onChange}
-              required
-              placeholder="Email"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password"></label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              required
-              placeholder="Password"
-            />
-          </div>
-          <input type="submit" value="Login" className="btn" />
-        </form>
-      </div>
-    </LoginStyle>
+    <Fragment>
+      <Nav />
+      <LoginStyle className="container">
+        <div className="form-container">
+          <h1>
+            Account <span>Login</span>
+          </h1>
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <label htmlFor="email"></label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password"></label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <input type="submit" value="Login" className="btn" />
+          </form>
+        </div>
+      </LoginStyle>
+    </Fragment>
   );
 };
 
