@@ -3,16 +3,12 @@ import { loadCharacter } from "../utils/API";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 
-
-
-
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
   const authContext = useContext(AuthContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  
 
   let userId;
   const { credits } = characterContext.data;
@@ -26,21 +22,12 @@ function Quiz({ questions }) {
     }
   }, [authContext.loading]);
 
-  console.log(characterContext);
-  
-
-
-
- 
-  
-  
-
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
       characterContext.updateCredits();
       characterContext.saveChar();
-      
+
       console.log(credits);
     }
 
@@ -65,8 +52,10 @@ function Quiz({ questions }) {
           <div className="score-section">
             <div className="row">
               You scored {score} out of {questions.length}!
-              <a href="/earn" onClick={characterContext.saveChar}><button>Back</button></a>
-            </div> 
+              <a href="/earn" onClick={characterContext.saveChar}>
+                <button>Back</button>
+              </a>
+            </div>
           </div>
         ) : (
           <>
