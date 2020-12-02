@@ -24,7 +24,7 @@ export default function Level(props) {
     if(characterContext.data.characterImage) img=characterContext.data.characterImage;
     
 return(
-    <div className="container" id="license">
+    <div className="container" id="menucard">
         <img style={style.backgroundimg} src="./img/space.jpg" alt="Space"/>
     <div className="row">
         <div className="col-12" id="photo">

@@ -12,7 +12,7 @@ const Register = (props) => {
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated) { 
       props.history.push("/");
     }
     if (error === "User already exists") {

@@ -1,9 +1,11 @@
 .air-field{
+    position: relative;
     margin-top:2em;
     background:gray;
 }
 
 .ship-item{
+    position: relative;
     width:200px;
     height:200px;
     border:1px solid black;
