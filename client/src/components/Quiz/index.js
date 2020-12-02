@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 import "./style.css"
+import Nav from "../layout/Nav";
 
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
@@ -45,59 +46,62 @@ function Quiz({ questions }) {
     );
   } else if (questions.length > 0) {
     return (
-      <div className="quiz-section container-fluid">
-        {showScore ? (
-          <div className="score-section">
-            <div className="row">
-              You scored {score} out of {questions.length}!
-              <a href="/earn" onClick={characterContext.saveChar}>
-                <button>Back</button>
-              </a>
-            </div>
-          </div>
-        ) : (
-          <>
-            <div className="question-section">
+      <React.Fragment>
+        <Nav />
+        <div className="quiz-section container-fluid">
+          {showScore ? (
+            <div className="score-section">
               <div className="row">
-                <div className="col-sm-12">
-                  <div className="q-count">
-                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                You scored {score} out of {questions.length}!
+                <a href="/earn" onClick={characterContext.saveChar}>
+                  <button>Back</button>
+                </a>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="question-section">
+                <div className="row">
+                  <div className="col-sm-12">
+                    <div className="q-count">
+                      <span>Question {currentQuestion + 1}</span>/{questions.length}
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-12">
+                    <div className="q-text">
+                      {questions[currentQuestion].questionText}
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-12">
+                    <img src={questions[currentQuestion].questionImg} className="quizImg"/>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-sm-12">
-                  <div className="q-text">
-                    {questions[currentQuestion].questionText}
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <img src={questions[currentQuestion].questionImg} className="quizImg"/>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-12">
-                <div className="ans-section">
-                  <div className="row">
-                    <div className="d-inline col-sm-12">
-                      {questions[currentQuestion].answerChoices.map((answerOption) => (
-                        <button
-                          onClick={() => handleUserAnswer(answerOption.isCorrect)}
-                        >
-                          {answerOption.answerText}
-                        </button>
-                      ))}
+                  <div className="ans-section">
+                    <div className="row">
+                      <div className="d-inline col-sm-12">
+                        {questions[currentQuestion].answerChoices.map((answerOption) => (
+                          <button
+                            onClick={() => handleUserAnswer(answerOption.isCorrect)}
+                          >
+                            {answerOption.answerText}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
+      </React.Fragment>
     );
   }
 }
