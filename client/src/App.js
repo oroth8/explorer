@@ -61,6 +61,7 @@ function App() {
     getQuiz();
   }, []);
 
+  //Filter for respective level
   const naQuestions = quizQuestions.filter(
     (questions) => questions.level === "North America"
   );
@@ -82,11 +83,6 @@ function App() {
   const anQuestions = quizQuestions.filter(
     (questions) => questions.level === "Antarctica"
   );
-
-  // const [characterState, setCharacter] = useState({
-  //   name: "default",
-  //   characterImage: "",
-  // });
 
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
