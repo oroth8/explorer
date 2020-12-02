@@ -9,9 +9,16 @@ const CharacterCreate = () => {
   useEffect(() => {
     if (authContext.user) {
       userId = authContext.user._id;
-      if (characterContext.missing) characterContext.updateUserId(userId);
-      characterContext.getPortrait();
-    } else authContext.loadUser();
+      if(characterContext.missing){        
+        characterContext.updateUserId(userId);
+        characterContext.getPortrait();
+        characterContext.setCredits(100);
+        characterContext.setCurrentYear(2021);
+      }
+    }
+    else 
+    authContext.loadUser();
+
   }, [authContext.loading]);
 
   function inputHandler(e) {

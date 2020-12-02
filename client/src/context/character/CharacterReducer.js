@@ -42,7 +42,26 @@ export default (state, action) => {
       ...state,
       data:temp
     };
+  case "UPDATE_SHIPARRAY":
+    let tempShips=state.data.shipIdArray;
+    if(action.action==="add") tempShips.push(action.newData)
+    else if(action.action==="remove"){
+      tempShips=tempShips.filter(ship=>{
+        if(ship._id===action.newData) return false;
+        else return true;
+      })
+      console.log(tempShips);
       
+    }
+
+    let tempData=state.data;
+    tempData.shipIdArray=tempShips;
+    console.log(tempData);
+    
+    return{ 
+      ...state,
+      data:tempData
+    }
   default:
     throw new Error(`Invalid action type: ${action.type}`);
   }
