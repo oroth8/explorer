@@ -6,7 +6,7 @@ import CharacterContext from "../../context/character/CharacterContext";
 import React, {useContext} from 'react';
 import "./style.css";
 
-const style={
+const style = {
   img: {
     width: "80%",
     height: "auto"
@@ -14,7 +14,7 @@ const style={
 }
 
 
-function Play(props) {  
+function Play({ questions }) {
   const characterContext = useContext(CharacterContext);
   let charText="View Character";
   if(characterContext.missing) charText="Create Character"
