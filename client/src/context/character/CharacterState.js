@@ -13,6 +13,7 @@ const CharacterState = (props) => {
       age:20,
       currentYear:2021,
       credits:100,
+      maxLevel:0,
       shipIdArray:[],
       birthYear:2001
     },
@@ -89,6 +90,9 @@ const CharacterState = (props) => {
         dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"characterImage", newData:res.data.results[0].picture.large})
     });
   }
+  const setMaxLevel=level=>{
+    dispatch({type:"UPDATE_CHARACTER_PROPERTY", name:"maxLevel", newData:level})
+  }
   const updateCredits = () => {
     let newCredits = state.data.credits + 1000000;
     dispatch({type: "UPDATE_CHARACTER_PROPERTY", name: "credits", newData: newCredits })
@@ -101,6 +105,7 @@ const CharacterState = (props) => {
           age:state.data.age,
           currentYear:state.data.currentYear,
           credits:state.data.credits,
+          maxLevel:state.data.maxLevel,
           shipIdArray:state.data.shipIdArray,
           birthYear:state.data.birthYear,
           characterImage:state.data.characterImage
@@ -115,6 +120,7 @@ const CharacterState = (props) => {
         updateUserId,
         buyShip,
         sellShip,
+        setMaxLevel,
         updateCredits,
         missing:state.missing,
         loaded:state.loaded

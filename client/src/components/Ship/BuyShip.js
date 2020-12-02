@@ -23,6 +23,8 @@ export default function BuyShip() {
     if(ship.cost<=availableCreds){  
       characterContext.buyShip(ship._id);
       characterContext.setCredits(availableCreds-ship.cost);
+      let currentMaxLevel=characterContext.data.maxLevel;
+      if(ship.maxLevel>currentMaxLevel) characterContext.setMaxLevel(ship.maxLevel);
     }
     else{
        setAlert("Not enough credits!", "danger");
@@ -32,6 +34,8 @@ export default function BuyShip() {
       let availableCreds=characterContext.data.credits;
       characterContext.sellShip(ship.id);
       characterContext.setCredits(availableCreds+ship.cost);
+      let currentMaxLevel=characterContext.data.maxLevel;
+      if(ship.maxLevel===currentMaxLevel) characterContext.setMaxLevel(ship.maxLevel-1);
   }
   if(shipArray){
     let bought=shipArray.filter(ship=>{

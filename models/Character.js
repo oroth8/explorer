@@ -8,6 +8,7 @@ const characterSchema = new Schema({
     characterImage: String,
     currentYear:{type: Number, default:2021},
     birthYear: {type:Number, default:2001},
+    maxLevel:{type:Number, default:0},
     credits: {type:Number, default:100},
     shipIdArray:{type:[String], default:[]},
     levelsCompletedArray:{type:[Number], default:[]}
