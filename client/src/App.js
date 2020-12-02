@@ -86,7 +86,7 @@ function App() {
       <GlobalStyle />
       <AuthState>
         <AlertState>
-          <CharProvider>
+          <CharacterState>
             <Router>
               <Alert />
               <Switch>
@@ -99,7 +99,7 @@ function App() {
                 <Route
                   exact
                   path="/characterCreation"
-                  component={CharacterCreator}
+                  component={CharacterCreate}
                 />
                 <Route exact path="/viewCharacter" component={ViewCharacter} />
                 <Route exact path="/login" component={Login} />
@@ -129,7 +129,7 @@ function App() {
                 </Route>
               </Switch>
             </Router>
-          </CharProvider>
+          </CharacterState>
         </AlertState>
       </AuthState>
     </div>
