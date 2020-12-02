@@ -172,6 +172,227 @@ const questionSeed = [
     ],
     questionImg: "../img/question/eiffel.jpg"
   },
+  {
+    level: "Asia",
+    questionText: "What is the most common language spoken in Asia?",
+    answerChoices: [
+      { answerText: "Mandarin Chinese", isCorrect: true },
+      { answerText: "Persian", isCorrect: false },
+      { answerText: "Hindi", isCorrect: false },
+      { answerText: "Arabic", isCorrect: false },
+    ],
+    questionImg: "../img/questions/map_asia.png"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the name of the tallest mountain in Asia?",
+    answerChoices: [
+      { answerText: "K2", isCorrect: false },
+      { answerText: "Makalu", isCorrect: false },
+      { answerText: "Lhotse", isCorrect: false },
+      { answerText: "Mount Everest", isCorrect: false },
+    ],
+    questionImg: "../img/questions/everest.JPG"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the largest city in Asia?",
+    answerChoices: [
+      { answerText: "Manila", isCorrect: false },
+      { answerText: "Tokyo", isCorrect: true },
+      { answerText: "Seoul", isCorrect: false },
+      { answerText: "Jakarta", isCorrect: false },
+    ],
+    questionImg: "../img/questions/tokyo.jpg"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the longest river in Asia?",
+    answerChoices: [
+      { answerText: "Yangtze River", isCorrect: true },
+      { answerText: "Mekong River", isCorrect: false },
+      { answerText: "Lena River", isCorrect: false },
+      { answerText: "Yellow River", isCorrect: false },
+    ],
+    questionImg: "../img/questions/Yangtze_River.jpg"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the largest country by population in Asia?",
+    answerChoices: [
+      { answerText: "Japan", isCorrect: false },
+      { answerText: "Indonesia", isCorrect: false },
+      { answerText: "India", isCorrect: false },
+      { answerText: "China", isCorrect: true },
+    ],
+    questionImg: "../img/questions/hong_kong.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "Which of the below is the longest river in Africa?",
+    answerChoices: [
+      { answerText: "Congo River", isCorrect: false },
+      { answerText: "White Nile", isCorrect: false },
+      { answerText: "Niger", isCorrect: false },
+      { answerText: "Nile", isCorrect: true },
+    ],
+    questionImg: "../img/questions/sphinx.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the name of the tallest mountain in Africa?",
+    answerChoices: [
+      { answerText: "Mount Kilimanjaro", isCorrect: true },
+      { answerText: "Toubkal", isCorrect: false },
+      { answerText: "Mount Kenya", isCorrect: false },
+      { answerText: "Mount Elgon", isCorrect: false },
+    ],
+    questionImg: "../img/questions/kilimanjaro.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What language is spoken the most in Africa?",
+    answerChoices: [
+      { answerText: "English", isCorrect: false },
+      { answerText: "Swahili", isCorrect: false },
+      { answerText: "Afrikaans", isCorrect: false },
+      { answerText: "Arabic", isCorrect: true },
+    ],
+    questionImg: "../img/questions/arua.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the largest desert in Africa?",
+    answerChoices: [
+      { answerText: "Sahara Desert", isCorrect: true },
+      { answerText: "Kalahari Desert", isCorrect: false },
+      { answerText: "Grand Bara Desert", isCorrect: false },
+      { answerText: "Namib Desert", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sahara.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the name of the largest lake in Africa?",
+    answerChoices: [
+      { answerText: "Lake Malawi", isCorrect: false },
+      { answerText: "Lake Volta", isCorrect: false },
+      { answerText: "Lake Rukwa", isCorrect: false },
+      { answerText: "Lake Victoria", isCorrect: true },
+    ],
+    questionImg: "../img/questions/Lake_Victoria.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "While the continent is commonly referred to as Australia, many countries make up the region. What other name does it go by?",
+    answerChoices: [
+      { answerText: "Down-Under", isCorrect: false },
+      { answerText: "Kangaroo Kontinent", isCorrect: false },
+      { answerText: "Oceania", isCorrect: true },
+      { answerText: "Aussieland", isCorrect: false },
+    ],
+    questionImg: "../img/questions/australia.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "Which of the below animals would you likely NOT see on a trip to Australia?",
+    answerChoices: [
+      { answerText: "Koala", isCorrect: false },
+      { answerText: "Kangaroo", isCorrect: false },
+      { answerText: "Wombat", isCorrect: false },
+      { answerText: "Elephant", isCorrect: true },
+    ],
+    questionImg: "../img/questions/koala.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "What city is the largest in all of Australia/Oceania?",
+    answerChoices: [
+      { answerText: "Auckland", isCorrect: false },
+      { answerText: "Sydney", isCorrect: true },
+      { answerText: "Perth", isCorrect: false },
+      { answerText: "Melbourne", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sydney_opera.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "What is the tallest mountain in Australia?",
+    answerChoices: [
+      { answerText: "Mount Kosciuszko", isCorrect: true },
+      { answerText: "Mount Tate", isCorrect: false },
+      { answerText: "Mount Twynam", isCorrect: false },
+      { answerText: "Gungartan", isCorrect: false },
+    ],
+    questionImg: "../img/questions/kosciouszko.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "The largest reef in the world can be found in Australia, what is it's name?",
+    answerChoices: [
+      { answerText: "Mesoamerican Reef", isCorrect: false },
+      { answerText: "Apo Reef", isCorrect: false },
+      { answerText: "Saya de Malha Banks", isCorrect: false },
+      { answerText: "Great Barrier Reef", isCorrect: true },
+    ],
+    questionImg: "../img/questions/gbr.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "",
+    answerChoices: [
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+    ],
+    questionImg: ""
+  },
+  {
+    level: "Antarctica",
+    questionText: "",
+    answerChoices: [
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+    ],
+    questionImg: ""
+  },
+  {
+    level: "Antarctica",
+    questionText: "",
+    answerChoices: [
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+    ],
+    questionImg: ""
+  },
+  {
+    level: "Antarctica",
+    questionText: "",
+    answerChoices: [
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+    ],
+    questionImg: ""
+  },
+  {
+    level: "Antarctica",
+    questionText: "",
+    answerChoices: [
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+      { answerText: "", isCorrect: },
+    ],
+    questionImg: ""
+  },
+
  
   
 ];
