@@ -10,7 +10,7 @@ export default function License(props) {
     if(characterContext.data.characterImage) img=characterContext.data.characterImage;
     
 return(
-    <div className="container" id="license">
+    <div className="" id="license">
     <div className="smudge"></div>
     <div className="row">
         <div className="col-5" id="photo">
@@ -29,7 +29,7 @@ return(
         LICENSE
     </div>
     <div className="row update-text">
-        UPDATED {characterContext.currentYear}
+        UPDATED {characterContext.data.currentYear}
     </div>
     </div>
     )

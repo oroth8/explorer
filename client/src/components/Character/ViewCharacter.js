@@ -13,22 +13,17 @@ export default function ViewCharacter(props) {
   // eslint-disable-next-line
   let userId;
 
-  useEffect(() => {
-    if (authContext.user) {
-      userId = authContext.user._id;
-      characterContext.loadChar(userId);
-    } else authContext.loadUser();
-  }, [authContext.loading]);
-
-  if (characterContext.missing) return <CharacterCreate />;
-  else if (!characterContext.loaded) return <>Loading</>;
-  else
-    return (
-      <>
-        <BuyShip />
-        <div className="container desk-box">
-          <License />
-        </div>
-      </>
-    );
+  let turnStyle={transform:'rotate(36deg)', pointerEvents:"none"};
+  if(characterContext.missing) return (<CharacterCreate />)
+  else if(!characterContext.loaded) return (<>Loading</>);
+  else return (
+    <> 
+    <BuyShip />
+    <div className="container desk-box">
+      <div style={turnStyle}>
+        <License />
+      </div>
+    </div>  
+</>
+  );
 }
