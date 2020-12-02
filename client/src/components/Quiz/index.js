@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import { loadCharacter } from "../utils/API";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 
@@ -11,7 +10,7 @@ function Quiz({ questions }) {
   const [score, setScore] = useState(0);
 
   let userId;
-  const { credits } = characterContext.data;
+  // const { credits } = characterContext.data;
 
   useEffect(() => {
     authContext.loadUser();
@@ -37,7 +36,7 @@ function Quiz({ questions }) {
     }
   };
 
-  if (questions.length == 0) {
+  if (questions.length === 0) {
     return (
       <div>
         <h1>Loading...</h1>
