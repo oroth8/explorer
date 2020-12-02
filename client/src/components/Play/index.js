@@ -27,7 +27,11 @@ function Play({ questions }) {
         <div className="row">
           <a href="/earn">
             <h4>Test Your Knowledge and Earn Space Cash!</h4>
-            <img style={style.img} src="../img/questions/denali.jpg" />
+            <img
+              style={style.img}
+              src="../img/questions/denali.jpg"
+              alt="test"
+            />
           </a>
         </div>
       </div>
