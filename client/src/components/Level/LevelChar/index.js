@@ -2,37 +2,27 @@ import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import {loadCharacter} from "../../utils/API";
 import AuthContext from "../../../context/auth/authContext";
-import {useCharacterContext} from "../../../context/character/CharacterContext";
-import CharacterCreator from "../../Character/CharacterCreator";
+import CharacterContext from "../../../context/character/CharacterContext";
+import CharacterCreate from "../../Character/CharacterCreate";
+import License from "../../Character/components/License";
 export default function ViewCharacter(props) { 
-  const [state, dispatch] = useCharacterContext();
   const authContext = useContext(AuthContext);
-  
-    
-  //
+  const characterContext = useContext(CharacterContext);
 
-  // let userId=authContext.user._id;
-  // console.log(userId);
 let userId;
 
   useEffect(()=>{
     authContext.loadUser();
     
     if(authContext.user){
+
       userId=authContext.user._id;      
-      getCharacter(userId);
+      characterContext.loadChar(userId);
     }      
+    else 
+     authContext.loadUser();
   },[authContext.loading]);
 
-  const getCharacter=userId=>{
-    dispatch({type:"LOADING"});
-    loadCharacter(userId)
-    .then(res=>{
-      if(res.data)      
-        dispatch({type:"UPDATE_CHARACTER", char:res.data})
-      else dispatch({type:"ERROR_NO_CHARACTER"})
-    })
-  };
 
   const [displayOptions, setDisplayOptions]=useState({
     position: "fixed",
@@ -56,38 +46,13 @@ let userId;
 
 
 
-  if(state.missing) return (<CharacterCreator />)
-  else if(!state.loaded) return (<>Loading</>);
+  
+  if(characterContext.missing) return (<CharacterCreate />)
   else return (
-    <div style={displayOptions} className="container" id="license">
-      <div className="smudge"></div>
-        <div className="row">
-          <div className="col-5" id="photo">
-            <img src={state.data.characterImage} />
-          </div>
-          <div className="col-7">
-          <ul className="stats">
-          <li>Name: {state.data.name}</li>
-            <li>Age: {state.data.age}</li>
-            <li>Born:{state.data.birthYear}</li>
-            <li>Ship Class: {state.data.shipIdArray[0]} </li>               
-            </ul>
-          </div>
-        </div>
-
-    </div>
-
+    <License />
 
   );
 }
-
-
-
-
-
-
-
-
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Location(props){
 

@@ -1,68 +1,38 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import Options from "../Options";
-import { loadCharacter } from "../utils/API";
 import BuyShip from "../Ship/BuyShip";
 import AuthContext from "../../context/auth/authContext";
-import { useCharacterContext } from "../../context/character/CharacterContext";
-import CharacterCreator from "./CharacterCreate";
-export default function ViewCharacter(props) {
-  const [state, dispatch] = useCharacterContext();
+import CharacterContext from "../../context/character/CharacterContext";
+import CharacterCreate from "./CharacterCreate"
+import License from "./components/License"
+
+export default function ViewCharacter(props) { 
   const authContext = useContext(AuthContext);
+  const characterContext = useContext(CharacterContext);
+ 
+let userId;
 
-  //hey
+  useEffect(()=>{
+    
+    if(authContext.user){
+      userId=authContext.user._id;      
+      characterContext.loadChar(userId);
+    }      
+    else 
+     authContext.loadUser();
 
-  // let userId=authContext.user._id;
-  // console.log(userId);
-  let userId;
+  },[authContext.loading]);
 
-  useEffect(() => {
-    authContext.loadUser();
 
-    if (authContext.user) {
-      userId = authContext.user._id;
-      getCharacter(userId);
-    }
-  }, [authContext.loading]);
-
-  const getCharacter = (userId) => {
-    dispatch({ type: "LOADING" });
-    loadCharacter(userId).then((res) => {
-      if (res.data) dispatch({ type: "UPDATE_CHARACTER", char: res.data });
-      else dispatch({ type: "ERROR_NO_CHARACTER" });
-    });
-  };
-
-  let display = { display: "TopRight" };
-
-  if (state.missing) return <CharacterCreator />;
-  else if (!state.loaded) return <>Loading</>;
-  else
-    return (
-      <>
-        <BuyShip />
-        <div className="container desk-box">
-          <div className="container" id="license">
-            <div className="smudge"></div>
-            <div className="row">
-              <div className="col-5" id="photo">
-                <img src={state.data.characterImage} />
-              </div>
-              <div className="col-7">
-                <ul className="stats">
-                  <li>Name: {state.data.name}</li>
-                  <li>Age: {state.data.age}</li>
-                  <li>Born:{state.data.birthYear}</li>
-                  <li>Ship Class: {state.data.shipIdArray[0]} </li>
-                </ul>
-              </div>
-            </div>
-            <div className="row license-text">LICENSE</div>
-            <div className="row update-text">UPDATED {state.currentYear}</div>
-          </div>
-          <a href="/buyShip">Creator</a>
-          <Options displayed={display} />
-        </div>
-      </>
-    );
+  if(characterContext.missing) return (<CharacterCreate />)
+  else if(!characterContext.loaded) return (<>Loading</>);
+  else return (
+    <> 
+    <BuyShip />
+    <div className="container desk-box">
+      <License />
+</div>  
+</>
+  );
 }
