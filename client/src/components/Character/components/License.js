@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import CharacterContext from "../../../context/character/CharacterContext";
 import "../style.css";
@@ -6,12 +6,15 @@ import "../style.css";
 export default function License(props) { 
 
     const characterContext = useContext(CharacterContext);
+    let img="../../../img/characterPlaceHolder.jpg";
+    if(characterContext.data.characterImage) img=characterContext.data.characterImage;
+    
 return(
     <div className="container" id="license">
     <div className="smudge"></div>
     <div className="row">
         <div className="col-5" id="photo">
-        <img src={characterContext.data.characterImage} />
+        <img alt="Character Portrait" src={img} />
         </div>
         <div className="col-7">
         <ul className="stats">
