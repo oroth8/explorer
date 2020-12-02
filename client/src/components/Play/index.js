@@ -1,12 +1,17 @@
-import License from "../Character/components/License"
-<<<<<<< HEAD
-import React from 'react';
-=======
-import CharacterContext from "../../context/character/CharacterContext"
+import License from "../Character/components/MenuLicense";
+import Ship from "../Character/components/Ship";
+import Level from "../Character/components/Level";
+import Quiz from "../Character/components/Quiz";
+import CharacterContext from "../../context/character/CharacterContext";
 import React, {useContext} from 'react';
 import "./style.css";
->>>>>>> main
 
+const style={
+  img: {
+    width: "80%",
+    height: "auto"
+  }
+}
 
 
 function Play(props) {  
@@ -15,29 +20,29 @@ function Play(props) {
   if(characterContext.missing) charText="Create Character"
 
         return (
-          <div className="row">
-            <div className="col-md-6 col-sm-12">
-              <div className="row">
-        <a href="/viewcharacter"><h4>{charText}</h4>
-                  <License />
-                </a>
-              </div>
-            </div>
-
-
-            <div className="col-md-6 col-sm-12">
-              <div className="card" >
-                <img className="card-img-top" src="/img/levelimgs/lvl1.jpg" alt="Character"/>
-                <div className="card-body">
-                    <a href="/level"><h5 className="card-text">Explore and Learn</h5></a>
-                </div>
-              </div>
-            </div>      
-             
-     
-
+          <div>
+          <div className="row mb-4">
+          <div className="col-md-6 col-sm-12">
+              <a href="/viewCharacter"><License/></a>
           </div>
 
+
+          <div className="col-md-6 col-sm-12">
+            <a href="/level"><Level /></a>
+          </div>
+          </div>
+
+          <div className="row mb-4">
+          <div className="col-md-6 col-sm-12">
+            <a href=""><Ship /></a>
+          </div>
+
+          <div className="col-md-6 col-sm-12">
+            <a href=""><Quiz /></a>
+          </div>
+
+          </div>
+          </div>
 
 
 
