@@ -15,7 +15,9 @@ export default function ViewCharacter(props) {
   let userId;
 
   function submitCharacter(e) {
+      e.preventDefault();
       characterContext.saveChar(); 
+      document.location.href="/viewcharacter";
   }
 
 
