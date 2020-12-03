@@ -16,6 +16,7 @@ const questionSeed = [
       { answerText: "Los Angeles", isCorrect: false },
       { answerText: "Mexico City", isCorrect: true },
     ],
+    questionImg: "../img/questions/mexico_city.jpg"
   },
   {
     level: "North America",
