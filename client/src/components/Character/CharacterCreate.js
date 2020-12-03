@@ -3,7 +3,7 @@ import "./style.css";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 import GameNav from "../layout/GameNav";
-const CharacterCreate = () => {
+const CharacterCreate = (props) => {
   const authContext = useContext(AuthContext);
   const characterContext = useContext(CharacterContext);
   let userId;
@@ -32,13 +32,7 @@ const CharacterCreate = () => {
   function getNewPortrait() {
     characterContext.getPortrait();
   }
-  function submitCharacter(e) {
-    // e.preventDefault();
-    if (e.target.name.value && e.target.age.value) {
-      characterContext.saveChar();
-    } else alert("Need a name!");
-  }
-  console.log(characterContext.missing);
+
 
   if (!characterContext.loaded && !characterContext.missing)
     return <>LOADING</>;
@@ -47,7 +41,7 @@ const CharacterCreate = () => {
       <div className="container mt-5">
         <div className="row creation-box">
           <div className="col col-lg-4">
-            <form onSubmit={submitCharacter}>
+            <form onSubmit={props.subFunc}>
               <p>
                 <label htmlFor="name">Character Name:</label>
               </p>
