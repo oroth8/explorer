@@ -83,6 +83,34 @@ function App() {
   const anQuestions = quizQuestions.filter(
     (questions) => questions.level === "Antarctica"
   );
+  const sunQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Sun"
+  );
+  const merQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Mercury"
+  );
+  const venQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Venus"
+  );
+  const earthQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Earth"
+  );
+  const marsQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Mars"
+  );
+  const jupQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Jupiter"
+  );
+  const satQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Saturn"
+  );
+  const urQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Uranus"
+  );
+  const nepQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Neptune"
+  );
+  
 
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
@@ -131,6 +159,15 @@ function App() {
                 </Route>
                 <Route exact path="/anquiz">
                   <Quiz questions={anQuestions} />
+                </Route>
+                <Route exact path="/sunquiz">
+                  <Quiz questions={sunQuestions} />
+                </Route>
+                <Route exact path="/merquiz">
+                  <Quiz questions={merQuestions} />
+                </Route>
+                <Route exact path="/venquiz">
+                  <Quiz questions={venQuestions} />
                 </Route>
               </Switch>
             </Router>
