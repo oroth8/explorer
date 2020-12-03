@@ -66,7 +66,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/asquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png" className="level1" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png" className="level1" alt="Asia"/>
                 <div className="card-body">
                   <span className="card-text">Asia</span>
                 </div>
@@ -76,7 +76,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/afquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/330px-Africa_%28orthographic_projection%29.svg.png" className="level1" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/330px-Africa_%28orthographic_projection%29.svg.png" className="level1" alt="Africa" />
                 <div className="card-body">
                   <span className="card-text">Africa</span>
                 </div>
@@ -86,7 +86,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/auquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia-New_Guinea_%28orthographic_projection%29.svg/330px-Australia-New_Guinea_%28orthographic_projection%29.svg.png" className="level1"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia-New_Guinea_%28orthographic_projection%29.svg/330px-Australia-New_Guinea_%28orthographic_projection%29.svg.png" className="level1" alt="Australia"/>
                 <div className="card-body">
                   <span className="card-text">Australia</span>
                 </div>
@@ -96,7 +96,8 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/anquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/330px-Antarctica_%28orthographic_projection%29.svg.png" className="level1" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/330px-Antarctica_%28orthographic_projection%29.svg.png" className="level1"
+                alt="Antarctica" />
                 <div className="card-body">
                   <span className="card-text">Antarctica</span>
                 </div>
@@ -117,6 +118,7 @@ function Earn(props) {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819-02.jpg/512px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819-02.jpg"
                   className="p-0 m-0"
+                  alt="Sun"
                 />
                 <div className="card-body">
                   <span className="card-text">Sun</span>
@@ -130,6 +132,7 @@ function Earn(props) {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/330px-Mercury_in_color_-_Prockter07-edit1.jpg"
                   className="p-0 m-0"
+                  alt="Mercury"
                 />
                 <div className="card-body">
                   <span className="card-text">Mercury</span>
@@ -143,6 +146,7 @@ function Earn(props) {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/PIA23791-Venus-NewlyProcessedView-20200608.jpg/330px-PIA23791-Venus-NewlyProcessedView-20200608.jpg"
                   className="p-0 m-0"
+                  alt="Venus"
                 />
                 <div className="card-body">
                   <span className="card-text">Venus</span>
@@ -158,6 +162,7 @@ function Earn(props) {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/330px-The_Earth_seen_from_Apollo_17.jpg"
                     className="p-0 m-0"
+                    alt="Earth"
                   />
                   <div className="card-body">
                     <span className="card-text">Earth</span>
@@ -172,6 +177,7 @@ function Earn(props) {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/330px-OSIRIS_Mars_true_color.jpg"
                       className="p-0 m-0"
+                      alt="Mars"
                     />
                     <div className="card-body">
                       <span className="card-text">Mars</span>
@@ -185,6 +191,7 @@ function Earn(props) {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/330px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
                       className="p-0 m-0"
+                      alt="Jupiter"
                     />
                     <div className="card-body">
                       <span className="card-text">Jupiter</span>
@@ -200,6 +207,7 @@ function Earn(props) {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/4/45/Saturn_closeup.jpg"
                       className="p-0 m-0"
+                      alt="Saturn"
                     />
                     <div className="card-body">
                       <span className="card-text">Saturn</span>
@@ -213,6 +221,7 @@ function Earn(props) {
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Uranus2.jpg/330px-Uranus2.jpg"
                       className="p-0 m-0"
+                      alt="Uranus"
                     />
                     <div className="card-body">
                       <span className="card-text">Uranus</span>
@@ -227,6 +236,7 @@ function Earn(props) {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg/330px-Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg"
                     className="p-0 m-0"
+                    alt="Neptune"
                   />
                   <div className="card-body">
                     <span className="card-text">Neptune</span>
