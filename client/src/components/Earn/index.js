@@ -21,13 +21,14 @@ function Earn(props) {
           </div>
         </div>
         <Wave />
-        <div className="row row-cols-3">
+        <div className="row row-cols-3 justify-content-center">
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/naquiz">
               <div className="card">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/330px-Location_North_America.svg.png"
                   alt="North America"
+                  className="level1"
                 />
                 <div className="card-body">
                   <span className="card-text">North America</span>
@@ -42,6 +43,7 @@ function Earn(props) {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/330px-South_America_%28orthographic_projection%29.svg.png"
                   alt="South America"
+                  className="level1"
                 />
                 <div className="card-body">
                   <span className="card-text">South America</span>
@@ -53,7 +55,8 @@ function Earn(props) {
             <Link to="/euquiz">
               <div className="card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/330px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" 
-                alt="Europe"/>
+                alt="Europe"
+                className="level1"/>
                 <div className="card-body">
                   <span className="card-text">Europe</span>
                 </div>
@@ -63,7 +66,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/asquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png" className="level1" />
                 <div className="card-body">
                   <span className="card-text">Asia</span>
                 </div>
@@ -73,7 +76,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/afquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/330px-Africa_%28orthographic_projection%29.svg.png" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/330px-Africa_%28orthographic_projection%29.svg.png" className="level1" />
                 <div className="card-body">
                   <span className="card-text">Africa</span>
                 </div>
@@ -83,7 +86,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/auquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia-New_Guinea_%28orthographic_projection%29.svg/330px-Australia-New_Guinea_%28orthographic_projection%29.svg.png" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia-New_Guinea_%28orthographic_projection%29.svg/330px-Australia-New_Guinea_%28orthographic_projection%29.svg.png" className="level1"/>
                 <div className="card-body">
                   <span className="card-text">Australia</span>
                 </div>
@@ -93,7 +96,7 @@ function Earn(props) {
           <div className="col-12 col-sm-6 col-md-6 col-lg-4">
             <Link to="/anquiz">
               <div className="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/330px-Antarctica_%28orthographic_projection%29.svg.png" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/330px-Antarctica_%28orthographic_projection%29.svg.png" className="level1" />
                 <div className="card-body">
                   <span className="card-text">Antarctica</span>
                 </div>
