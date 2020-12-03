@@ -34,6 +34,12 @@ import GlobalStyle from "./components/GlobalStyle";
 import { getQuizQuestions } from "./components/utils/API";
 import Earn from "./components/Earn";
 
+import 'whatwg-fetch';
+import openSocket from 'socket.io-client';
+const socket = openSocket('http://localhost:3001');
+
+//this.sendSocketIO = this.sendSocketIO.bind(this);
+
 // Put login token in local storage
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -42,6 +48,30 @@ if (localStorage.token) {
 // Our main background output
 
 function App() {
+
+  socket.on('connect', () => {
+   console.log("CONNECTED");
+   console.log(socket.rooms);
+   
+  });
+  socket.on('hello', (counter) => {
+    console.log("counter"+counter);
+  });
+  socket.on('example_message',() => {
+    console.log("message received!");
+  });
+  socket.on('serverMsg',(data) => {
+    console.log("message received from server:"+data);
+  });
+  // socket.onAny((eventName, ...args) => {
+  //   console.log(eventName);
+    
+  // });
+  function sendSocketIO() {
+    console.log("message sent");
+    
+    socket.emit('socketMsg', 'demo');
+  }
   const [quizQuestions, setQuizQuestions] = useState([
     {
       level: "",
@@ -91,6 +121,9 @@ function App() {
   // Send data to EmployeeList to be rendered, then renders final results.
   return (
     <div className="App">
+      <div>
+  <button onClick={sendSocketIO}>Send Socket.io</button>
+</div>
       <GlobalStyle />
       <AuthState>
         <AlertState>
