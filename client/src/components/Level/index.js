@@ -31,8 +31,8 @@ function Level() {
     top: "20%",
     left: "40%",
     transition: "all 1s",
-    width: "40px",
-    height: "20px",
+    width: "60px",
+    height: "30px",
   });
 
   let getLocation = (e) => {
@@ -76,6 +76,11 @@ function Level() {
     }
   }
 
+  const [shipSrc, setShipSrc]=useState({
+    source: "/img/ship/plane.svg"
+  })
+
+
   const [levelNumber, setLevelNumber] = useState({
     number: 1
   });
@@ -83,7 +88,7 @@ function Level() {
   let levelChange= direction => {
     let level=Number(levelNumber.number);
     if(direction==="add"){
-      if(level < characterContext.data.maxLevel){
+      if(level < characterContext.data.maxLevel && level < 2){
       level=(level+1);
       }
     }else{
@@ -92,7 +97,13 @@ function Level() {
       }
     }
     setLevelNumber({...levelNumber, "number": level, name: `Level${level}`});
-  }
+    if (level===1){
+      setShipSrc({...shipSrc, source: "/img/ship/plane.svg"});
+    }else{
+      setShipSrc({...shipSrc, source: "/img/ship/rocket.svg"});
+      }
+    }
+  
 
 
 
@@ -108,7 +119,7 @@ function Level() {
                 <LevelChar displayed={displayedModal}/>
                   {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
                   {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
-                <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
+                <img style={avatarState} src={shipSrc.source} alt="Character"/> 
             </div>);
   };
 
