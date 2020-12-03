@@ -83,7 +83,7 @@
 @media (min-width: 992px) {
   .quizImg {
     width: 650px;
-    height: 350px;
+    height: 425px;
     margin: auto;
     margin-top: 5px;
     object-fit: cover, scale-down;
@@ -93,8 +93,8 @@
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .quizImg {
-    width: 850px;
-    height: 550px;
+    width: 950px;
+    height: 575px;
     margin: auto;
     margin-top: 5px;
     object-fit: cover, scale-down;

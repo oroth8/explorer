@@ -49,49 +49,49 @@ function Earn(props) {
       <p>Level 2</p>
       <div className="row">
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/sunquiz">
             <p>Sun</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/merquiz">
             <p>Mercury</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/venquiz">
             <p>Venus</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/earthquiz">
             <p>Earth</p>
           </Link>
         </div>
       </div>
       <div className="row">
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/marsquiz">
             <p>Mars</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/jupquiz">
             <p>Jupiter</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/satquiz">
             <p>Saturn</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/urquiz">
             <p>Uranus</p>
           </Link>
         </div>
         <div className="col-3">
-          <Link to="!#">
+          <Link to="/nepquiz">
             <p>Neptune</p>
           </Link>
         </div>
