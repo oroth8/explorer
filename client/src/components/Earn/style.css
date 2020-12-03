@@ -1,0 +1,54 @@
+.quizzes .card {
+    height: 378px;
+    width: 332px;
+    background-color: #212121;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+
+.quizzes img {
+    height: 330px;
+    width: 330px;
+    border-radius: 3px;
+    border-bottom: 1px solid #23d997;
+    padding: 10px;
+    
+}
+
+
+
+.quizzes {
+    margin-left: 15px;
+}
+
+.jumbotron {
+    background: #1b1b1b;
+    background-image: url("../img/space.jpg");
+    border-bottom: 3px solid #23d997;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .quizzes {
+        margin-left: 5px;
+    }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .quizzes {
+        margin-left: 25px;
+        padding-right: 75px
+    }
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .quizzes {
+        margin-left: 55px;
+    }
+ }
