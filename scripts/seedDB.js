@@ -392,6 +392,469 @@ const questionSeed = [
     ],
     questionImg: "../img/questions/glaciers.jpg"
   },
+  {
+    level: "Sun",
+    questionText: "What element primarily makes up the Sun?",
+    answerChoices: [
+      { answerText: "Nitrogen", isCorrect: false },
+      { answerText: "Helium", isCorrect: false },
+      { answerText: "Hydrogen", isCorrect: true },
+      { answerText: "Oxygen", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun1.jpg"
+  },
+  {
+    level: "Sun",
+    questionText: "What is the surface temperature of the Sun?",
+    answerChoices: [
+      { answerText: "100 degrees F", isCorrect: false },
+      { answerText: "1,000 degrees F", isCorrect: false },
+      { answerText: "10,000 degrees F", isCorrect: true },
+      { answerText: "1,000,000 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun2.jpg"
+  },
+  {
+    level: "Sun",
+    questionText: "How old is the Sun?",
+    answerChoices: [
+      { answerText: "460 years", isCorrect: false },
+      { answerText: "46,000 years", isCorrect: false },
+      { answerText: "4,600,000 years", isCorrect: false },
+      { answerText: "4,600,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/sun3.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How far is the Sun from the Earth?",
+    answerChoices: [
+      { answerText: "9 million miles", isCorrect: false },
+      { answerText: "90 million miles", isCorrect: true },
+      { answerText: "9 billion miles", isCorrect: false },
+      { answerText: "90 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun4.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How many Earth masses are equivalent to one solar mass?",
+    answerChoices: [
+      { answerText: "30", isCorrect: false },
+      { answerText: "3,000", isCorrect: false },
+      { answerText: "300,000", isCorrect: true },
+      { answerText: "3,000,000", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "Seventy percent of the Earth is covered with:",
+    answerChoices: [
+      { answerText: "Forest", isCorrect: false },
+      { answerText: "Water", isCorrect: true },
+      { answerText: "Desert", isCorrect: false },
+      { answerText: "Ice", isCorrect: false },
+    ],
+    questionImg: "../img/questions/earth.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How many Earth days does it take Earth to revolve around the sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "225 days", isCorrect: false },
+      { answerText: "365 days", isCorrect: true },
+      { answerText: "500 days", isCorrect: false },
+    ],
+    questionImg: "../img/questions/earth2.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How many Earth days does it take Mercury to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "12 Days", isCorrect: false },
+      { answerText: "64 Days", isCorrect: false },
+      { answerText: "72 Days", isCorrect: false },
+      { answerText: "88 Days", isCorrect: true },
+    ],
+    questionImg: "../img/questions/clock.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "What is the daytime surface temperature of the Mercury?",
+    answerChoices: [
+      { answerText: "80 degrees F", isCorrect: false },
+      { answerText: "800 degrees F", isCorrect: true },
+      { answerText: "8,000 degrees F", isCorrect: false },
+      { answerText: "800,000 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mercury.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How old is Mercury?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/galaxy.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How far is the Mercury from the Sun?",
+    answerChoices: [
+      { answerText: "4 thousand miles", isCorrect: false },
+      { answerText: "40 thousand miles", isCorrect: false },
+      { answerText: "4 million miles", isCorrect: false },
+      { answerText: "40 million miles", isCorrect: true },
+    ],
+    questionImg: "../img/questions/solar_sys2.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How many Mercury masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".05", isCorrect: false },
+      { answerText: ".5", isCorrect: false },
+      { answerText: "2", isCorrect: false },
+      { answerText: "20", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mercury2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How many earth days does it take Venus to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "225 days", isCorrect: true },
+      { answerText: "350 days", isCorrect: false },
+      { answerText: "500 days", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "What is the daytime surface temperature of Venus?",
+    answerChoices: [
+      { answerText: "8.6 degrees F", isCorrect: false },
+      { answerText: "86 degrees F", isCorrect: false },
+      { answerText: "860 degrees F", isCorrect: true },
+      { answerText: "8,600 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How old is Venus?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "4,500 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/venus3.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How far is Venus from the Sun?",
+    answerChoices: [
+      { answerText: "6.7 million miles", isCorrect: false },
+      { answerText: "67 million miles", isCorrect: true },
+      { answerText: "6.7 billion miles", isCorrect: false },
+      { answerText: "67 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/galaxy2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How many Venus masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".1", isCorrect: false },
+      { answerText: ".5", isCorrect: false },
+      { answerText: ".8", isCorrect: true },
+      { answerText: "1.5", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus4.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How many Earth days does it take Mars to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "350 days", isCorrect: false },
+      { answerText: "450 days", isCorrect: false },
+      { answerText: "690 days", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mars2.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How old is Mars?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mars3.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How far is Mars from the Sun?",
+    answerChoices: [
+      { answerText: "13.7 million miles", isCorrect: false },
+      { answerText: "137 million miles", isCorrect: true },
+      { answerText: "13.7 billion miles", isCorrect: false },
+      { answerText: "137 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars4.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How many Mars masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".1", isCorrect: true },
+      { answerText: ".5", isCorrect: false },
+      { answerText: ".8", isCorrect: false },
+      { answerText: "1.5", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars5.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "What is the daytime surface temperature of Mars?",
+    answerChoices: [
+      { answerText: "-80 degrees F", isCorrect: true },
+      { answerText: "-8 degrees F", isCorrect: false },
+      { answerText: "8 degrees F", isCorrect: false },
+      { answerText: "80 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How many Earth years does it take Jupiter to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "1", isCorrect: false },
+      { answerText: "6", isCorrect: false },
+      { answerText: "12", isCorrect: true },
+      { answerText: "29", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter2.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "What is the daytime surface temperature of Jupiter?",
+    answerChoices: [
+      { answerText: "-2,340 degrees F", isCorrect: false },
+      { answerText: "-1170 degrees F", isCorrect: false },
+      { answerText: "-230 degrees F", isCorrect: true },
+      { answerText: "-117 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter4.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How old is Jupiter?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/jupiter.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How far is Jupiter from the Sun?",
+    answerChoices: [
+      { answerText: "47.5 million miles", isCorrect: false },
+      { answerText: "475 million miles", isCorrect: true },
+      { answerText: "47.5 billion miles", isCorrect: false },
+      { answerText: "475 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How many Earth masses are equivalent to one Jupiter mass?",
+    answerChoices: [
+      { answerText: "3", isCorrect: false },
+      { answerText: "30", isCorrect: false },
+      { answerText: "300", isCorrect: true },
+      { answerText: "3,000", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter3.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How many Earth years does it take Saturn to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "1 years", isCorrect: false },
+      { answerText: "6 years", isCorrect: false },
+      { answerText: "12 years", isCorrect: false },
+      { answerText: "29 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/saturn3.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "What is the daytime surface temperature of Saturn?",
+    answerChoices: [
+      { answerText: "-2,900 degrees F", isCorrect: false },
+      { answerText: "-290 degrees F", isCorrect: true },
+      { answerText: "-29 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/saturn4.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How old is Saturn?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/saturn2.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How far is Saturn from the Sun?",
+    answerChoices: [
+      { answerText: "1 million miles", isCorrect: false },
+      { answerText: "100 million miles", isCorrect: false },
+      { answerText: "1 billion miles", isCorrect: true },
+      { answerText: "100 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys2.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How many Earth masses are equivalent to one Saturn mass?",
+    answerChoices: [
+      { answerText: "9", isCorrect: false },
+      { answerText: "95", isCorrect: true },
+      { answerText: "950", isCorrect: false },
+      { answerText: "9,500", isCorrect: false },
+    ],
+    questionImg: "../img/questions/saturn.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How many Earth years does it take Uranus to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "8", isCorrect: false },
+      { answerText: "84", isCorrect: true },
+      { answerText: "126", isCorrect: false },
+      { answerText: "200", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus3.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "What is the daytime surface temperature of Uranus?",
+    answerChoices: [
+      { answerText: "-3,500 degrees F", isCorrect: false },
+      { answerText: "-350 degrees F", isCorrect: true },
+      { answerText: "-35 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus2.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How old is Uranus?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/space.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How far is Uranus from the Sun?",
+    answerChoices: [
+      { answerText: "1.8 million miles", isCorrect: false },
+      { answerText: "180 million miles", isCorrect: false },
+      { answerText: "1.8 billion miles", isCorrect: true },
+      { answerText: "180 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How many Earth masses are equivalent to one Uranus mass?",
+    answerChoices: [
+      { answerText: "15", isCorrect: true },
+      { answerText: "75", isCorrect: false },
+      { answerText: "150", isCorrect: false },
+      { answerText: "300", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus.webp"
+  },
+  {
+    level: "Neptune",
+    questionText: "How many Earth years does it take Neptune to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "8", isCorrect: false },
+      { answerText: "84", isCorrect: false },
+      { answerText: "165", isCorrect: true },
+      { answerText: "250", isCorrect: false },
+    ],
+    questionImg: "../img/questions/space2.jpg"
+  },
+  {
+    level: "Neptune",
+    questionText: "What is the daytime surface temperature of Neptune?",
+    answerChoices: [
+      { answerText: "-300 degrees F", isCorrect: false },
+      { answerText: "-370 degrees F", isCorrect: true },
+      { answerText: "-37 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/neptune.webp"
+  },
+  {
+    level: "Neptune",
+    questionText: "How old is Neptune?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/neptune2.jpeg"
+  },
+  {
+    level: "Neptune",
+    questionText: "How far is Neptune from the Sun?",
+    answerChoices: [
+      { answerText: "2.7 million miles", isCorrect: false },
+      { answerText: "270 million miles", isCorrect: false },
+      { answerText: "2.7 billion miles", isCorrect: true },
+      { answerText: "270 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys2.jpg"
+  },
+  {
+    level: "Neptune",
+    questionText: "How many Earth masses are equivalent to one Neptune mass?",
+    answerChoices: [
+      { answerText: "17", isCorrect: true },
+      { answerText: "72", isCorrect: false },
+      { answerText: "150", isCorrect: false },
+      { answerText: "300", isCorrect: false },
+    ],
+    questionImg: "../img/questions/neptune3.png"
+  },
+  
 ];
 
 db.Question.remove({})
