@@ -14,6 +14,7 @@ const CharacterCreate = () => {
         characterContext.getPortrait();
         characterContext.setCredits(100);
         characterContext.setCurrentYear(2021);
+        characterContext.setMaxLevel(0);
       }
     }
     else 

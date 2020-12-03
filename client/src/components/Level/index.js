@@ -5,7 +5,7 @@ import Level2 from "./Level2";
 import Options from "../Options";
 import AuthContext from "../../context/auth/authContext";
 import LevelChar from "./LevelChar";
-
+import CharacterContext from "../../context/character/CharacterContext";
 const style={
   white: {
     color: "white"
@@ -16,6 +16,7 @@ const style={
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Level() {
   const authContext = useContext(AuthContext);
+  const characterContext = useContext(CharacterContext);
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -30,8 +31,8 @@ function Level() {
     top: "20%",
     left: "40%",
     transition: "all 1s",
-    width: "40px",
-    height: "20px",
+    width: "60px",
+    height: "30px",
   });
 
   let getLocation = (e) => {
@@ -75,6 +76,11 @@ function Level() {
     }
   }
 
+  const [shipSrc, setShipSrc]=useState({
+    source: "/img/ship/plane.svg"
+  })
+
+
   const [levelNumber, setLevelNumber] = useState({
     number: 1
   });
@@ -82,7 +88,7 @@ function Level() {
   let levelChange= direction => {
     let level=Number(levelNumber.number);
     if(direction==="add"){
-      if(level < 2){
+      if(level < characterContext.data.maxLevel && level < 2){
       level=(level+1);
       }
     }else{
@@ -91,7 +97,13 @@ function Level() {
       }
     }
     setLevelNumber({...levelNumber, "number": level, name: `Level${level}`});
-  }
+    if (level===1){
+      setShipSrc({...shipSrc, source: "/img/ship/plane.svg"});
+    }else{
+      setShipSrc({...shipSrc, source: "/img/ship/rocket.svg"});
+      }
+    }
+  
 
 
 
@@ -107,7 +119,7 @@ function Level() {
                 <LevelChar displayed={displayedModal}/>
                   {levelNumber.number===1 && <Level1 displayed={displayedModal} /> }
                   {levelNumber.number===2 && <Level2 displayed={displayedModal} /> }
-                <img style={avatarState} src="./img/avatar.png" alt="Character"/> 
+                <img style={avatarState} src={shipSrc.source} alt="Character"/> 
             </div>);
   };
 

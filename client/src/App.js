@@ -13,6 +13,7 @@ import CharacterState from "./context/character/CharacterState";
 import Landing from "./pages/Landing";
 import Play from "./components/Play";
 import BuyShip from "./components/Ship/BuyShip";
+import Instructions from "./components/Instructions";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
@@ -132,6 +133,7 @@ function App() {
               <Alert />
               <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route exact path="/instructions" component={Instructions} />
                 <Route exact path="/play">
                   <Play questions={quizQuestions} />
                 </Route>
