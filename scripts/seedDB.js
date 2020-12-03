@@ -82,7 +82,7 @@ const questionSeed = [
       { answerText: "Chile", isCorrect: true },
       { answerText: "Bolivia", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.png"
+    questionImg: "../img/questions/map_SA.jpg"
   },
   {
     level: "South America",
@@ -93,7 +93,7 @@ const questionSeed = [
       { answerText: "Argentina", isCorrect: false },
       { answerText: "Venezuela", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.png"
+    questionImg: "../img/questions/map_SA.jpg"
   },
   {
     level: "South America",
