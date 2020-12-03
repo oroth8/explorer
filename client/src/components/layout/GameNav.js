@@ -42,6 +42,9 @@ const GameNavStyle = styled.div`
   margin-left: 1rem;
   position: fixed;
   top: 2rem;
+  ul {
+    list-style: none;
+  }
   .list-group-item {
     background-color: transparent;
   }
