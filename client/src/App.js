@@ -171,6 +171,24 @@ function App() {
                 <Route exact path="/venquiz">
                   <Quiz questions={venQuestions} />
                 </Route>
+                <Route exact path="/marsquiz">
+                  <Quiz questions={marsQuestions} />
+                </Route>
+                <Route exact path="/jupquiz">
+                  <Quiz questions={jupQuestions} />
+                </Route>
+                <Route exact path="/satquiz">
+                  <Quiz questions={satQuestions} />
+                </Route>
+                <Route exact path="/urquiz">
+                  <Quiz questions={urQuestions} />
+                </Route>
+                <Route exact path="/nepquiz">
+                  <Quiz questions={nepQuestions} />
+                </Route>
+                <Route exact path="/earthquiz">
+                  <Quiz questions={earthQuestions} />
+                </Route>
               </Switch>
             </Router>
           </CharacterState>
