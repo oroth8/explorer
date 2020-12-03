@@ -5,11 +5,8 @@ const express = require("express");
 const routes = require("./routes");
 const path = require("path");
 const connectDB = require("./config/db");
-// const socketIo = require("socket.io")``
-// const cors = require("cors");
 // Express instance
 const app = express();
-// app.use(cors);
 // connect to db
 connectDB();
 
@@ -19,7 +16,6 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Socket.io
 
 
 
@@ -44,13 +40,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
-// const http = require('http').Server(app);
-// const io = require('socket.io')(http);
-
-// const server = require('http').createServer(app);
-// const io = require('socket.io',server,  );
-
-
 // Start the server
 const expressServer=app.listen(PORT, () => {
   if (process.env.NODE_ENV !== "production") {
@@ -66,36 +55,17 @@ const io=require("socket.io")(expressServer,
 );
 
 io.on('connection', socket => {
-  let counter = 0;
-  // setInterval(() => {
-  //   socket.emit('hello', ++counter);
-  // }, 1000);
 
-  socket.on("socketMsg", msg=>{
-    console.log("Server received: "+msg);
-    socket.broadcast.emit("serverMsg", "Just received "+msg);    
+  // socket.join('chatRoom');
+  socket.once("USER_CONNECTED", msg=>{
+    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");  
+    console.log(msg);
+    
+  })
+  socket.on("USER_MESSAGE", msg=>{
+    socket.broadcast.emit("USER_MESSAGE", msg);  
+    console.log(msg);
+    
   })
 
-  
-  // socket.onAny((eventName, ...args) => {
-  //   socket.emit(eventName, ...args);
-    
-  // });
-
-    });
-
-// io.on('connection', function(socket){
-//   console.log('a user connected');
-//   socket.on('disconnect', function(){
-//     console.log('User Disconnected');
-//   });
-//   socket.on('example_message', function(msg){
-//     console.log('message: ' + msg);
-//   });
-// });
-
-
-
-
-// server.listen(3000);
-//https://medium.com/@Keithweaver_/using-socket-io-with-a-mern-stack-2a7049f94b85
+});

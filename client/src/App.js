@@ -14,7 +14,7 @@ import Landing from "./pages/Landing";
 import Play from "./components/Play";
 import BuyShip from "./components/Ship/BuyShip";
 import Instructions from "./components/Instructions";
-
+import Chat from "./components/Chat"
 // Quiz Components
 import Quiz from "./components/Quiz";
 // import { CharProvider } from "./context/character/CharacterContext";
@@ -35,9 +35,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import { getQuizQuestions } from "./components/utils/API";
 import Earn from "./components/Earn";
 
-import 'whatwg-fetch';
-import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:3001');
+// import 'whatwg-fetch';
 
 //this.sendSocketIO = this.sendSocketIO.bind(this);
 
@@ -50,29 +48,7 @@ if (localStorage.token) {
 
 function App() {
 
-  socket.on('connect', () => {
-   console.log("CONNECTED");
-   console.log(socket.rooms);
-   
-  });
-  socket.on('hello', (counter) => {
-    console.log("counter"+counter);
-  });
-  socket.on('example_message',() => {
-    console.log("message received!");
-  });
-  socket.on('serverMsg',(data) => {
-    console.log("message received from server:"+data);
-  });
-  // socket.onAny((eventName, ...args) => {
-  //   console.log(eventName);
-    
-  // });
-  function sendSocketIO() {
-    console.log("message sent");
-    
-    socket.emit('socketMsg', 'demo');
-  }
+
   const [quizQuestions, setQuizQuestions] = useState([
     {
       level: "",
@@ -123,7 +99,6 @@ function App() {
   return (
     <div className="App">
       <div>
-  <button onClick={sendSocketIO}>Send Socket.io</button>
 </div>
       <GlobalStyle />
       <AuthState>
@@ -145,6 +120,7 @@ function App() {
                   component={CharacterCreate}
                 />
                 <Route exact path="/viewCharacter" component={ViewCharacter} />
+                <Route exact path="/chat" component={Chat} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/ship" component={BuyShip} />
                 <Route exact path="/earn">
