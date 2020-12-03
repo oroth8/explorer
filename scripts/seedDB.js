@@ -37,7 +37,7 @@ const questionSeed = [
       { answerText: "Atlantic Ocean", isCorrect: false },
       { answerText: "Gulf of Mexico", isCorrect: false },
       { answerText: "Pacific Ocean", isCorrect: true },
-      { AnswerText: "Indian Ocean", isCorrect: false },
+      { answerText: "Indian Ocean", isCorrect: false },
     ],
     questionImg: "../img/questions/NA.jpg",
   },
@@ -824,17 +824,6 @@ const questionSeed = [
   },
   {
     level: "Neptune",
-    questionText: "How old is Neptune?",
-    answerChoices: [
-      { answerText: "450 years", isCorrect: false },
-      { answerText: "45,000 years", isCorrect: false },
-      { answerText: "4,500,000 years", isCorrect: false },
-      { answerText: "4,500,000,000 years", isCorrect: true },
-    ],
-    questionImg: "../img/questions/neptune4.jpg"
-  },
-  {
-    level: "Neptune",
     questionText: "How far is Neptune from the Sun?",
     answerChoices: [
       { answerText: "2.7 million miles", isCorrect: false },
@@ -854,6 +843,17 @@ const questionSeed = [
       { answerText: "300 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/neptune3.png"
+  },
+  {
+    level: "Neptune",
+    questionText: "How old is Neptune?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/neptune4.jpg"
   },
   
 ];
