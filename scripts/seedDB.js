@@ -171,7 +171,7 @@ const questionSeed = [
       { answerText: "Eiffel Tower", isCorrect: false },
       { answerText: "Federation Tower", isCorrect: true },
     ],
-    questionImg: "../img/question/eiffel.jpg"
+    questionImg: "../img/questions/eiffel.jpg"
   },
   {
     level: "Asia",
@@ -441,10 +441,10 @@ const questionSeed = [
     level: "Earth",
     questionText: "How many Earth masses are equivalent to one solar mass?",
     answerChoices: [
-      { answerText: "30", isCorrect: false },
-      { answerText: "3,000", isCorrect: false },
-      { answerText: "300,000", isCorrect: true },
-      { answerText: "3,000,000", isCorrect: false },
+      { answerText: "30 masses", isCorrect: false },
+      { answerText: "3,000 masses", isCorrect: false },
+      { answerText: "300,000 masses", isCorrect: true },
+      { answerText: "3,000,000 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/solar_sys.jpg"
   },
@@ -512,16 +512,16 @@ const questionSeed = [
       { answerText: "4 million miles", isCorrect: false },
       { answerText: "40 million miles", isCorrect: true },
     ],
-    questionImg: "../img/questions/solar_sys2.jpg"
+    questionImg: "../img/questions/solar_sys2.png"
   },
   {
     level: "Mercury",
     questionText: "How many Mercury masses are equivalent to one Earth mass?",
     answerChoices: [
-      { answerText: ".05", isCorrect: false },
-      { answerText: ".5", isCorrect: false },
-      { answerText: "2", isCorrect: false },
-      { answerText: "20", isCorrect: true },
+      { answerText: ".05 masses", isCorrect: false },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: "2 masses", isCorrect: false },
+      { answerText: "20 masses", isCorrect: true },
     ],
     questionImg: "../img/questions/mercury2.jpg"
   },
@@ -573,10 +573,10 @@ const questionSeed = [
     level: "Venus",
     questionText: "How many Venus masses are equivalent to one Earth mass?",
     answerChoices: [
-      { answerText: ".1", isCorrect: false },
-      { answerText: ".5", isCorrect: false },
-      { answerText: ".8", isCorrect: true },
-      { answerText: "1.5", isCorrect: false },
+      { answerText: ".1 masses", isCorrect: false },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: ".8 masses", isCorrect: true },
+      { answerText: "1.5 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/venus4.jpg"
   },
@@ -617,10 +617,10 @@ const questionSeed = [
     level: "Mars",
     questionText: "How many Mars masses are equivalent to one Earth mass?",
     answerChoices: [
-      { answerText: ".1", isCorrect: true },
-      { answerText: ".5", isCorrect: false },
-      { answerText: ".8", isCorrect: false },
-      { answerText: "1.5", isCorrect: false },
+      { answerText: ".1 masses", isCorrect: true },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: ".8 masses", isCorrect: false },
+      { answerText: "1.5 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/mars5.jpg"
   },
@@ -639,10 +639,10 @@ const questionSeed = [
     level: "Jupiter",
     questionText: "How many Earth years does it take Jupiter to revolve around the Sun?",
     answerChoices: [
-      { answerText: "1", isCorrect: false },
-      { answerText: "6", isCorrect: false },
-      { answerText: "12", isCorrect: true },
-      { answerText: "29", isCorrect: false },
+      { answerText: "1 year", isCorrect: false },
+      { answerText: "6 years", isCorrect: false },
+      { answerText: "12 years", isCorrect: true },
+      { answerText: "29 years", isCorrect: false },
     ],
     questionImg: "../img/questions/jupiter2.jpg"
   },
@@ -666,7 +666,7 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/jupiter.jpg"
+    questionImg: "../img/questions/jupiter.png"
   },
   {
     level: "Jupiter",
@@ -683,10 +683,10 @@ const questionSeed = [
     level: "Jupiter",
     questionText: "How many Earth masses are equivalent to one Jupiter mass?",
     answerChoices: [
-      { answerText: "3", isCorrect: false },
-      { answerText: "30", isCorrect: false },
-      { answerText: "300", isCorrect: true },
-      { answerText: "3,000", isCorrect: false },
+      { answerText: "3 masses", isCorrect: false },
+      { answerText: "30 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: true },
+      { answerText: "3,000 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/jupiter3.jpg"
   },
@@ -732,16 +732,16 @@ const questionSeed = [
       { answerText: "1 billion miles", isCorrect: true },
       { answerText: "100 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys2.jpg"
+    questionImg: "../img/questions/solar_sys2.png"
   },
   {
     level: "Saturn",
     questionText: "How many Earth masses are equivalent to one Saturn mass?",
     answerChoices: [
-      { answerText: "9", isCorrect: false },
-      { answerText: "95", isCorrect: true },
-      { answerText: "950", isCorrect: false },
-      { answerText: "9,500", isCorrect: false },
+      { answerText: "9 masses", isCorrect: false },
+      { answerText: "95 masses", isCorrect: true },
+      { answerText: "950 masses", isCorrect: false },
+      { answerText: "9,500 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/saturn.jpg"
   },
@@ -749,10 +749,10 @@ const questionSeed = [
     level: "Uranus",
     questionText: "How many Earth years does it take Uranus to revolve around the Sun?",
     answerChoices: [
-      { answerText: "8", isCorrect: false },
-      { answerText: "84", isCorrect: true },
-      { answerText: "126", isCorrect: false },
-      { answerText: "200", isCorrect: false },
+      { answerText: "8 years", isCorrect: false },
+      { answerText: "84 years", isCorrect: true },
+      { answerText: "126 years", isCorrect: false },
+      { answerText: "200 years", isCorrect: false },
     ],
     questionImg: "../img/questions/uranus3.jpg"
   },
@@ -793,10 +793,10 @@ const questionSeed = [
     level: "Uranus",
     questionText: "How many Earth masses are equivalent to one Uranus mass?",
     answerChoices: [
-      { answerText: "15", isCorrect: true },
-      { answerText: "75", isCorrect: false },
-      { answerText: "150", isCorrect: false },
-      { answerText: "300", isCorrect: false },
+      { answerText: "15 masses", isCorrect: true },
+      { answerText: "75 masses", isCorrect: false },
+      { answerText: "150 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/uranus.webp"
   },
@@ -804,10 +804,10 @@ const questionSeed = [
     level: "Neptune",
     questionText: "How many Earth years does it take Neptune to revolve around the Sun?",
     answerChoices: [
-      { answerText: "8", isCorrect: false },
-      { answerText: "84", isCorrect: false },
-      { answerText: "165", isCorrect: true },
-      { answerText: "250", isCorrect: false },
+      { answerText: "8 years", isCorrect: false },
+      { answerText: "84 years", isCorrect: false },
+      { answerText: "165 years", isCorrect: true },
+      { answerText: "250 years", isCorrect: false },
     ],
     questionImg: "../img/questions/space2.jpg"
   },
@@ -831,7 +831,7 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/neptune2.jpeg"
+    questionImg: "../img/questions/neptune4.jpg"
   },
   {
     level: "Neptune",
@@ -842,16 +842,16 @@ const questionSeed = [
       { answerText: "2.7 billion miles", isCorrect: true },
       { answerText: "270 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys2.jpg"
+    questionImg: "../img/questions/solar_sys2.png"
   },
   {
     level: "Neptune",
     questionText: "How many Earth masses are equivalent to one Neptune mass?",
     answerChoices: [
-      { answerText: "17", isCorrect: true },
-      { answerText: "72", isCorrect: false },
-      { answerText: "150", isCorrect: false },
-      { answerText: "300", isCorrect: false },
+      { answerText: "17 masses", isCorrect: true },
+      { answerText: "72 masses", isCorrect: false },
+      { answerText: "150 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: false },
     ],
     questionImg: "../img/questions/neptune3.png"
   },
