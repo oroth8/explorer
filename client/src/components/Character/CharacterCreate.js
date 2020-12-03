@@ -34,59 +34,73 @@ const CharacterCreate = () => {
   }
   function submitCharacter(e) {
     // e.preventDefault();
-    if (e.target.name.value && e.target.age.value) {
+    // if (characterContext.name && CharacterContext.age) {
       characterContext.saveChar();
-    } else alert("Need a name!");
+    // } else alert("Need a name!");
   }
-  console.log(characterContext.missing);
 
-  if (!characterContext.loaded && !characterContext.missing)
-    return <>LOADING</>;
-  else
+
     return (
       <div className="container mt-5">
-        <div className="row creation-box">
-          <div className="col col-lg-4">
-            <form onSubmit={submitCharacter}>
-              <p>
-                <label htmlFor="name">Character Name:</label>
-              </p>
-              <input
+        <div className="row">
+          <div className="col-sm-2">
+          </div>
+          <div className="col-sm-10">
+            <h2 className="text-center">Begin your adventure! </h2>
+            
+            <form className="row mt-4 text-center" onSubmit={submitCharacter}>
+              <div className="col-md-6 col-sm-12 text-center">
+ 
+                <h3> What is your name? </h3>
+                <p>
+                <input
                 onChange={inputHandler}
                 type="text"
                 name="name"
                 id="name"
-                defaultValue={characterContext.data.name}
-              />
-              <p>
-                <label htmlFor="age">Age:</label>
-              </p>
-              <input
+                placeholder="Name"
+              /></p>
+              </div>
+              <div className="col-md-6 col-sm-12 text-center">
+                <h3> How old are you? </h3>
+                <p>
+                <input
                 type="number"
                 onChange={inputHandler}
                 name="age"
                 maxLength="3"
                 size="3"
                 id="age"
-                defaultValue={characterContext.data.age}
-              />
+                placeholder="20"
+              /></p>
+              </div>
+              <div className="col-md-6 col-sm-12 text-center">
+                <h3> Choose a picture. </h3>
               <p>
-                <button type="submit">Submit</button>
-              </p>
-            </form>
-          </div>
-          <div className="col col-lg-8">
-            <div className="col">
               <img
                 src={characterContext.data.characterImage}
                 alt="Character Portrait"
-              />
-            </div>
-            <button id="change-portrait" onClick={getNewPortrait}>
-              Choose new Portrait
+              /> <br/>
+            <button type="button" id="change-portrait" onClick={getNewPortrait}>
+              Next
             </button>
+            </p>
+              </div>
+              <div className="col-md-6 col-sm-12 text-center">
+                <h3 className="mb-4"> Ready to start? </h3>
+            <button className="mt-4" type="submit">Submit</button>
+            </div>
+            </form>
+
+
+
+
           </div>
+
+
         </div>
+
+
         <GameNav />
       </div>
     );
