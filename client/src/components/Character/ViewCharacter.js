@@ -15,18 +15,9 @@ export default function ViewCharacter(props) {
   let userId;
 
   function submitCharacter(e) {
-    e.preventDefault();
-    if (e.target.name.value && e.target.age.value) {
-      characterContext.saveChar()
-      .then(data=>{
-        console.log("SubmitCharacter:");
-        console.log(data);       
-        
-      })
-
-    } else alert("Need a name!");
+      characterContext.saveChar(); 
   }
-  console.log(characterContext.missing);
+
 
   let turnStyle = { transform: "rotate(36deg)", pointerEvents: "none" };
   if (characterContext.missing) return <CharacterCreate subFunc={submitCharacter}/>;
