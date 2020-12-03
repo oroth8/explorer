@@ -6,6 +6,7 @@ import CharacterContext from "../../context/character/CharacterContext";
 import React, { useContext } from "react";
 import "./style.css";
 import Wave from "../layout/Wave";
+import GameNav from "../layout/GameNav";
 
 // const style = {
 //   img: {
@@ -43,6 +44,7 @@ function Play({ questions }) {
           </a>
         </div>
       </div>
+      <GameNav />
     </div>
   );
 }

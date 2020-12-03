@@ -111,7 +111,7 @@ function Level() {
             <div onClick={(e) => (getLocation(e))} onKeyPress={handleKey} tabIndex="0">
                           <div className="row">
                     <button className="col-4" onClick={(e)=>{ e.stopPropagation(); levelChange("subtract");}}>Previous Level</button> 
-                    <button className="col-4" onClick={(e)=>{ e.stopPropagation();}}><a href="/earn" style={style.white}>Earn Money</a></button> 
+                    <button className="col-4" onClick={(e)=>{ e.stopPropagation(); document.location.href="/earn"}}>Earn Money</button> 
                     <button className="col-4" onClick={(e)=>{ e.stopPropagation(); levelChange("add");}}>Next Level</button>
                     </div>
 

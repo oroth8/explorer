@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
+import GameNav from "../layout/GameNav";
 const CharacterCreate = () => {
   const authContext = useContext(AuthContext);
   const characterContext = useContext(CharacterContext);
@@ -9,17 +10,14 @@ const CharacterCreate = () => {
   useEffect(() => {
     if (authContext.user) {
       userId = authContext.user._id;
-      if(characterContext.missing){        
+      if (characterContext.missing) {
         characterContext.updateUserId(userId);
         characterContext.getPortrait();
         characterContext.setCredits(100);
         characterContext.setCurrentYear(2021);
         characterContext.setMaxLevel(0);
       }
-    }
-    else 
-    authContext.loadUser();
-
+    } else authContext.loadUser();
   }, [authContext.loading]);
 
   function inputHandler(e) {
@@ -89,6 +87,7 @@ const CharacterCreate = () => {
             </button>
           </div>
         </div>
+        <GameNav />
       </div>
     );
 };

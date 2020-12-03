@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GameNav from "../layout/GameNav";
 
 function Earn(props) {
   console.log(props);
@@ -95,6 +96,7 @@ function Earn(props) {
           </Link>
         </div>
       </div>
+      <GameNav />
     </div>
   );
 }
