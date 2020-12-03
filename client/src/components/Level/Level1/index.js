@@ -2,16 +2,16 @@ import React from "react";
 import "./style.css";
 import imageMap from "./map.json";
 import Location from "../Location";
+import GameNav from "../../layout/GameNav";
 
-
-const style={
+const style = {
   container: {
     position: "relative",
-    height: "auto"
+    height: "auto",
   },
   backgroundImage: {
     width: "100%",
-    maxHeight: "80vh"
+    maxHeight: "80vh",
   },
   header: {
     backgroundColor: "white",
@@ -19,41 +19,42 @@ const style={
     position: "fixed",
     top: "0",
     left: "0",
-    zIndex: "1"
-  }
+    zIndex: "1",
+  },
 };
-
 
 // Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
-function Level1(props)  {
-  
-const [location, setLocation]=React.useState({
-  "name":"Earth",
-  "id": 0
-});
+function Level1(props) {
+  const [location, setLocation] = React.useState({
+    name: "Earth",
+    id: 0,
+  });
 
-let getLandingSpot=(name, id) =>{
-  setLocation({...location, "name": name, "id": id});
-};
+  let getLandingSpot = (name, id) => {
+    setLocation({ ...location, name: name, id: id });
+  };
 
-
-
-
-        return (
-          <React.Fragment>
-            <Location displayed={props.displayed} location={location}/>
-            <div style={style.container}>
-          <img src="./img/levelimgs/lvl0.png" style={style.backgroundImage} alt="Level 1"/>
-          {imageMap.map((item)=> (
-            <div style={item.style} onClick={(e)=> {
+  return (
+    <React.Fragment>
+      <Location displayed={props.displayed} location={location} />
+      <div style={style.container}>
+        <img
+          src="./img/levelimgs/lvl0.png"
+          style={style.backgroundImage}
+          alt="Level 1"
+        />
+        {imageMap.map((item) => (
+          <div
+            style={item.style}
+            onClick={(e) => {
               getLandingSpot(item.name, item.id);
-            }}></div>
-          ))}
-          </div>
-          </React.Fragment>
-        );
-  }
-
-
+            }}
+          ></div>
+        ))}
+      </div>
+      <GameNav />
+    </React.Fragment>
+  );
+}
 
 export default Level1;
