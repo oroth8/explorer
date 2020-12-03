@@ -12,7 +12,6 @@ export default (state, action) => {
       loaded:true,
       missing:false
     }
-    break;
   case "LOADING":
     return{
       ...state,
@@ -40,24 +39,26 @@ export default (state, action) => {
     temp[action.name]=action.newData      
     return{       
       ...state,
-      data:temp
+      data:temp,
+      needToSave:true,
     };
-  case "UPDATE_SHIPARRAY":
+  case "UPDATE_SHIPARRAY": 
     let tempShips=state.data.shipIdArray;
-    if(action.action==="add") tempShips.push(action.newData)
+    let shipId=action.newData[0];
+    let credits=action.newData[1];
+    let maxLevel=action.newData[2];
+    if(action.action==="add") tempShips.push(shipId)
     else if(action.action==="remove"){
       tempShips=tempShips.filter(ship=>{
         if(ship._id===action.newData) return false;
         else return true;
-      })
-      console.log(tempShips);
-      
+      })      
     }
-
     let tempData=state.data;
     tempData.shipIdArray=tempShips;
-    console.log(tempData);
-    
+    tempData.maxLevel=maxLevel;
+    tempData.credits=credits;    
+    console.log(tempData);    
     return{ 
       ...state,
       data:tempData
