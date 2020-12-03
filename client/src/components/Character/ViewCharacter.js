@@ -14,6 +14,8 @@ export default function ViewCharacter(props) {
   // eslint-disable-next-line
   let userId;
 
+
+
   function submitCharacter(e) {
     e.preventDefault();
     if (e.target.name.value && e.target.age.value) {
@@ -26,8 +28,11 @@ export default function ViewCharacter(props) {
 
     } else alert("Need a name!");
   }
-  console.log(characterContext.missing);
 
+  useEffect(()=>{
+    
+  },[characterContext.missing]);
+  
   let turnStyle = { transform: "rotate(36deg)", pointerEvents: "none" };
   if (characterContext.missing) return <CharacterCreate subFunc={submitCharacter}/>;
   else if (!characterContext.loaded) return <>Loading</>;
@@ -43,4 +48,5 @@ export default function ViewCharacter(props) {
         <GameNav />
       </>
     );
+
 }

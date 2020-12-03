@@ -49,8 +49,10 @@ export default (state, action) => {
     let maxLevel=action.newData[2];
     if(action.action==="add") tempShips.push(shipId)
     else if(action.action==="remove"){
+      console.log("Removing "+tempShips[0]+" from "+shipId);
+      
       tempShips=tempShips.filter(ship=>{
-        if(ship._id===action.newData) return false;
+        if(ship==shipId) return false;
         else return true;
       })      
     }

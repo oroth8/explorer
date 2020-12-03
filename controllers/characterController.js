@@ -1,5 +1,6 @@
 const db = require('../models/Character');
 
+
 // Export Controller Methods
 module.exports = {
     create: function(req, res) {

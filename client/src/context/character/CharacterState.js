@@ -69,14 +69,13 @@ const CharacterState = (props) => {
     dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:[shipId, level, creds]})
     saveChar();  
   }
-  const sellShip=shipId=>{
-    dispatch({type:"UPDATE_SHIPARRAY", action:"remove", newData:shipId})  
+  const sellShip=(shipId, level, creds)=>{
+    dispatch({type:"UPDATE_SHIPARRAY", action:"remove",  newData:[shipId, level, creds]})  
     saveChar();  
   }
   const saveChar = ()=>{
     console.log("saving:");
-    console.log(state);
-    
+    console.log(state);    
     return saveCharacter(state)
 
     .then(res=>{
