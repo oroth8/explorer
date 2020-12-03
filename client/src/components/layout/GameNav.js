@@ -41,7 +41,7 @@ const GameNavStyle = styled.div`
   margin-top: 5rem;
   margin-left: 1rem;
   position: fixed;
-  top: 2rem;
+  top: 2.9rem;
   ul {
     list-style: none;
   }
