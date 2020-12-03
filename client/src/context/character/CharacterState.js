@@ -77,9 +77,19 @@ const CharacterState = (props) => {
     console.log("saving:");
     console.log(state);
     
-    saveCharacter(state)
+    return saveCharacter(state)
+
     .then(res=>{
+      console.log("CharacterSTate");
+      
       console.log(res);
+      return (res);
+      
+    })
+    .catch(error=>{
+      console.log("Character State");
+      console.log(error);
+      
       
     });
   };
