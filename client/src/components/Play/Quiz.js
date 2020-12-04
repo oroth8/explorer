@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
-import CharacterContext from "../../../context/character/CharacterContext";
-import "../style.css";
+import CharacterContext from "../../context/character/CharacterContext";
+import "./style.css";
 
 const style={
     black: {
