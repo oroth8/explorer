@@ -6,6 +6,12 @@ export default (state, action) => {
   }
 
   switch (action.type) {
+  case "SAVED":{
+    return{
+      ...state,
+      saveMe:false
+    }
+  }
   case "UPDATE_CHARACTER":
     return{
       ...state,
@@ -40,14 +46,16 @@ export default (state, action) => {
     return{       
       ...state,
       data:temp,
-      needToSave:true,
+      saveMe:true,
     };
   case "UPDATE_SHIPARRAY":      // This takes an array of three items: The ship id, the number of credits the player has left,
     let tempShips=state.data.shipIdArray;       // and the player's new maximum level.
     let shipId=action.newData[0];
     let credits=action.newData[1];
     let maxLevel=action.newData[2];
+    // If we have just bought a ship, we can just add it to our array (which will then got put into the state)
     if(action.action==="add") tempShips.push(shipId)
+    // If we are selling a ship, we need to make a new array that filters out the sold ship
     else if(action.action==="remove"){
       tempShips=tempShips.filter(ship=>{
         if(ship===action.newData[0]) return false;
@@ -60,7 +68,8 @@ export default (state, action) => {
     tempData.credits=credits;    
     return{ 
       ...state,
-      data:tempData
+      data:tempData,
+      saveMe:true
     }
   default:
     throw new Error(`Invalid action type: ${action.type}`);

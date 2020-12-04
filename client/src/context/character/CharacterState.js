@@ -17,7 +17,8 @@ const CharacterState = (props) => {
       shipIdArray:[],
       birthYear:2001
     },
-    loaded:false
+    loaded:false,
+    saveMe:false
   };
   const [state, dispatch] = useReducer(CharacterReducer, initialState);
 
@@ -35,6 +36,17 @@ const CharacterState = (props) => {
 
   },[authContext.loading, state.loaded]);
   
+  useEffect(()=>{
+    if(state.saveMe){
+      console.log("Saving!");
+      
+      saveChar();
+      dispatch({type:"SAVED"})
+    }
+  });
+
+
+
   // load character
   const loadChar = (userId) => {  
     dispatch({type:"LOADING"})
@@ -68,11 +80,11 @@ const CharacterState = (props) => {
   }
   const buyShip=(shipId, level, creds)=>{
     dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:[shipId, level, creds]})
-    saveChar();  
+   // saveChar();  
   }
   const sellShip=(shipId, level, creds)=>{
     dispatch({type:"UPDATE_SHIPARRAY", action:"remove", newData:[shipId, level, creds]})  
-    saveChar();  
+  //  saveChar();  
   }
   const saveChar = ()=>{
     console.log("saving:");
