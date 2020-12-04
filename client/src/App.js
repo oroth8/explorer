@@ -17,13 +17,11 @@ import Instructions from "./components/Instructions";
 
 // Quiz Components
 import Quiz from "./components/Quiz";
-// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
-// import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -40,7 +38,6 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-// Our main background output
 
 function App() {
   const [quizQuestions, setQuizQuestions] = useState([
@@ -112,8 +109,6 @@ function App() {
     (questions) => questions.level === "Neptune"
   );
   
-
-  // Send data to EmployeeList to be rendered, then renders final results.
   return (
     <div className="App">
       <GlobalStyle />
