@@ -128,7 +128,7 @@ function Earn({ questions, categories }) {
               {getImageUrls(category)}
               <Link to={link}>
                 <div className="card">
-                  <img alt={category} src={url}></img>
+                  <img alt={category} src={url} className="level1"></img>
                   <div className="card-body">
                     <span className="card-text">{category}</span>
                   </div>
