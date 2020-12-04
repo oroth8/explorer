@@ -13,9 +13,11 @@ const Footer = () => {
           <div class="col-md-4 mx-auto">
             <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
             <p>
-              This is a React.js full stack web game that is designed to take
-              the user on an educational journey while interacting with the NASA
-              API to gain explorative knowledge.
+              This is a MERN stack web game that is designed to take the user on
+              an educational journey while interacting with the NASA API to gain
+              explorative knowledge. Gain credits as rewards for answering
+              correct quiz questions while transversing the universe. Purchase
+              and upgrade ships throught your journey.
             </p>
           </div>
 
@@ -55,24 +57,6 @@ const Footer = () => {
           </div>
 
           <hr class="clearfix w-100 d-md-none" />
-          <div class="col-md-2 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Map</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Account</a>
-              </li>
-              <li>
-                <a href="#!">Register</a>
-              </li>
-              <li>
-                <a href="#!">Play Now!</a>
-              </li>
-              <li>
-                <a href="#!">Instructions</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
       {!user && <hr />}
