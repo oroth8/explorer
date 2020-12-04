@@ -30,7 +30,7 @@ const CharacterState = (props) => {
       if(!state.loaded) loadChar(userId);
     }      
     else 
-      // If we don't, then we load the user data. after it's loaded, useEffect will trigger again, with better news
+      // If we don't, then we load the user data. after it's loaded, useEffect will trigger again, and we can load the character
      authContext.loadUser();
 
   },[authContext.loading, state.loaded]);
@@ -41,11 +41,12 @@ const CharacterState = (props) => {
     // If we haven't already loaded our character, load it now
     if(!state.loaded)loadCharacter(userId)
     .then(res=>{
-      if(res.data.data)      {
-        console.log(res.data);
-        
+      if(res.data.data){        
         dispatch({type:"UPDATE_CHARACTER", char:res.data})}
       else dispatch({type:"ERROR_NO_CHARACTER"})
+    })
+    .catch(err=>{
+      console.error("Error in CharacterState load character: "+err)
     });
   };
   const updateName=(name)=>{
@@ -69,8 +70,8 @@ const CharacterState = (props) => {
     dispatch({type:"UPDATE_SHIPARRAY", action:"add", newData:[shipId, level, creds]})
     saveChar();  
   }
-  const sellShip=shipId=>{
-    dispatch({type:"UPDATE_SHIPARRAY", action:"remove", newData:shipId})  
+  const sellShip=(shipId, level, creds)=>{
+    dispatch({type:"UPDATE_SHIPARRAY", action:"remove", newData:[shipId, level, creds]})  
     saveChar();  
   }
   const saveChar = ()=>{
@@ -80,17 +81,11 @@ const CharacterState = (props) => {
     return saveCharacter(state)
 
     .then(res=>{
-      console.log("CharacterSTate");
-      
-      console.log(res);
-      return (res);
-      
+      return (res);    
     })
     .catch(error=>{
-      console.log("Character State");
+      console.log("Character State Error:");
       console.log(error);
-      
-      
     });
   };
   const getPortrait=()=>{

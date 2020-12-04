@@ -1,19 +1,12 @@
-import License from "../Character/components/MenuLicense";
-import Ship from "../Character/components/Ship";
-import Level from "../Character/components/Level";
-import Quiz from "../Character/components/Quiz";
+import License from "./MenuLicense";
+import Chat from "../Chat"
+import Level from "./Level";
+import Quiz from "./Quiz";
 import CharacterContext from "../../context/character/CharacterContext";
 import React, { useContext } from "react";
 import "./style.css";
 import Wave from "../layout/Wave";
 import GameNav from "../layout/GameNav";
-
-// const style = {
-//   img: {
-//     width: "80%",
-//     height: "auto"
-//   }
-// }
 
 function Play({ questions }) {
   const characterContext = useContext(CharacterContext);
@@ -38,9 +31,15 @@ function Play({ questions }) {
       </div>
 
       <div className="row mb-4">
-        <div className="col-md-6 col-sm-12">
+      <div className="col-md-6 col-sm-12">
           <a href="/earn">
             <Quiz />
+          </a>
+        </div>
+
+       <div className="col-md-6 col-sm-12">
+          <a href="/chat">
+            <Chat />
           </a>
         </div>
       </div>

@@ -14,16 +14,14 @@ import Landing from "./pages/Landing";
 import Play from "./components/Play";
 import BuyShip from "./components/Ship/BuyShip";
 import Instructions from "./components/Instructions";
-
+import Chat from "./components/Chat"
 // Quiz Components
 import Quiz from "./components/Quiz";
-// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
-// import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -36,14 +34,19 @@ import { getQuizCategories, getQuizQuestions } from "./components/utils/API";
 import Earn from "./components/Earn";
 import ScrollToTop from "./components/ScrollToTop";
 
+// import 'whatwg-fetch';
+
+//this.sendSocketIO = this.sendSocketIO.bind(this);
+
 // Put login token in local storage
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-// Our main background output
 
 function App() {
+
+
   const [quizQuestions, setQuizQuestions] = useState([
     {
       level: "",
@@ -127,10 +130,10 @@ function App() {
     (questions) => questions.level === "Neptune"
   );
   
-
-  // Send data to EmployeeList to be rendered, then renders final results.
   return (
     <div className="App">
+      <div>
+</div>
       <GlobalStyle />
       <AuthState>
         <AlertState>
@@ -152,6 +155,7 @@ function App() {
                   component={CharacterCreate}
                 />
                 <Route exact path="/viewCharacter" component={ViewCharacter} />
+                <Route exact path="/chat" component={Chat} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/ship" component={BuyShip} />
                 <ScrollToTop>

@@ -5,10 +5,8 @@ const express = require("express");
 const routes = require("./routes");
 const path = require("path");
 const connectDB = require("./config/db");
-
 // Express instance
 const app = express();
-
 // connect to db
 connectDB();
 
@@ -18,6 +16,8 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
 
 // If our node environment is production we will serve up our static assets from the build folder
 if (process.env.NODE_ENV === "production") {
@@ -40,10 +40,32 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
-
-// Start the server
-app.listen(PORT, () => {
+// Start the server, and set a variable for io to use later
+const expressServer=app.listen(PORT, () => {
   if (process.env.NODE_ENV !== "production") {
     console.log(`Server listening at http://localhost:${PORT}`);
   }
+});
+
+// Create socket io using the express server
+// Specify the cors headers, just to be safe.
+const io=require("socket.io")(expressServer, 
+  {  cors: {
+    origin: "http://localhost:"+3000,
+    methods: ["GET", "POST"]
+  }}
+);
+
+io.on('connection', socket => {
+  socket.on("USER_CONNECTED", msg=>{
+    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
+    console.log("User connected: "+msg);
+  })
+
+  socket.on("TELL_EVERYONE", msg=>{
+    console.log("User message: "+msg);
+    
+    socket.broadcast.emit("USER_MESSAGE", msg);      
+  })
+ 
 });

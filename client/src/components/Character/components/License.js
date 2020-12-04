@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-
 import CharacterContext from "../../../context/character/CharacterContext";
 import "../style.css";
 
 export default function License(props) { 
 
     const characterContext = useContext(CharacterContext);
+    // Placeholder image in case the character doesn't exist yet
     let img="../../../img/characterPlaceHolder.jpg";
+    // If the character does exist, then we should use the real image:
     if(characterContext.data.characterImage) img=characterContext.data.characterImage;
     
 return(
