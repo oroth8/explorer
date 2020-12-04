@@ -17,13 +17,11 @@ import Instructions from "./components/Instructions";
 import Chat from "./components/Chat"
 // Quiz Components
 import Quiz from "./components/Quiz";
-// import { CharProvider } from "./context/character/CharacterContext";
 
 // Auth context states
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
-// import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -44,7 +42,6 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-// Our main background output
 
 function App() {
 
@@ -68,6 +65,7 @@ function App() {
     getQuiz();
   }, []);
 
+  //Filter for respective level
   const naQuestions = quizQuestions.filter(
     (questions) => questions.level === "North America"
   );
@@ -89,13 +87,34 @@ function App() {
   const anQuestions = quizQuestions.filter(
     (questions) => questions.level === "Antarctica"
   );
-
-  // const [characterState, setCharacter] = useState({
-  //   name: "default",
-  //   characterImage: "",
-  // });
-
-  // Send data to EmployeeList to be rendered, then renders final results.
+  const sunQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Sun"
+  );
+  const merQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Mercury"
+  );
+  const venQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Venus"
+  );
+  const earthQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Earth"
+  );
+  const marsQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Mars"
+  );
+  const jupQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Jupiter"
+  );
+  const satQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Saturn"
+  );
+  const urQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Uranus"
+  );
+  const nepQuestions = quizQuestions.filter(
+    (questions) => questions.level === "Neptune"
+  );
+  
   return (
     <div className="App">
       <div>
@@ -146,6 +165,33 @@ function App() {
                 </Route>
                 <Route exact path="/anquiz">
                   <Quiz questions={anQuestions} />
+                </Route>
+                <Route exact path="/sunquiz">
+                  <Quiz questions={sunQuestions} />
+                </Route>
+                <Route exact path="/merquiz">
+                  <Quiz questions={merQuestions} />
+                </Route>
+                <Route exact path="/venquiz">
+                  <Quiz questions={venQuestions} />
+                </Route>
+                <Route exact path="/marsquiz">
+                  <Quiz questions={marsQuestions} />
+                </Route>
+                <Route exact path="/jupquiz">
+                  <Quiz questions={jupQuestions} />
+                </Route>
+                <Route exact path="/satquiz">
+                  <Quiz questions={satQuestions} />
+                </Route>
+                <Route exact path="/urquiz">
+                  <Quiz questions={urQuestions} />
+                </Route>
+                <Route exact path="/nepquiz">
+                  <Quiz questions={nepQuestions} />
+                </Route>
+                <Route exact path="/earthquiz">
+                  <Quiz questions={earthQuestions} />
                 </Route>
               </Switch>
             </Router>

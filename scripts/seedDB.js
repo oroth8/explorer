@@ -16,6 +16,7 @@ const questionSeed = [
       { answerText: "Los Angeles", isCorrect: false },
       { answerText: "Mexico City", isCorrect: true },
     ],
+    questionImg: "../img/questions/mexico_city.jpg"
   },
   {
     level: "North America",
@@ -36,7 +37,7 @@ const questionSeed = [
       { answerText: "Atlantic Ocean", isCorrect: false },
       { answerText: "Gulf of Mexico", isCorrect: false },
       { answerText: "Pacific Ocean", isCorrect: true },
-      { AnswerText: "Indian Ocean", isCorrect: false },
+      { answerText: "Indian Ocean", isCorrect: false },
     ],
     questionImg: "../img/questions/NA.jpg",
   },
@@ -82,7 +83,7 @@ const questionSeed = [
       { answerText: "Chile", isCorrect: true },
       { answerText: "Bolivia", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.png"
+    questionImg: "../img/questions/map_SA.jpg"
   },
   {
     level: "South America",
@@ -93,7 +94,7 @@ const questionSeed = [
       { answerText: "Argentina", isCorrect: false },
       { answerText: "Venezuela", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.png"
+    questionImg: "../img/questions/map_SA.jpg"
   },
   {
     level: "South America",
@@ -170,9 +171,690 @@ const questionSeed = [
       { answerText: "Eiffel Tower", isCorrect: false },
       { answerText: "Federation Tower", isCorrect: true },
     ],
-    questionImg: "../img/question/eiffel.jpg"
+    questionImg: "../img/questions/eiffel.jpg"
   },
- 
+  {
+    level: "Asia",
+    questionText: "What is the most common language spoken in Asia?",
+    answerChoices: [
+      { answerText: "Mandarin Chinese", isCorrect: true },
+      { answerText: "Persian", isCorrect: false },
+      { answerText: "Hindi", isCorrect: false },
+      { answerText: "Arabic", isCorrect: false },
+    ],
+    questionImg: "../img/questions/map_asia.png"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the name of the tallest mountain in Asia?",
+    answerChoices: [
+      { answerText: "K2", isCorrect: false },
+      { answerText: "Makalu", isCorrect: false },
+      { answerText: "Lhotse", isCorrect: false },
+      { answerText: "Mount Everest", isCorrect: false },
+    ],
+    questionImg: "../img/questions/everest.JPG"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the largest city in Asia?",
+    answerChoices: [
+      { answerText: "Manila", isCorrect: false },
+      { answerText: "Tokyo", isCorrect: true },
+      { answerText: "Seoul", isCorrect: false },
+      { answerText: "Jakarta", isCorrect: false },
+    ],
+    questionImg: "../img/questions/tokyo.jpg"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the longest river in Asia?",
+    answerChoices: [
+      { answerText: "Yangtze River", isCorrect: true },
+      { answerText: "Mekong River", isCorrect: false },
+      { answerText: "Lena River", isCorrect: false },
+      { answerText: "Yellow River", isCorrect: false },
+    ],
+    questionImg: "../img/questions/Yangtze_River.jpg"
+  },
+  {
+    level: "Asia",
+    questionText: "What is the largest country by population in Asia?",
+    answerChoices: [
+      { answerText: "Japan", isCorrect: false },
+      { answerText: "Indonesia", isCorrect: false },
+      { answerText: "India", isCorrect: false },
+      { answerText: "China", isCorrect: true },
+    ],
+    questionImg: "../img/questions/hong_kong.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "Which of the below is the longest river in Africa?",
+    answerChoices: [
+      { answerText: "Congo River", isCorrect: false },
+      { answerText: "White Nile", isCorrect: false },
+      { answerText: "Niger", isCorrect: false },
+      { answerText: "Nile", isCorrect: true },
+    ],
+    questionImg: "../img/questions/sphinx.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the name of the tallest mountain in Africa?",
+    answerChoices: [
+      { answerText: "Mount Kilimanjaro", isCorrect: true },
+      { answerText: "Toubkal", isCorrect: false },
+      { answerText: "Mount Kenya", isCorrect: false },
+      { answerText: "Mount Elgon", isCorrect: false },
+    ],
+    questionImg: "../img/questions/kilimanjaro.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What language is spoken the most in Africa?",
+    answerChoices: [
+      { answerText: "English", isCorrect: false },
+      { answerText: "Swahili", isCorrect: false },
+      { answerText: "Afrikaans", isCorrect: false },
+      { answerText: "Arabic", isCorrect: true },
+    ],
+    questionImg: "../img/questions/arua.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the largest desert in Africa?",
+    answerChoices: [
+      { answerText: "Sahara Desert", isCorrect: true },
+      { answerText: "Kalahari Desert", isCorrect: false },
+      { answerText: "Grand Bara Desert", isCorrect: false },
+      { answerText: "Namib Desert", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sahara.jpg"
+  },
+  {
+    level: "Africa",
+    questionText: "What is the name of the largest lake in Africa?",
+    answerChoices: [
+      { answerText: "Lake Malawi", isCorrect: false },
+      { answerText: "Lake Volta", isCorrect: false },
+      { answerText: "Lake Rukwa", isCorrect: false },
+      { answerText: "Lake Victoria", isCorrect: true },
+    ],
+    questionImg: "../img/questions/Lake_Victoria.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "While the continent is commonly referred to as Australia, many countries make up the region. What other name does it go by?",
+    answerChoices: [
+      { answerText: "Down-Under", isCorrect: false },
+      { answerText: "Kangaroo Kontinent", isCorrect: false },
+      { answerText: "Oceania", isCorrect: true },
+      { answerText: "Aussieland", isCorrect: false },
+    ],
+    questionImg: "../img/questions/australia.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "Which of the below animals would you likely NOT see on a trip to Australia?",
+    answerChoices: [
+      { answerText: "Koala", isCorrect: false },
+      { answerText: "Kangaroo", isCorrect: false },
+      { answerText: "Wombat", isCorrect: false },
+      { answerText: "Elephant", isCorrect: true },
+    ],
+    questionImg: "../img/questions/koala.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "What city is the largest in all of Australia/Oceania?",
+    answerChoices: [
+      { answerText: "Auckland", isCorrect: false },
+      { answerText: "Sydney", isCorrect: true },
+      { answerText: "Perth", isCorrect: false },
+      { answerText: "Melbourne", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sydney_opera.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "What is the tallest mountain in Australia?",
+    answerChoices: [
+      { answerText: "Mount Kosciuszko", isCorrect: true },
+      { answerText: "Mount Tate", isCorrect: false },
+      { answerText: "Mount Twynam", isCorrect: false },
+      { answerText: "Gungartan", isCorrect: false },
+    ],
+    questionImg: "../img/questions/kosciouszko.jpg"
+  },
+  {
+    level: "Australia",
+    questionText: "The largest reef in the world can be found in Australia, what is it's name?",
+    answerChoices: [
+      { answerText: "Mesoamerican Reef", isCorrect: false },
+      { answerText: "Apo Reef", isCorrect: false },
+      { answerText: "Saya de Malha Banks", isCorrect: false },
+      { answerText: "Great Barrier Reef", isCorrect: true },
+    ],
+    questionImg: "../img/questions/gbr.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Which of these animals would you NOT find in Antarctica?",
+    answerChoices: [
+      { answerText: "Polar Bears", isCorrect: true },
+      { answerText: "Seals", isCorrect: false },
+      { answerText: "Whales", isCorrect: false },
+      { answerText: "Penguins", isCorrect: false },
+    ],
+    questionImg: "../img/questions/penguins.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Antarctica is the coldest continent on Earth. It is also the world's:",
+    answerChoices: [
+      { answerText: "Largest", isCorrect: false },
+      { answerText: "Smallest", isCorrect: false },
+      { answerText: "Windiest", isCorrect: true },
+      { answerText: "Inhabited", isCorrect: false },
+    ],
+    questionImg: "../img/questions/antarctica.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Antarctica is claimed by what Country?",
+    answerChoices: [
+      { answerText: "United Kingdom", isCorrect: false },
+      { answerText: "United States of America", isCorrect: false },
+      { answerText: "Russia", isCorrect: false },
+      { answerText: "None", isCorrect: true },
+    ],
+    questionImg: "../img/questions/plane.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "Many scientists travel to Antarctica for research. How many research stations are on the continent?",
+    answerChoices: [
+      { answerText: "10-25", isCorrect: false },
+      { answerText: "25-50", isCorrect: false },
+      { answerText: "50-100", isCorrect: false },
+      { answerText: "100+", isCorrect: true },
+    ],
+    questionImg: "../img/questions/research.jpg"
+  },
+  {
+    level: "Antarctica",
+    questionText: "What is the coldest temperature ever recorded in Antarctica?",
+    answerChoices: [
+      { answerText: "-128.5 degrees F", isCorrect: true },
+      { answerText: "-105.2 degrees F", isCorrect: false },
+      { answerText: "-179.6 degrees F", isCorrect: false },
+      { answerText: "-83.6 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/glaciers.jpg"
+  },
+  {
+    level: "Sun",
+    questionText: "What element primarily makes up the Sun?",
+    answerChoices: [
+      { answerText: "Nitrogen", isCorrect: false },
+      { answerText: "Helium", isCorrect: false },
+      { answerText: "Hydrogen", isCorrect: true },
+      { answerText: "Oxygen", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun1.jpg"
+  },
+  {
+    level: "Sun",
+    questionText: "What is the surface temperature of the Sun?",
+    answerChoices: [
+      { answerText: "100 degrees F", isCorrect: false },
+      { answerText: "1,000 degrees F", isCorrect: false },
+      { answerText: "10,000 degrees F", isCorrect: true },
+      { answerText: "1,000,000 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun2.jpg"
+  },
+  {
+    level: "Sun",
+    questionText: "How old is the Sun?",
+    answerChoices: [
+      { answerText: "460 years", isCorrect: false },
+      { answerText: "46,000 years", isCorrect: false },
+      { answerText: "4,600,000 years", isCorrect: false },
+      { answerText: "4,600,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/sun3.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How far is the Sun from the Earth?",
+    answerChoices: [
+      { answerText: "9 million miles", isCorrect: false },
+      { answerText: "90 million miles", isCorrect: true },
+      { answerText: "9 billion miles", isCorrect: false },
+      { answerText: "90 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/sun4.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How many Earth masses are equivalent to one solar mass?",
+    answerChoices: [
+      { answerText: "30 masses", isCorrect: false },
+      { answerText: "3,000 masses", isCorrect: false },
+      { answerText: "300,000 masses", isCorrect: true },
+      { answerText: "3,000,000 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "Seventy percent of the Earth is covered with:",
+    answerChoices: [
+      { answerText: "Forest", isCorrect: false },
+      { answerText: "Water", isCorrect: true },
+      { answerText: "Desert", isCorrect: false },
+      { answerText: "Ice", isCorrect: false },
+    ],
+    questionImg: "../img/questions/earth.jpg"
+  },
+  {
+    level: "Earth",
+    questionText: "How many Earth days does it take Earth to revolve around the sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "225 days", isCorrect: false },
+      { answerText: "365 days", isCorrect: true },
+      { answerText: "500 days", isCorrect: false },
+    ],
+    questionImg: "../img/questions/earth2.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How many Earth days does it take Mercury to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "12 Days", isCorrect: false },
+      { answerText: "64 Days", isCorrect: false },
+      { answerText: "72 Days", isCorrect: false },
+      { answerText: "88 Days", isCorrect: true },
+    ],
+    questionImg: "../img/questions/clock.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "What is the daytime surface temperature of the Mercury?",
+    answerChoices: [
+      { answerText: "80 degrees F", isCorrect: false },
+      { answerText: "800 degrees F", isCorrect: true },
+      { answerText: "8,000 degrees F", isCorrect: false },
+      { answerText: "800,000 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mercury.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How old is Mercury?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/galaxy.jpg"
+  },
+  {
+    level: "Mercury",
+    questionText: "How far is the Mercury from the Sun?",
+    answerChoices: [
+      { answerText: "4 thousand miles", isCorrect: false },
+      { answerText: "40 thousand miles", isCorrect: false },
+      { answerText: "4 million miles", isCorrect: false },
+      { answerText: "40 million miles", isCorrect: true },
+    ],
+    questionImg: "../img/questions/solar_sys2.png"
+  },
+  {
+    level: "Mercury",
+    questionText: "How many Mercury masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".05 masses", isCorrect: false },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: "2 masses", isCorrect: false },
+      { answerText: "20 masses", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mercury2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How many earth days does it take Venus to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "225 days", isCorrect: true },
+      { answerText: "350 days", isCorrect: false },
+      { answerText: "500 days", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "What is the daytime surface temperature of Venus?",
+    answerChoices: [
+      { answerText: "8.6 degrees F", isCorrect: false },
+      { answerText: "86 degrees F", isCorrect: false },
+      { answerText: "860 degrees F", isCorrect: true },
+      { answerText: "8,600 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How old is Venus?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "4,500 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/venus3.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How far is Venus from the Sun?",
+    answerChoices: [
+      { answerText: "6.7 million miles", isCorrect: false },
+      { answerText: "67 million miles", isCorrect: true },
+      { answerText: "6.7 billion miles", isCorrect: false },
+      { answerText: "67 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/galaxy2.jpg"
+  },
+  {
+    level: "Venus",
+    questionText: "How many Venus masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".1 masses", isCorrect: false },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: ".8 masses", isCorrect: true },
+      { answerText: "1.5 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/venus4.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How many Earth days does it take Mars to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "110 days", isCorrect: false },
+      { answerText: "350 days", isCorrect: false },
+      { answerText: "450 days", isCorrect: false },
+      { answerText: "690 days", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mars2.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How old is Mars?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/mars3.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How far is Mars from the Sun?",
+    answerChoices: [
+      { answerText: "13.7 million miles", isCorrect: false },
+      { answerText: "137 million miles", isCorrect: true },
+      { answerText: "13.7 billion miles", isCorrect: false },
+      { answerText: "137 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars4.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "How many Mars masses are equivalent to one Earth mass?",
+    answerChoices: [
+      { answerText: ".1 masses", isCorrect: true },
+      { answerText: ".5 masses", isCorrect: false },
+      { answerText: ".8 masses", isCorrect: false },
+      { answerText: "1.5 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars5.jpg"
+  },
+  {
+    level: "Mars",
+    questionText: "What is the daytime surface temperature of Mars?",
+    answerChoices: [
+      { answerText: "-80 degrees F", isCorrect: true },
+      { answerText: "-8 degrees F", isCorrect: false },
+      { answerText: "8 degrees F", isCorrect: false },
+      { answerText: "80 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/mars.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How many Earth years does it take Jupiter to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "1 year", isCorrect: false },
+      { answerText: "6 years", isCorrect: false },
+      { answerText: "12 years", isCorrect: true },
+      { answerText: "29 years", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter2.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "What is the daytime surface temperature of Jupiter?",
+    answerChoices: [
+      { answerText: "-2,340 degrees F", isCorrect: false },
+      { answerText: "-1170 degrees F", isCorrect: false },
+      { answerText: "-230 degrees F", isCorrect: true },
+      { answerText: "-117 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter4.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How old is Jupiter?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/jupiter.png"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How far is Jupiter from the Sun?",
+    answerChoices: [
+      { answerText: "47.5 million miles", isCorrect: false },
+      { answerText: "475 million miles", isCorrect: true },
+      { answerText: "47.5 billion miles", isCorrect: false },
+      { answerText: "475 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Jupiter",
+    questionText: "How many Earth masses are equivalent to one Jupiter mass?",
+    answerChoices: [
+      { answerText: "3 masses", isCorrect: false },
+      { answerText: "30 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: true },
+      { answerText: "3,000 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/jupiter3.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How many Earth years does it take Saturn to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "1 years", isCorrect: false },
+      { answerText: "6 years", isCorrect: false },
+      { answerText: "12 years", isCorrect: false },
+      { answerText: "29 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/saturn3.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "What is the daytime surface temperature of Saturn?",
+    answerChoices: [
+      { answerText: "-2,900 degrees F", isCorrect: false },
+      { answerText: "-290 degrees F", isCorrect: true },
+      { answerText: "-29 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/saturn4.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How old is Saturn?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/saturn2.jpg"
+  },
+  {
+    level: "Saturn",
+    questionText: "How far is Saturn from the Sun?",
+    answerChoices: [
+      { answerText: "1 million miles", isCorrect: false },
+      { answerText: "100 million miles", isCorrect: false },
+      { answerText: "1 billion miles", isCorrect: true },
+      { answerText: "100 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys2.png"
+  },
+  {
+    level: "Saturn",
+    questionText: "How many Earth masses are equivalent to one Saturn mass?",
+    answerChoices: [
+      { answerText: "9 masses", isCorrect: false },
+      { answerText: "95 masses", isCorrect: true },
+      { answerText: "950 masses", isCorrect: false },
+      { answerText: "9,500 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/saturn.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How many Earth years does it take Uranus to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "8 years", isCorrect: false },
+      { answerText: "84 years", isCorrect: true },
+      { answerText: "126 years", isCorrect: false },
+      { answerText: "200 years", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus3.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "What is the daytime surface temperature of Uranus?",
+    answerChoices: [
+      { answerText: "-3,500 degrees F", isCorrect: false },
+      { answerText: "-350 degrees F", isCorrect: true },
+      { answerText: "-35 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus2.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How old is Uranus?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/space.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How far is Uranus from the Sun?",
+    answerChoices: [
+      { answerText: "1.8 million miles", isCorrect: false },
+      { answerText: "180 million miles", isCorrect: false },
+      { answerText: "1.8 billion miles", isCorrect: true },
+      { answerText: "180 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys.jpg"
+  },
+  {
+    level: "Uranus",
+    questionText: "How many Earth masses are equivalent to one Uranus mass?",
+    answerChoices: [
+      { answerText: "15 masses", isCorrect: true },
+      { answerText: "75 masses", isCorrect: false },
+      { answerText: "150 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/uranus.webp"
+  },
+  {
+    level: "Neptune",
+    questionText: "How many Earth years does it take Neptune to revolve around the Sun?",
+    answerChoices: [
+      { answerText: "8 years", isCorrect: false },
+      { answerText: "84 years", isCorrect: false },
+      { answerText: "165 years", isCorrect: true },
+      { answerText: "250 years", isCorrect: false },
+    ],
+    questionImg: "../img/questions/space2.jpg"
+  },
+  {
+    level: "Neptune",
+    questionText: "What is the daytime surface temperature of Neptune?",
+    answerChoices: [
+      { answerText: "-300 degrees F", isCorrect: false },
+      { answerText: "-370 degrees F", isCorrect: true },
+      { answerText: "-37 degrees F", isCorrect: false },
+      { answerText: "0 degrees F", isCorrect: false },
+    ],
+    questionImg: "../img/questions/neptune.webp"
+  },
+  {
+    level: "Neptune",
+    questionText: "How far is Neptune from the Sun?",
+    answerChoices: [
+      { answerText: "2.7 million miles", isCorrect: false },
+      { answerText: "270 million miles", isCorrect: false },
+      { answerText: "2.7 billion miles", isCorrect: true },
+      { answerText: "270 billion miles", isCorrect: false },
+    ],
+    questionImg: "../img/questions/solar_sys2.png"
+  },
+  {
+    level: "Neptune",
+    questionText: "How many Earth masses are equivalent to one Neptune mass?",
+    answerChoices: [
+      { answerText: "17 masses", isCorrect: true },
+      { answerText: "72 masses", isCorrect: false },
+      { answerText: "150 masses", isCorrect: false },
+      { answerText: "300 masses", isCorrect: false },
+    ],
+    questionImg: "../img/questions/neptune3.png"
+  },
+  {
+    level: "Neptune",
+    questionText: "How old is Neptune?",
+    answerChoices: [
+      { answerText: "450 years", isCorrect: false },
+      { answerText: "45,000 years", isCorrect: false },
+      { answerText: "4,500,000 years", isCorrect: false },
+      { answerText: "4,500,000,000 years", isCorrect: true },
+    ],
+    questionImg: "../img/questions/neptune4.jpg"
+  },
   
 ];
 
@@ -226,7 +908,7 @@ const locationSeed = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/330px-Asia_%28orthographic_projection%29.svg.png",
   },
   {
-    name: "Antartica",
+    name: "Antarctica",
     description:
       "Antarctica (/ænˈtɑːrtɪkə/ or /æntˈɑːrktɪkə/ (About this soundlisten)) is Earth's southernmost continent. It contains the geographic South Pole and is situated in the Antarctic region of the Southern Hemisphere, almost entirely south of the Antarctic Circle, and is surrounded by the Southern Ocean. At 14,200,000 square kilometres (5,500,000 square miles), it is the fifth-largest continent and nearly twice the size of Australia. At 0.00008 people per square kilometre, it is by far the least densely populated continent. About 98% of Antarctica is covered by ice that averages 1.9 km (1.2 mi; 6,200 ft) in thickness, which extends to all but the northernmost reaches of the Antarctic Peninsula.  Antarctica, on average, is the coldest, driest, and windiest continent, and has the highest average elevation of all the continents.[6] Most of Antarctica is a polar desert, with annual precipitation of 200 mm (7.9 in) along the coast and far less inland; there has been no rain there for almost 2 million years, yet 80% of the world freshwater reserves are stored there, enough to raise global sea levels by about 60 metres (200 ft) if all of it were to melt. The temperature in Antarctica has reached −89.2 °C (−128.6 °F) (or even −94.7 °C (−135.8 °F) as measured from space[8]), though the average for the third quarter (the coldest part of the year) is −63 °C (−81 °F). Anywhere from 1,000 to 5,000 people reside throughout the year at research stations scattered across the continent. Organisms native to Antarctica include many types of algae, bacteria, fungi, plants, protista, and certain animals, such as mites, nematodes, penguins, seals and tardigrades. Vegetation, where it occurs, is tundra.",
     imageUrl:

@@ -1,11 +1,12 @@
 export default (state, action) => {
-  console.log('action');
-  console.log(action);
-  
+  const DEBUGGING=false;
+  if(DEBUGGING){
+    console.log('action');
+    console.log(action);
+  }
+
   switch (action.type) {
   case "UPDATE_CHARACTER":
-    console.log("Updated");
-    console.log(action.char);
     return{
       ...state,
       ...action.char.data,
@@ -18,8 +19,7 @@ export default (state, action) => {
       loaded:false
     };
     case "ERROR_NO_CHARACTER":
-      console.log("NO CHAR");
-      
+      console.error("No character in database");      
       return{
         ...state,
         missing:true
@@ -42,15 +42,15 @@ export default (state, action) => {
       data:temp,
       needToSave:true,
     };
-  case "UPDATE_SHIPARRAY": 
-    let tempShips=state.data.shipIdArray;
+  case "UPDATE_SHIPARRAY":      // This takes an array of three items: The ship id, the number of credits the player has left,
+    let tempShips=state.data.shipIdArray;       // and the player's new maximum level.
     let shipId=action.newData[0];
     let credits=action.newData[1];
     let maxLevel=action.newData[2];
     if(action.action==="add") tempShips.push(shipId)
     else if(action.action==="remove"){
       tempShips=tempShips.filter(ship=>{
-        if(ship._id===action.newData) return false;
+        if(ship===action.newData[0]) return false;
         else return true;
       })      
     }
@@ -58,7 +58,6 @@ export default (state, action) => {
     tempData.shipIdArray=tempShips;
     tempData.maxLevel=maxLevel;
     tempData.credits=credits;    
-    console.log(tempData);    
     return{ 
       ...state,
       data:tempData

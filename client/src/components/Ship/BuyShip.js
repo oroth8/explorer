@@ -18,11 +18,15 @@ export default function BuyShip() {
   },[]);
 
   function buyShip(ship){
-    console.log(ship);
+    // First, figure out how many credits the user has
     let availableCreds=characterContext.data.credits;
+    // If the ship is cheap enough, let the user buy it
     if(ship.cost<=availableCreds){  
+      // If the character's max level is lower than their new ship, then we can increase it!
       let currentMaxLevel=characterContext.data.maxLevel;
       if(ship.maxLevel>currentMaxLevel) currentMaxLevel=ship.maxLevel;    
+      // Update the character context, adding the ship to the shipArray, reducing the number of credits,
+      // and updating their max level. This will also save the updated info the database
       characterContext.buyShip(ship._id, (availableCreds-ship.cost),currentMaxLevel);
     }
     else{
@@ -30,12 +34,18 @@ export default function BuyShip() {
     }    
   }
   function sellShip(ship){        
+      // First, get the user's maximum level and number of credits.
       let availableCreds=characterContext.data.credits;
       let currentMaxLevel=characterContext.data.maxLevel;
-      if(ship.maxLevel===currentMaxLevel) characterContext.setMaxLevel(ship.maxLevel-1);
-      characterContext.sellShip(ship.id, (availableCreds+ship.cost),currentMaxLevel);
+      // Each ship increases the user's level by one. So if we're selling our best ship,
+      // our max level should be set to the level beneath it.
+      if(ship.maxLevel===currentMaxLevel) currentMaxLevel=(ship.maxLevel-1);
+      // Update the character context, adding the ship to the shipArray, reducing the number of credits,
+      // and updating their max level. This will also save the updated info the database
+      characterContext.sellShip(ship._id, (availableCreds+ship.cost),currentMaxLevel);
   }
   
+  // Divide the array into arrays of ships that the character already owns, and ships that are available for purchase.
   if(shipArray){
     let bought=shipArray.filter(ship=>{
       if(characterContext.data.shipIdArray.indexOf(ship._id)!==-1) return true;
@@ -54,21 +64,24 @@ export default function BuyShip() {
       </div>
       <div className="col-5">
       Ships Owned:
-    {
-    bought.map(elem=>(
-        <ShipItem key={elem.id} data={elem} buyFunction={sellShip}/>
-    ))}
+      
+      <div className="row row-cols-2">
+      {bought.map(elem=>(
+          <ShipItem key={elem.id} data={elem} buyFunction={sellShip}/>
+      ))}
+      </div>
     </div>
     <div className="col-6">
+      
     Ships for Sale:
-    {
-    others.map(elem=>(
-        <ShipItem key={elem.id} data={elem}  buyFunction={buyShip}/>
-    ))}
+      <div className="row row-cols-2">
+        {others.map(elem=>(
+            <ShipItem key={elem.id} data={elem}  buyFunction={buyShip}/>
+        ))}
+      </div>
     </div>
     </div>
     </div>  
-    
       );
   }
   else 

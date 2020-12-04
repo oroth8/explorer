@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import styled from "styled-components";
 import img from "../img/space.jpg";
-import Wave from "./Wave";
 
 const Jumbotron = () => {
   const authContext = useContext(AuthContext);
