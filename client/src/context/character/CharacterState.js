@@ -35,6 +35,8 @@ const CharacterState = (props) => {
 
   },[authContext.loading, state.loaded]);
   
+
+  },[state.saveMe])
   // load character
   const loadChar = (userId) => {  
     dispatch({type:"LOADING"})

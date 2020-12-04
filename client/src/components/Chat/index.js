@@ -11,7 +11,7 @@ export default function Chat(){
   // const socket = openSocket('http://localhost:'+PORT, {transports: ['websocket']});
 console.log(window.location.hostname);
 
-const socket = openSocket(`wss://${window.location.hostname}:${PORT}`, {transports: ['websocket']});
+const socket = openSocket(`http://${window.location.hostname}:${PORT}`, {transports: ['websocket']});
 
   let userId;
   useEffect(() => {
