@@ -146,7 +146,7 @@ function Earn({ questions, categories }) {
         <Wave />
         <div className="row row-cols-3 justify-content-center">
           {level2Cat.map((category) => (
-            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4 level2">
               {getImageUrls(category)}
               <Link to={link}>
                 <div className="card">

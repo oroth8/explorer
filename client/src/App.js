@@ -164,7 +164,9 @@ function App() {
                     questions={quizQuestions}
                     exact
                     path="/earn"
-                  />
+                  >
+                    <Earn categories={quizCategories} />
+                  </PrivateRoute>
                   {/* QUIZ ROUTES */}
                   <Route exact path="/naquiz">
                     <Quiz questions={naQuestions} />
