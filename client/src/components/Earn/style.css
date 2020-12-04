@@ -4,7 +4,6 @@
     background-color: #212121;
     align-items: center;
     margin: 0 auto;
-    margin-bottom: 10px;
     float: none; 
     justify-content: center;
 }
@@ -20,6 +19,9 @@
 
 .level1 {
     padding: 15px;
+}
+.level2 {
+    padding: 8px;
 }
 
 
