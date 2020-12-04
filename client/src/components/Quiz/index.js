@@ -5,6 +5,7 @@ import "./style.css"
 import Nav from "../layout/Nav";
 import { Link } from "react-router-dom"
 import GameNav from "../layout/GameNav"
+import Footer from "../layout/Footer"
 
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
@@ -112,6 +113,8 @@ function Quiz({ questions }) {
             </>
           )}
         </div>
+        <Footer />
+        
         <GameNav />
       </React.Fragment>
     );
