@@ -30,7 +30,7 @@ const CharacterCreate = (props) => {
   // When the user changes the age, or types in the name field, we update the character state
   function inputHandler(e) {
     const { name, value } = e.target;
-    if (name === "age") {
+    if (name === "age" && value>0) {
       characterContext.updateAge(value);
     } else if (name === "name") {
       characterContext.updateName(value);
