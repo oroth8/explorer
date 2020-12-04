@@ -6,6 +6,7 @@ const questionSchema = new Schema({
   questionText: { type: String },
   answerChoices: [{ answerText: String, isCorrect: Boolean }],
   questionImg: { type: String },
+  map: String
 });
 
 const Question = mongoose.model("Question", questionSchema);
