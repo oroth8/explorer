@@ -2,8 +2,13 @@
     height: 378px;
     width: 332px;
     background-color: #212121;
-    margin-bottom: 5px;
     align-items: center;
+    
+    margin: 0 auto;
+    margin-bottom: 10px;
+    float: none; 
+    
+    justify-content: center;
 }
 
 
@@ -12,14 +17,16 @@
     width: 330px;
     border-radius: 3px;
     border-bottom: 1px solid #23d997;
-    padding: 10px;
-    
+    object-fit: cover;
 }
 
 
 
 .quizzes {
-    margin-left: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 3px solid #23d997;
+    padding-bottom: 15px;
 }
 
 .jumbotron {
@@ -34,21 +41,21 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .quizzes {
-        margin-left: 5px;
+        padding-left: 5px;
     }
  }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
     .quizzes {
-        margin-left: 25px;
-        padding-right: 75px
+        padding-left: 25px;
+        padding-right: 75px;
     }
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .quizzes {
-        margin-left: 55px;
+        padding-left: 55px;
     }
  }
