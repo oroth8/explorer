@@ -30,8 +30,9 @@ import Alert from "./components/layout/Alerts";
 
 // Global Style
 import GlobalStyle from "./components/GlobalStyle";
-import { getQuizQuestions } from "./components/utils/API";
+import { getQuizCategories, getQuizQuestions } from "./components/utils/API";
 import Earn from "./components/Earn";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Put login token in local storage
 if (localStorage.token) {
@@ -45,8 +46,15 @@ function App() {
       questionText: "",
       answerChoices: [{ answerText: "", isCorrect: false }],
       questionImg: "",
+      map: "",
     },
   ]);
+  const [quizCategories, setQuizCategories] = useState([
+    {
+      _id: "",
+      map: [],
+    }
+  ])
 
   const getQuiz = () => {
     getQuizQuestions().then(function (response) {
@@ -54,8 +62,15 @@ function App() {
     });
   };
 
+  const getCategories = () => {
+    getQuizCategories().then(function(response) {
+      setQuizCategories(response.data);
+    })
+  }
+
   useEffect(() => {
     getQuiz();
+    getCategories();
   }, []);
 
   //Filter for respective level
@@ -128,6 +143,7 @@ function App() {
                   path="/play"
                   component={Play}
                   questions={quizQuestions}
+                  categories={quizCategories}
                 />
                 <PrivateRoute exact path="/level" component={Level} />
                 <PrivateRoute
@@ -142,61 +158,64 @@ function App() {
                 />
                 <PrivateRoute exact path="/chat" component={Chat} />
                 <PrivateRoute exact path="/ship" component={BuyShip} />
-                <PrivateRoute
-                  component={Earn}
-                  questions={quizQuestions}
-                  exact
-                  path="/earn"
-                />
-                {/* QUIZ ROUTES */}
-                <Route exact path="/naquiz">
-                  <Quiz questions={naQuestions} />
-                </Route>
-                <Route exact path="/saquiz">
-                  <Quiz questions={saQuestions} />
-                </Route>
-                <Route exact path="/euquiz">
-                  <Quiz questions={euQuestions} />
-                </Route>
-                <Route exact path="/asquiz">
-                  <Quiz questions={asQuestions} />
-                </Route>
-                <Route exact path="/afquiz">
-                  <Quiz questions={afQuestions} />
-                </Route>
-                <Route exact path="/auquiz">
-                  <Quiz questions={auQuestions} />
-                </Route>
-                <Route exact path="/anquiz">
-                  <Quiz questions={anQuestions} />
-                </Route>
-                <Route exact path="/sunquiz">
-                  <Quiz questions={sunQuestions} />
-                </Route>
-                <Route exact path="/merquiz">
-                  <Quiz questions={merQuestions} />
-                </Route>
-                <Route exact path="/venquiz">
-                  <Quiz questions={venQuestions} />
-                </Route>
-                <Route exact path="/marsquiz">
-                  <Quiz questions={marsQuestions} />
-                </Route>
-                <Route exact path="/jupquiz">
-                  <Quiz questions={jupQuestions} />
-                </Route>
-                <Route exact path="/satquiz">
-                  <Quiz questions={satQuestions} />
-                </Route>
-                <Route exact path="/urquiz">
-                  <Quiz questions={urQuestions} />
-                </Route>
-                <Route exact path="/nepquiz">
-                  <Quiz questions={nepQuestions} />
-                </Route>
-                <Route exact path="/earthquiz">
-                  <Quiz questions={earthQuestions} />
-                </Route>
+                <ScrollToTop>
+                  <PrivateRoute
+                    component={Earn}
+                    questions={quizQuestions}
+                    exact
+                    path="/earn"
+                  />
+                  {/* QUIZ ROUTES */}
+                  <Route exact path="/naquiz">
+                    <Quiz questions={naQuestions} />
+                  </Route>
+                  <Route exact path="/saquiz">
+                    <Quiz questions={saQuestions} />
+                  </Route>
+                  <Route exact path="/euquiz">
+                    <Quiz questions={euQuestions} />
+                  </Route>
+                  <Route exact path="/asquiz">
+                    <Quiz questions={asQuestions} />
+                  </Route>
+                  <Route exact path="/afquiz">
+                    <Quiz questions={afQuestions} />
+                  </Route>
+                  <Route exact path="/auquiz">
+                    <Quiz questions={auQuestions} />
+                  </Route>
+                  <Route exact path="/anquiz">
+                    <Quiz questions={anQuestions} />
+                  </Route>
+                  <Route exact path="/sunquiz">
+                    <Quiz questions={sunQuestions} />
+                  </Route>
+                  <Route exact path="/merquiz">
+                    <Quiz questions={merQuestions} />
+                  </Route>
+                  <Route exact path="/venquiz">
+                    <Quiz questions={venQuestions} />
+                  </Route>
+                  <Route exact path="/marsquiz">
+                    <Quiz questions={marsQuestions} />
+                  </Route>
+                  <Route exact path="/jupquiz">
+                    <Quiz questions={jupQuestions} />
+                  </Route>
+                  <Route exact path="/satquiz">
+                    <Quiz questions={satQuestions} />
+                  </Route>
+                  <Route exact path="/urquiz">
+                    <Quiz questions={urQuestions} />
+                  </Route>
+                  <Route exact path="/nepquiz">
+                    <Quiz questions={nepQuestions} />
+                  </Route>
+                  <Route exact path="/earthquiz">
+                    <Quiz questions={earthQuestions} />
+                  </Route>
+                 </ScrollToTop>
+
               </Switch>
             </Router>
           </CharacterState>

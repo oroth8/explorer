@@ -3,6 +3,12 @@ import "./style.css";
 import AuthContext from "../../context/auth/authContext";
 import openSocket from 'socket.io-client';
 
+const style={
+  back: {
+    background: "rgba(0,0,0,0)"
+  }
+}
+
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
@@ -54,8 +60,8 @@ export default function Chat(){
   });
 
     return (
-      <div className="container" id="menucard">
-        <div className="row message-screen">
+      <div className="container" id="menucard" style={style.back}>
+        <div className="row mt-4 message-screen">
           <div className="col-12">
           {messagesString.split("\n").map((elem, i)=>(
             <li key={i}>{elem}</li>
