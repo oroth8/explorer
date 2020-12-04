@@ -6,9 +6,9 @@ import openSocket from 'socket.io-client';
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
-  
+  //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
   const PORT = process.env.PORT || 3001;
-  const socket = openSocket('http://localhost:'+PORT);
+  const socket = openSocket('http://localhost:'+PORT, {transports: ['websocket']});
 
   let userId;
   useEffect(() => {
