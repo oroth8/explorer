@@ -3,7 +3,9 @@
   width: 100%;
   margin: auto;
   background-color: #566573;
-  border: 3px solid #23d997;
+  border-left: 3px solid #23d997;
+  border-right: 3px solid #23d997;
+  border-bottom: 3px solid #23d997;
   text-align: center;
 }
 .quizImg {
@@ -33,6 +35,10 @@
 
 #back {
     margin-bottom: 5px;
+}
+
+.quiz-head {
+  margin-bottom: 0px;
 }
 
 
