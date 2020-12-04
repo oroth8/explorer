@@ -1,22 +1,25 @@
+// Dependencies
 import React, { useEffect, useState, useContext } from "react";
 import AuthContext from "../../context/auth/authContext";
 import CharacterContext from "../../context/character/CharacterContext";
 import "./style.css"
-import Nav from "../layout/Nav";
 import { Link } from "react-router-dom"
 import GameNav from "../layout/GameNav"
 import Footer from "../layout/Footer"
 
+// Quiz Component
 function Quiz({ questions }) {
+  // Character & Authorization Context
   const characterContext = useContext(CharacterContext);
   const authContext = useContext(AuthContext);
+  // Quiz States
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
 
   let userId;
-  // const { credits } = characterContext.data;
 
+  // Load auth & user context on authContext.loading change. Loads user character based on authorization user id
   useEffect(() => {
     authContext.loadUser();
 
@@ -25,14 +28,14 @@ function Quiz({ questions }) {
       characterContext.loadChar(userId);
     }
   }, [authContext.loading]);
-
+  // Handles user answer choice, if correct, score is incremented, character credits are incremented through updateCredits function and finally the character is saved via saveChar function
   const handleUserAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
       characterContext.updateCredits();
       characterContext.saveChar();
     }
-
+    // Cycles through questions until last has been answered, then set score state to true to display score section
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -40,17 +43,18 @@ function Quiz({ questions }) {
       setShowScore(true);
     }
   };
-
+  //Regex to add commas to number
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
+  // if no questions have loaded, display loading...
   if (questions.length === 0) {
     return (
       <div>
         <h1>Loading...</h1>
       </div>
     );
+    // if questions loaded, display below JSX
   } else if (questions.length > 0) {
     return (
       <React.Fragment>
