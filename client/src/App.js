@@ -8,13 +8,12 @@ import ViewCharacter from "./components/Character/ViewCharacter";
 // Character Context
 import CharacterState from "./context/character/CharacterState";
 // Ship Components
-// import BuyShip from "./components/Ship/BuyShip";
 // Pages
 import Landing from "./pages/Landing";
 import Play from "./components/Play";
 import BuyShip from "./components/Ship/BuyShip";
 import Instructions from "./components/Instructions";
-import Chat from "./components/Chat"
+import Chat from "./components/Chat";
 // Quiz Components
 import Quiz from "./components/Quiz";
 
@@ -22,6 +21,7 @@ import Quiz from "./components/Quiz";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 // auth components
 import Register from "./components/auth/Register";
@@ -34,19 +34,12 @@ import { getQuizCategories, getQuizQuestions } from "./components/utils/API";
 import Earn from "./components/Earn";
 import ScrollToTop from "./components/ScrollToTop";
 
-// import 'whatwg-fetch';
-
-//this.sendSocketIO = this.sendSocketIO.bind(this);
-
 // Put login token in local storage
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-
 function App() {
-
-
   const [quizQuestions, setQuizQuestions] = useState([
     {
       level: "",
@@ -129,11 +122,9 @@ function App() {
   const nepQuestions = quizQuestions.filter(
     (questions) => questions.level === "Neptune"
   );
-  
+
   return (
-    <div className="App">
-      <div>
-</div>
+    <>
       <GlobalStyle />
       <AuthState>
         <AlertState>
@@ -141,28 +132,40 @@ function App() {
             <Router>
               <Alert />
               <Switch>
+                {/* PUBLIC ROUTES */}
                 <Route exact path="/" component={Landing} />
-                <Route exact path="/instructions" component={Instructions} />
-                <Route exact path="/play">
-                  <Play questions={quizQuestions}
-                  categories={quizCategories} />
-                </Route>
-                <Route exact path="/level" component={Level} />
                 <Route exact path="/register" component={Register} />
-                <Route
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/instructions" component={Instructions} />
+                {/* PRIVATE ROUTES */}
+                <PrivateRoute
+                  exact
+                  path="/play"
+                  component={Play}
+                  questions={quizQuestions}
+                  categories={quizCategories}
+                />
+                <PrivateRoute exact path="/level" component={Level} />
+                <PrivateRoute
                   exact
                   path="/characterCreation"
                   component={CharacterCreate}
                 />
-                <Route exact path="/viewCharacter" component={ViewCharacter} />
-                <Route exact path="/chat" component={Chat} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/ship" component={BuyShip} />
+                <PrivateRoute
+                  exact
+                  path="/viewCharacter"
+                  component={ViewCharacter}
+                />
+                <PrivateRoute exact path="/chat" component={Chat} />
+                <PrivateRoute exact path="/ship" component={BuyShip} />
                 <ScrollToTop>
-                  <Route exact path="/earn">
-                    <Earn questions={quizQuestions}
-                    categories={quizCategories} />
-                  </Route>
+                  <PrivateRoute
+                    component={Earn}
+                    questions={quizQuestions}
+                    exact
+                    path="/earn"
+                  />
+                  {/* QUIZ ROUTES */}
                   <Route exact path="/naquiz">
                     <Quiz questions={naQuestions} />
                   </Route>
@@ -211,13 +214,14 @@ function App() {
                   <Route exact path="/earthquiz">
                     <Quiz questions={earthQuestions} />
                   </Route>
-                </ScrollToTop>
+                 </ScrollToTop>
+
               </Switch>
             </Router>
           </CharacterState>
         </AlertState>
       </AuthState>
-    </div>
+    </>
   );
 }
 
