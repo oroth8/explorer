@@ -165,7 +165,7 @@ function App() {
                     exact
                     path="/earn"
                   >
-                    <Earn categories={quizCategories}></Earn>
+                    <Earn categories={quizCategories} />
                   </PrivateRoute>
                   {/* QUIZ ROUTES */}
                   <Route exact path="/naquiz">
