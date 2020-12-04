@@ -1,5 +1,5 @@
 export default (state, action) => {
-  const DEBUGGING==false;
+  const DEBUGGING=false;
   if(DEBUGGING){
     console.log('action');
     console.log(action);
