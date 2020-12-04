@@ -47,10 +47,8 @@ const CharacterCreate = (props) => {
             </div>
             <div className="col-sm-10">
               <h2 className="text-center">Begin your adventure! </h2>
-              
               <form className="row mt-4 text-center" onSubmit={props.subFunc}>
                 <div className="col-md-6 col-sm-12 text-center">
-   
                   <h3> What is your name? </h3>
                   <p>
                   <input
@@ -91,16 +89,8 @@ const CharacterCreate = (props) => {
               <button className="mt-4" type="submit">Submit</button>
               </div>
               </form>
-  
-  
-  
-  
             </div>
-  
-  
           </div>
-  
-  
           <GameNav />
         </div>
       );
