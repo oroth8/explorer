@@ -57,7 +57,6 @@ const expressServer=app.listen(PORT, () => {
 // );
 const io=require("socket.io")(expressServer);
 console.log("Conencted to socketio?");
-console.error.log("test?")
 
 io.on('connection', socket => {
   socket.on("USER_CONNECTED", msg=>{
