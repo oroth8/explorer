@@ -19,7 +19,7 @@ const socket = openSocket(`http://${window.location.hostname}:${PORT}`, {transpo
  socket.once('connect', () => {
     console.log("CONNECTED");
     socket.emit('USER_CONNECTED', authContext.user.name);
-    
+    // comment
    });
     }
     else 
