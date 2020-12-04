@@ -49,12 +49,15 @@ const expressServer=app.listen(PORT, () => {
 
 // Create socket io using the express server
 // Specify the cors headers, just to be safe.
-const io=require("socket.io")(expressServer, 
-  {  cors: {
-    origin: "http://localhost:"+3000,
-    methods: ["GET", "POST"]
-  }}
-);
+// const io=require("socket.io")(expressServer, 
+//   {  cors: {
+//     origin: "http://localhost:"+3000,
+//     methods: ["GET", "POST"]
+//   }}
+// );
+const io=require("socket.io")(expressServer);
+console.log("Conencted to socketio?");
+console.error.log("test?")
 
 io.on('connection', socket => {
   socket.on("USER_CONNECTED", msg=>{
