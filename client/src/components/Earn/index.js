@@ -5,7 +5,7 @@ import "./style.css";
 import Wave from "../layout/Wave";
 import Footer from "../layout/Footer";
 
-function Earn({ questions, categories }) {
+function Earn({ categories }) {
   const level1 = categories.filter((category) => category.map === "level1");
   const level2 = categories.filter((category) => category.map === "level2");
 
