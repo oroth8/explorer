@@ -8,7 +8,9 @@ export default function Chat(){
   const [messagesString, setMessages] = useState("");
   //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
   const PORT = process.env.PORT || 3001;
-  const socket = openSocket('http://localhost:'+PORT, {transports: ['websocket']});
+  // const socket = openSocket('http://localhost:'+PORT, {transports: ['websocket']});
+
+const socket = openSocket(`http://${window.location.hostname}:${PORT}`, {transports: ['websocket']});
 
   let userId;
   useEffect(() => {
