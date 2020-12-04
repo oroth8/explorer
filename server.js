@@ -61,9 +61,11 @@ io.on('connection', socket => {
     socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
     console.log("User connected: "+msg);
   })
+
   socket.on("TELL_EVERYONE", msg=>{
     console.log("User message: "+msg);
     
     socket.broadcast.emit("USER_MESSAGE", msg);      
   })
+ 
 });
