@@ -28,7 +28,7 @@ return(
         <img style={style.backgroundimg} src="./img/space.jpg" alt="Space"/>
     <div className="row">
         <div className="col-12" id="photo">
-        <img alt="Character Portrait" src="./img/levelimgs/lvl1.jpg" />
+        <img alt="Character Portrait" src="./img/quiz.jpg" />
         </div>
         <div className="col-12 text-center align-middle">
          <h3 className="mt-4" style={style.black}>Earn Money! </h3>
