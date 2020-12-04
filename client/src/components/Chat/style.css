@@ -1,5 +1,43 @@
 .message-screen{
     color:#23d997;
     list-style-type: none;
-
+    height:85%;
+    overflow-y:auto;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.message-screen::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .message-screen {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+.message-input{
+    position: absolute;
+    bottom:0;
+}
+.message-input input{
+    width:250%;
+}
+.message-submit{
+    padding:0;
+    margin-left: 10em;
+    border:none;
+}
+#menucard{
+    position:relative;
+    top:10%;    
+    width:26em;
+    height:20em;
+    border:1px solid black;
+    border-radius: 3em;
+    overflow:hidden;
+    font-size:larger;    
+    background:black;
+    box-shadow: 5px 5px 16px black;
+    color:black;
+    text-decoration:none;
+    border:3px solid grey;
 }

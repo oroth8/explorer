@@ -5,7 +5,7 @@ import openSocket from 'socket.io-client';
 
 export default function Chat(){
   const authContext = useContext(AuthContext);
-  const [messageArray, setMessages] = useState([]);
+  const [messageArray, setMessages] = useState("");
   
   const PORT = process.env.PORT || 3001;
   const socket = openSocket('http://localhost:'+PORT);
@@ -24,73 +24,57 @@ export default function Chat(){
     authContext.loadUser();
   }, [authContext.loading]);
 
+  useEffect(()=>{
+      
+  },[]); 
+ 
+
   function submitMessage(e) {
-    // e.preventDefault();
+    e.preventDefault();
     if (e.target.message.value) {
-      socket.emit('USER_MESSAGE', authContext.user.name+": "+e.target.message.value);
+      console.log("Trying to send "+e.target.message.value);
+      
+      socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
     }
   }
-
-
-  //  socket.on('hello', (counter) => {
-  //    console.log("counter"+counter);
-  //  });
-
-
-  socket.once('USER_MESSAGE',(msg) => {
+  socket.on('USER_MESSAGE',(msg) => {
     if(msg){
-      console.log(msg);
-      let temp=messageArray
-      temp.push(msg);
-      setMessages(temp);
+      let temp=messageArray;
+      // temp=[...messageArray, msg];
+      setMessages(temp+"\n"+msg);
    }
   });   
-  socket.once('user_MESSAGE',(msg) => {
+  socket.on('LOGIN_MESSAGE',(msg) => {
     if(msg){
-      console.log(msg);
-      let temp=messageArray
-      temp.push(msg);
-      setMessages(temp);
+      let temp=messageArray;
+      // temp=[...messageArray, msg];
+      setMessages(temp+"\n"+msg);
    }
   });
 
-
-  //  socket.on('serverMsg',(data) => {
-  //    console.log("message received from server:"+data);
-  //  });
-   // socket.onAny((eventName, ...args) => {
-   //   console.log(eventName);
-     
-   // });
    function sendSocketIO() {
-     console.log("message sent");
-     
+     console.log("message sent");     
      socket.emit('test', 'demo');
    }
 
-
-
-
     return (
-      <div className="container mt-5">
+      <div className="container" id="menucard">
         <div className="row message-screen">
           <div className="col-12">
-          {messageArray.map(elem=>(
-            <li>{elem}</li>
+          {messageArray.split("\n").map((elem, i)=>(
+            <li key={i}>{elem}</li>
           ))}
           </div>
         </div>
         <div className="row message-input">
-          <div className="col-12">
-            <form onSubmit={submitMessage}>
-              <input
-                type="text"
-                name="message"
-                id="message"
-              />
-              <button type="submit">Submit</button>
-            </form>
-          </div>
+          <form onSubmit={submitMessage}>
+            <div className="col-9">
+              <input type="text" name="message" id="message" />
+            </div>
+            <div className="col-3">
+              <button type="submit" className="message-submit">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     );

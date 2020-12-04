@@ -40,13 +40,15 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
-// Start the server
+// Start the server, and set a variable for io to use later
 const expressServer=app.listen(PORT, () => {
   if (process.env.NODE_ENV !== "production") {
     console.log(`Server listening at http://localhost:${PORT}`);
   }
 });
-/// please add comments
+
+// Create socket io using the express server
+// Specify the cors headers, just to be safe.
 const io=require("socket.io")(expressServer, 
   {  cors: {
     origin: "http://localhost:"+3000,
@@ -55,17 +57,13 @@ const io=require("socket.io")(expressServer,
 );
 
 io.on('connection', socket => {
-
-  // socket.join('chatRoom');
-  socket.once("USER_CONNECTED", msg=>{
-    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");  
-    console.log(msg);
-    
+  socket.on("USER_CONNECTED", msg=>{
+    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
+    console.log("User connected: "+msg);
   })
-  socket.on("USER_MESSAGE", msg=>{
-    socket.broadcast.emit("USER_MESSAGE", msg);  
-    console.log(msg);
+  socket.on("TELL_EVERYONE", msg=>{
+    console.log("User message: "+msg);
     
+    socket.broadcast.emit("USER_MESSAGE", msg);      
   })
-
 });
