@@ -4,6 +4,8 @@ import CharacterContext from "../../context/character/CharacterContext";
 import "./style.css"
 import Nav from "../layout/Nav";
 import { Link } from "react-router-dom"
+import GameNav from "../layout/GameNav"
+import Footer from "../layout/Footer"
 
 function Quiz({ questions }) {
   const characterContext = useContext(CharacterContext);
@@ -52,15 +54,25 @@ function Quiz({ questions }) {
   } else if (questions.length > 0) {
     return (
       <React.Fragment>
-        <Nav />
+        <div className="jumbotron jumbotron-fluid quiz-head">
+          <div className="container">
+            <h1>Earn Money!</h1>
+            <span>Test your knowledge to earn credits!</span>
+          </div>
+        </div>
         <div className="quiz-section container-fluid">
           {showScore ? (
             <div className="score-section container">
               <div className="row">
-                <p>You scored {score} out of {questions.length}!</p>
+                <p>
+                  You scored {score} out of {questions.length}!
+                </p>
               </div>
               <div className="row">
-                <p>Your correct answers earned you {numberWithCommas(score * 1000000)} credits!</p>
+                <p>
+                  Your correct answers earned you{" "}
+                  {numberWithCommas(score * 1000000)} credits!
+                </p>
               </div>
               <div className="row">
                 <Link to="/earn" onClick={characterContext.saveChar}>
@@ -74,7 +86,8 @@ function Quiz({ questions }) {
                 <div className="row">
                   <div className="col-sm-12">
                     <div className="q-count">
-                      <span>Question {currentQuestion + 1}</span>/{questions.length}
+                      <span>Question {currentQuestion + 1}</span>/
+                      {questions.length}
                     </div>
                   </div>
                 </div>
@@ -87,7 +100,10 @@ function Quiz({ questions }) {
                 </div>
                 <div className="row">
                   <div className="col-sm-12">
-                    <img src={questions[currentQuestion].questionImg} className="quizImg"/>
+                    <img
+                      src={questions[currentQuestion].questionImg}
+                      className="quizImg"
+                    />
                   </div>
                 </div>
               </div>
@@ -96,13 +112,17 @@ function Quiz({ questions }) {
                   <div className="ans-section">
                     <div className="row">
                       <div className="d-inline col-sm-12">
-                        {questions[currentQuestion].answerChoices.map((answerOption) => (
-                          <button
-                            onClick={() => handleUserAnswer(answerOption.isCorrect)}
-                          >
-                            {answerOption.answerText}
-                          </button>
-                        ))}
+                        {questions[currentQuestion].answerChoices.map(
+                          (answerOption) => (
+                            <button
+                              onClick={() =>
+                                handleUserAnswer(answerOption.isCorrect)
+                              }
+                            >
+                              {answerOption.answerText}
+                            </button>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>
@@ -111,6 +131,9 @@ function Quiz({ questions }) {
             </>
           )}
         </div>
+        <Footer />
+
+        <GameNav />
       </React.Fragment>
     );
   }

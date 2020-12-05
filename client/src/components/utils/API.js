@@ -11,6 +11,10 @@ export function getQuizQuestions(){
     return axios.get("/api/questions")
 }
 
+export function getQuizCategories(){
+    return axios.get("/api/questions/category")
+}
+
 export async function loadCharacter(userId){
     return axios.get("/api/character/load/"+userId); 
 }

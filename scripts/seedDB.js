@@ -16,7 +16,8 @@ const questionSeed = [
       { answerText: "Los Angeles", isCorrect: false },
       { answerText: "Mexico City", isCorrect: true },
     ],
-    questionImg: "../img/questions/mexico_city.jpg"
+    questionImg: "../img/questions/mexico_city.jpg",
+    map: "level1"
   },
   {
     level: "North America",
@@ -29,6 +30,7 @@ const questionSeed = [
       { answerText: "Montana", isCorrect: false },
     ],
     questionImg: "../img/questions/denali.jpg",
+    map: "level1"
   },
   {
     level: "North America",
@@ -40,6 +42,7 @@ const questionSeed = [
       { answerText: "Indian Ocean", isCorrect: false },
     ],
     questionImg: "../img/questions/NA.jpg",
+    map: "level1"
   },
   {
     level: "North America",
@@ -50,7 +53,8 @@ const questionSeed = [
       { answerText: "Lake Tahoe", isCorrect: false },
       { answerText: "Lake Huron", isCorrect: false }
     ],
-    questionImg: "../img/questions/Great_Lakes.jpg"
+    questionImg: "../img/questions/Great_Lakes.jpg",
+    map: "level1"
   },
   {
     level: "North America",
@@ -61,7 +65,8 @@ const questionSeed = [
       { answerText: "Sierra Nevada", isCorrect: false },
       { answerText: "Rocky Mountains", isCorrect: true },
     ],
-    questionImg: "../img/questions/Rocky.jpg"
+    questionImg: "../img/questions/Rocky.jpg",
+    map: "level1"
   },
   {
     level: "South America",
@@ -72,7 +77,8 @@ const questionSeed = [
       { answerText: "River Paraguay", isCorrect: false},
       { answerText: "Rio Tocantins", isCorrect: false},
     ],
-    questionImg: "../img/questions/amazon_river.jpg"
+    questionImg: "../img/questions/amazon_river.jpg",
+    map: "level1"
   },
   {
     level: "South America",
@@ -83,7 +89,8 @@ const questionSeed = [
       { answerText: "Chile", isCorrect: true },
       { answerText: "Bolivia", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.jpg"
+    questionImg: "../img/questions/map_SA.jpg",
+    map: "level1"
   },
   {
     level: "South America",
@@ -94,7 +101,8 @@ const questionSeed = [
       { answerText: "Argentina", isCorrect: false },
       { answerText: "Venezuela", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_SA.jpg"
+    questionImg: "../img/questions/map_SA.jpg",
+    map: "level1"
   },
   {
     level: "South America",
@@ -105,7 +113,8 @@ const questionSeed = [
       { answerText: "Salto Grande", isCorrect: false },
       { answerText: "Tequendama Falls", isCorrect: false },
     ],
-    questionImg: "../img/questions/angel_falls.png"
+    questionImg: "../img/questions/angel_falls.png",
+    map: "level1"
   },
   {
     level: "South America",
@@ -116,7 +125,8 @@ const questionSeed = [
       { answerText: "English", isCorrect:  false },
       { answerText: "French", isCorrect: false },
     ],
-    questionImg: "../img/questions/Santiago_Skyline.jpg"
+    questionImg: "../img/questions/Santiago_Skyline.jpg",
+    map: "level1"
   },
   {
     level: "Europe",
@@ -127,7 +137,8 @@ const questionSeed = [
       { answerText: "France", isCorrect: false },
       { answerText: "Russia", isCorrect: true },
     ],
-    questionImg: "../img/questions/europe_map.jpg"
+    questionImg: "../img/questions/europe_map.jpg",
+    map: "level1"
   },
   {
     level: "Europe",
@@ -138,7 +149,8 @@ const questionSeed = [
       { answerText: "Moscow", isCorrect: true },
       { answerText: "Berlin", isCorrect: false },
     ],
-    questionImg: "../img/questions/St_Basils.jpg"
+    questionImg: "../img/questions/St_Basils.jpg",
+    map: "level1"
   },
   {
     level: "Europe",
@@ -149,7 +161,8 @@ const questionSeed = [
       { answerText: "Pyrenees", isCorrect: false },
       { answerText: "Apennines", isCorrect: false },
     ],
-    questionImg: "../img/questions/alps.jpg"
+    questionImg: "../img/questions/alps.jpg",
+    map: "level1"
   },
   {
     level: "Europe",
@@ -160,7 +173,8 @@ const questionSeed = [
       { answerText: "Mount Elbrus", isCorrect: true },
       { answerText: "Tetnuldi", isCorrect: false },
     ],
-    questionImg: "../img/questions/mount_elbrus.jpg"
+    questionImg: "../img/questions/mount_elbrus.jpg",
+    map: "level1"
   },
   {
     level: "Europe",
@@ -171,7 +185,8 @@ const questionSeed = [
       { answerText: "Eiffel Tower", isCorrect: false },
       { answerText: "Federation Tower", isCorrect: true },
     ],
-    questionImg: "../img/questions/eiffel.jpg"
+    questionImg: "../img/questions/eiffel.jpg",
+    map: "level1"
   },
   {
     level: "Asia",
@@ -182,7 +197,8 @@ const questionSeed = [
       { answerText: "Hindi", isCorrect: false },
       { answerText: "Arabic", isCorrect: false },
     ],
-    questionImg: "../img/questions/map_asia.png"
+    questionImg: "../img/questions/map_asia.png",
+    map: "level1"
   },
   {
     level: "Asia",
@@ -193,7 +209,8 @@ const questionSeed = [
       { answerText: "Lhotse", isCorrect: false },
       { answerText: "Mount Everest", isCorrect: false },
     ],
-    questionImg: "../img/questions/everest.JPG"
+    questionImg: "../img/questions/everest.JPG",
+    map: "level1"
   },
   {
     level: "Asia",
@@ -204,7 +221,8 @@ const questionSeed = [
       { answerText: "Seoul", isCorrect: false },
       { answerText: "Jakarta", isCorrect: false },
     ],
-    questionImg: "../img/questions/tokyo.jpg"
+    questionImg: "../img/questions/tokyo.jpg",
+    map: "level1"
   },
   {
     level: "Asia",
@@ -215,7 +233,8 @@ const questionSeed = [
       { answerText: "Lena River", isCorrect: false },
       { answerText: "Yellow River", isCorrect: false },
     ],
-    questionImg: "../img/questions/Yangtze_River.jpg"
+    questionImg: "../img/questions/Yangtze_River.jpg",
+    map: "level1"
   },
   {
     level: "Asia",
@@ -226,7 +245,8 @@ const questionSeed = [
       { answerText: "India", isCorrect: false },
       { answerText: "China", isCorrect: true },
     ],
-    questionImg: "../img/questions/hong_kong.jpg"
+    questionImg: "../img/questions/hong_kong.jpg",
+    map: "level1"
   },
   {
     level: "Africa",
@@ -237,7 +257,8 @@ const questionSeed = [
       { answerText: "Niger", isCorrect: false },
       { answerText: "Nile", isCorrect: true },
     ],
-    questionImg: "../img/questions/sphinx.jpg"
+    questionImg: "../img/questions/sphinx.jpg",
+    map: "level1"
   },
   {
     level: "Africa",
@@ -248,7 +269,8 @@ const questionSeed = [
       { answerText: "Mount Kenya", isCorrect: false },
       { answerText: "Mount Elgon", isCorrect: false },
     ],
-    questionImg: "../img/questions/kilimanjaro.jpg"
+    questionImg: "../img/questions/kilimanjaro.jpg",
+    map: "level1"
   },
   {
     level: "Africa",
@@ -259,7 +281,8 @@ const questionSeed = [
       { answerText: "Afrikaans", isCorrect: false },
       { answerText: "Arabic", isCorrect: true },
     ],
-    questionImg: "../img/questions/arua.jpg"
+    questionImg: "../img/questions/arua.jpg",
+    map: "level1"
   },
   {
     level: "Africa",
@@ -270,7 +293,8 @@ const questionSeed = [
       { answerText: "Grand Bara Desert", isCorrect: false },
       { answerText: "Namib Desert", isCorrect: false },
     ],
-    questionImg: "../img/questions/sahara.jpg"
+    questionImg: "../img/questions/sahara.jpg",
+    map: "level1"
   },
   {
     level: "Africa",
@@ -281,7 +305,8 @@ const questionSeed = [
       { answerText: "Lake Rukwa", isCorrect: false },
       { answerText: "Lake Victoria", isCorrect: true },
     ],
-    questionImg: "../img/questions/Lake_Victoria.jpg"
+    questionImg: "../img/questions/Lake_Victoria.jpg",
+    map: "level1"
   },
   {
     level: "Australia",
@@ -292,7 +317,8 @@ const questionSeed = [
       { answerText: "Oceania", isCorrect: true },
       { answerText: "Aussieland", isCorrect: false },
     ],
-    questionImg: "../img/questions/australia.jpg"
+    questionImg: "../img/questions/australia.jpg",
+    map: "level1"
   },
   {
     level: "Australia",
@@ -303,7 +329,8 @@ const questionSeed = [
       { answerText: "Wombat", isCorrect: false },
       { answerText: "Elephant", isCorrect: true },
     ],
-    questionImg: "../img/questions/koala.jpg"
+    questionImg: "../img/questions/koala.jpg",
+    map: "level1"
   },
   {
     level: "Australia",
@@ -314,7 +341,8 @@ const questionSeed = [
       { answerText: "Perth", isCorrect: false },
       { answerText: "Melbourne", isCorrect: false },
     ],
-    questionImg: "../img/questions/sydney_opera.jpg"
+    questionImg: "../img/questions/sydney_opera.jpg",
+    map: "level1"
   },
   {
     level: "Australia",
@@ -325,7 +353,8 @@ const questionSeed = [
       { answerText: "Mount Twynam", isCorrect: false },
       { answerText: "Gungartan", isCorrect: false },
     ],
-    questionImg: "../img/questions/kosciouszko.jpg"
+    questionImg: "../img/questions/kosciouszko.jpg",
+    map: "level1"
   },
   {
     level: "Australia",
@@ -336,7 +365,8 @@ const questionSeed = [
       { answerText: "Saya de Malha Banks", isCorrect: false },
       { answerText: "Great Barrier Reef", isCorrect: true },
     ],
-    questionImg: "../img/questions/gbr.jpg"
+    questionImg: "../img/questions/gbr.jpg",
+    map: "level1"
   },
   {
     level: "Antarctica",
@@ -347,7 +377,8 @@ const questionSeed = [
       { answerText: "Whales", isCorrect: false },
       { answerText: "Penguins", isCorrect: false },
     ],
-    questionImg: "../img/questions/penguins.jpg"
+    questionImg: "../img/questions/penguins.jpg",
+    map: "level1"
   },
   {
     level: "Antarctica",
@@ -356,9 +387,10 @@ const questionSeed = [
       { answerText: "Largest", isCorrect: false },
       { answerText: "Smallest", isCorrect: false },
       { answerText: "Windiest", isCorrect: true },
-      { answerText: "Inhabited", isCorrect: false },
+      { answerText: "Largest Tourist Destination", isCorrect: false },
     ],
-    questionImg: "../img/questions/antarctica.jpg"
+    questionImg: "../img/questions/antarctica.jpg",
+    map: "level1"
   },
   {
     level: "Antarctica",
@@ -369,7 +401,8 @@ const questionSeed = [
       { answerText: "Russia", isCorrect: false },
       { answerText: "None", isCorrect: true },
     ],
-    questionImg: "../img/questions/plane.jpg"
+    questionImg: "../img/questions/plane.jpg",
+    map: "level1"
   },
   {
     level: "Antarctica",
@@ -380,7 +413,8 @@ const questionSeed = [
       { answerText: "50-100", isCorrect: false },
       { answerText: "100+", isCorrect: true },
     ],
-    questionImg: "../img/questions/research.jpg"
+    questionImg: "../img/questions/research.jpg",
+    map: "level1"
   },
   {
     level: "Antarctica",
@@ -391,7 +425,8 @@ const questionSeed = [
       { answerText: "-179.6 degrees F", isCorrect: false },
       { answerText: "-83.6 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/glaciers.jpg"
+    questionImg: "../img/questions/glaciers.jpg",
+    map: "level1"
   },
   {
     level: "Sun",
@@ -402,7 +437,8 @@ const questionSeed = [
       { answerText: "Hydrogen", isCorrect: true },
       { answerText: "Oxygen", isCorrect: false },
     ],
-    questionImg: "../img/questions/sun1.jpg"
+    questionImg: "../img/questions/sun1.jpg",
+    map: "level2"
   },
   {
     level: "Sun",
@@ -413,7 +449,8 @@ const questionSeed = [
       { answerText: "10,000 degrees F", isCorrect: true },
       { answerText: "1,000,000 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/sun2.jpg"
+    questionImg: "../img/questions/sun2.jpg",
+    map: "level2"
   },
   {
     level: "Sun",
@@ -424,7 +461,8 @@ const questionSeed = [
       { answerText: "4,600,000 years", isCorrect: false },
       { answerText: "4,600,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/sun3.jpg"
+    questionImg: "../img/questions/sun3.jpg",
+    map: "level2"
   },
   {
     level: "Earth",
@@ -435,7 +473,8 @@ const questionSeed = [
       { answerText: "9 billion miles", isCorrect: false },
       { answerText: "90 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/sun4.jpg"
+    questionImg: "../img/questions/sun4.jpg",
+    map: "level2"
   },
   {
     level: "Earth",
@@ -446,7 +485,8 @@ const questionSeed = [
       { answerText: "300,000 masses", isCorrect: true },
       { answerText: "3,000,000 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys.jpg"
+    questionImg: "../img/questions/solar_sys.jpg",
+    map: "level2"
   },
   {
     level: "Earth",
@@ -457,7 +497,8 @@ const questionSeed = [
       { answerText: "Desert", isCorrect: false },
       { answerText: "Ice", isCorrect: false },
     ],
-    questionImg: "../img/questions/earth.jpg"
+    questionImg: "../img/questions/earth.jpg",
+    map: "level2"
   },
   {
     level: "Earth",
@@ -468,7 +509,8 @@ const questionSeed = [
       { answerText: "365 days", isCorrect: true },
       { answerText: "500 days", isCorrect: false },
     ],
-    questionImg: "../img/questions/earth2.jpg"
+    questionImg: "../img/questions/earth2.jpg",
+    map: "level2"
   },
   {
     level: "Mercury",
@@ -479,7 +521,8 @@ const questionSeed = [
       { answerText: "72 Days", isCorrect: false },
       { answerText: "88 Days", isCorrect: true },
     ],
-    questionImg: "../img/questions/clock.jpg"
+    questionImg: "../img/questions/clock.jpg",
+    map: "level2"
   },
   {
     level: "Mercury",
@@ -490,7 +533,8 @@ const questionSeed = [
       { answerText: "8,000 degrees F", isCorrect: false },
       { answerText: "800,000 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/mercury.jpg"
+    questionImg: "../img/questions/mercury.jpg",
+    map: "level2"
   },
   {
     level: "Mercury",
@@ -501,7 +545,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/galaxy.jpg"
+    questionImg: "../img/questions/galaxy.jpg",
+    map: "level2"
   },
   {
     level: "Mercury",
@@ -512,7 +557,8 @@ const questionSeed = [
       { answerText: "4 million miles", isCorrect: false },
       { answerText: "40 million miles", isCorrect: true },
     ],
-    questionImg: "../img/questions/solar_sys2.png"
+    questionImg: "../img/questions/solar_sys2.png",
+    map: "level2"
   },
   {
     level: "Mercury",
@@ -523,7 +569,8 @@ const questionSeed = [
       { answerText: "2 masses", isCorrect: false },
       { answerText: "20 masses", isCorrect: true },
     ],
-    questionImg: "../img/questions/mercury2.jpg"
+    questionImg: "../img/questions/mercury2.jpg",
+    map: "level2"
   },
   {
     level: "Venus",
@@ -534,7 +581,8 @@ const questionSeed = [
       { answerText: "350 days", isCorrect: false },
       { answerText: "500 days", isCorrect: false },
     ],
-    questionImg: "../img/questions/venus.jpg"
+    questionImg: "../img/questions/venus.jpg",
+    map: "level2"
   },
   {
     level: "Venus",
@@ -545,7 +593,8 @@ const questionSeed = [
       { answerText: "860 degrees F", isCorrect: true },
       { answerText: "8,600 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/venus2.jpg"
+    questionImg: "../img/questions/venus2.jpg",
+    map: "level2"
   },
   {
     level: "Venus",
@@ -556,7 +605,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/venus3.jpg"
+    questionImg: "../img/questions/venus3.jpg",
+    map: "level2"
   },
   {
     level: "Venus",
@@ -567,7 +617,8 @@ const questionSeed = [
       { answerText: "6.7 billion miles", isCorrect: false },
       { answerText: "67 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/galaxy2.jpg"
+    questionImg: "../img/questions/galaxy2.jpg",
+    map: "level2"
   },
   {
     level: "Venus",
@@ -578,7 +629,8 @@ const questionSeed = [
       { answerText: ".8 masses", isCorrect: true },
       { answerText: "1.5 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/venus4.jpg"
+    questionImg: "../img/questions/venus4.jpg",
+    map: "level2"
   },
   {
     level: "Mars",
@@ -589,7 +641,8 @@ const questionSeed = [
       { answerText: "450 days", isCorrect: false },
       { answerText: "690 days", isCorrect: true },
     ],
-    questionImg: "../img/questions/mars2.jpg"
+    questionImg: "../img/questions/mars2.jpg",
+    map: "level2"
   },
   {
     level: "Mars",
@@ -600,7 +653,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/mars3.jpg"
+    questionImg: "../img/questions/mars3.jpg",
+    map: "level2"
   },
   {
     level: "Mars",
@@ -611,7 +665,8 @@ const questionSeed = [
       { answerText: "13.7 billion miles", isCorrect: false },
       { answerText: "137 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/mars4.jpg"
+    questionImg: "../img/questions/mars4.jpg",
+    map: "level2"
   },
   {
     level: "Mars",
@@ -622,7 +677,8 @@ const questionSeed = [
       { answerText: ".8 masses", isCorrect: false },
       { answerText: "1.5 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/mars5.jpg"
+    questionImg: "../img/questions/mars5.jpg",
+    map: "level2"
   },
   {
     level: "Mars",
@@ -633,7 +689,8 @@ const questionSeed = [
       { answerText: "8 degrees F", isCorrect: false },
       { answerText: "80 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/mars.jpg"
+    questionImg: "../img/questions/mars.jpg",
+    map: "level2"
   },
   {
     level: "Jupiter",
@@ -644,7 +701,8 @@ const questionSeed = [
       { answerText: "12 years", isCorrect: true },
       { answerText: "29 years", isCorrect: false },
     ],
-    questionImg: "../img/questions/jupiter2.jpg"
+    questionImg: "../img/questions/jupiter2.jpg",
+    map: "level2"
   },
   {
     level: "Jupiter",
@@ -655,7 +713,8 @@ const questionSeed = [
       { answerText: "-230 degrees F", isCorrect: true },
       { answerText: "-117 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/jupiter4.jpg"
+    questionImg: "../img/questions/jupiter4.jpg",
+    map: "level2"
   },
   {
     level: "Jupiter",
@@ -666,7 +725,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/jupiter.png"
+    questionImg: "../img/questions/jupiter.png",
+    map: "level2"
   },
   {
     level: "Jupiter",
@@ -677,7 +737,8 @@ const questionSeed = [
       { answerText: "47.5 billion miles", isCorrect: false },
       { answerText: "475 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys.jpg"
+    questionImg: "../img/questions/solar_sys.jpg",
+    map: "level2"
   },
   {
     level: "Jupiter",
@@ -688,7 +749,8 @@ const questionSeed = [
       { answerText: "300 masses", isCorrect: true },
       { answerText: "3,000 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/jupiter3.jpg"
+    questionImg: "../img/questions/jupiter3.jpg",
+    map: "level2"
   },
   {
     level: "Saturn",
@@ -699,7 +761,8 @@ const questionSeed = [
       { answerText: "12 years", isCorrect: false },
       { answerText: "29 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/saturn3.jpg"
+    questionImg: "../img/questions/saturn3.jpg",
+    map: "level2"
   },
   {
     level: "Saturn",
@@ -710,7 +773,8 @@ const questionSeed = [
       { answerText: "-29 degrees F", isCorrect: false },
       { answerText: "0 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/saturn4.jpg"
+    questionImg: "../img/questions/saturn4.jpg",
+    map: "level2"
   },
   {
     level: "Saturn",
@@ -721,7 +785,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/saturn2.jpg"
+    questionImg: "../img/questions/saturn2.jpg",
+    map: "level2"
   },
   {
     level: "Saturn",
@@ -732,7 +797,8 @@ const questionSeed = [
       { answerText: "1 billion miles", isCorrect: true },
       { answerText: "100 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys2.png"
+    questionImg: "../img/questions/solar_sys2.png",
+    map: "level2"
   },
   {
     level: "Saturn",
@@ -743,7 +809,8 @@ const questionSeed = [
       { answerText: "950 masses", isCorrect: false },
       { answerText: "9,500 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/saturn.jpg"
+    questionImg: "../img/questions/saturn.jpg",
+    map: "level2"
   },
   {
     level: "Uranus",
@@ -754,7 +821,8 @@ const questionSeed = [
       { answerText: "126 years", isCorrect: false },
       { answerText: "200 years", isCorrect: false },
     ],
-    questionImg: "../img/questions/uranus3.jpg"
+    questionImg: "../img/questions/uranus3.jpg",
+    map: "level2"
   },
   {
     level: "Uranus",
@@ -765,7 +833,8 @@ const questionSeed = [
       { answerText: "-35 degrees F", isCorrect: false },
       { answerText: "0 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/uranus2.jpg"
+    questionImg: "../img/questions/uranus2.jpg",
+    map: "level2"
   },
   {
     level: "Uranus",
@@ -776,7 +845,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/space.jpg"
+    questionImg: "../img/questions/space.jpg",
+    map: "level2"
   },
   {
     level: "Uranus",
@@ -787,7 +857,8 @@ const questionSeed = [
       { answerText: "1.8 billion miles", isCorrect: true },
       { answerText: "180 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys.jpg"
+    questionImg: "../img/questions/solar_sys.jpg",
+    map: "level2"
   },
   {
     level: "Uranus",
@@ -798,7 +869,8 @@ const questionSeed = [
       { answerText: "150 masses", isCorrect: false },
       { answerText: "300 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/uranus.webp"
+    questionImg: "../img/questions/uranus.webp",
+    map: "level2"
   },
   {
     level: "Neptune",
@@ -809,7 +881,8 @@ const questionSeed = [
       { answerText: "165 years", isCorrect: true },
       { answerText: "250 years", isCorrect: false },
     ],
-    questionImg: "../img/questions/space2.jpg"
+    questionImg: "../img/questions/space2.jpg",
+    map: "level2"
   },
   {
     level: "Neptune",
@@ -820,7 +893,8 @@ const questionSeed = [
       { answerText: "-37 degrees F", isCorrect: false },
       { answerText: "0 degrees F", isCorrect: false },
     ],
-    questionImg: "../img/questions/neptune.webp"
+    questionImg: "../img/questions/neptune.webp",
+    map: "level2"
   },
   {
     level: "Neptune",
@@ -831,7 +905,8 @@ const questionSeed = [
       { answerText: "2.7 billion miles", isCorrect: true },
       { answerText: "270 billion miles", isCorrect: false },
     ],
-    questionImg: "../img/questions/solar_sys2.png"
+    questionImg: "../img/questions/solar_sys2.png",
+    map: "level2"
   },
   {
     level: "Neptune",
@@ -842,7 +917,8 @@ const questionSeed = [
       { answerText: "150 masses", isCorrect: false },
       { answerText: "300 masses", isCorrect: false },
     ],
-    questionImg: "../img/questions/neptune3.png"
+    questionImg: "../img/questions/neptune3.png",
+    map: "level2"
   },
   {
     level: "Neptune",
@@ -853,7 +929,8 @@ const questionSeed = [
       { answerText: "4,500,000 years", isCorrect: false },
       { answerText: "4,500,000,000 years", isCorrect: true },
     ],
-    questionImg: "../img/questions/neptune4.jpg"
+    questionImg: "../img/questions/neptune4.jpg",
+    map: "level2"
   },
   
 ];

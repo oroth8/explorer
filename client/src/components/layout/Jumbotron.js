@@ -39,6 +39,7 @@ const JumboStyle = styled.div`
   background-image: url(${img});
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: none;
   min-height: 60rem;
 `;
 const TS = styled.div`
@@ -51,8 +52,7 @@ const TS = styled.div`
   button {
     color: white;
   }
-  @media only screen and (max-width: 900px) {
-    #text,
+  @media only screen and (max-width: 1100px) {
     button {
       color: #212529;
       font-weight: bold;
