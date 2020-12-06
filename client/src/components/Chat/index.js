@@ -10,7 +10,7 @@ export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
   const io = require("socket.io-client");
-  const socket = io();
+  const socket = io({transports: ['websocket']});
   useEffect(() => {
     if (authContext.user) { 
       socket.once('connect', () => {
