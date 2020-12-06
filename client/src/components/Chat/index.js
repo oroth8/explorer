@@ -1,48 +1,31 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
-import openSocket from 'socket.io-client';
-
 const style={
   back: {
     background: "rgba(0,0,0,0)"
   }
 }
-
-
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
-  //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
-  const PORT = process.env.PORT || 3001;
-  // const socket = openSocket('http://localhost/socket.io:'+PORT, {transports: ['websocket']});
   const io = require("socket.io-client");
   const socket = io();
-  socket.on('time', (timeString) => {
-    console.log(timeString);
-  });
-  let userId;
   useEffect(() => {
-    if (authContext.user) {
-      userId = authContext.user._id;
- socket.once('connect', () => {
-    console.log("CONNECTED");
-    socket.emit('USER_CONNECTED', authContext.user.name);
-    
-   });
+    if (authContext.user) { 
+      socket.once('connect', () => {
+        socket.emit('USER_CONNECTED', authContext.user.name);
+      });
     }
     else 
     authContext.loadUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authContext.loading]);
-
-
- 
 
   function submitMessage(e) {
     e.preventDefault();
     if (e.target.message.value) {
-      console.log("Trying to send "+e.target.message.value);
-      
+      console.log("Trying to send "+e.target.message.value);      
       socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
       e.target.message.value="";
     }
@@ -51,8 +34,7 @@ export default function Chat(){
 
   socket.once('USER_MESSAGE',(msg) => {
     if(msg){
-      console.log("Received: "+msg);
-      
+      console.log("Received: "+msg);      
       let temp=messagesString;
       setMessages(temp+"\n"+msg);
    }
@@ -85,5 +67,4 @@ export default function Chat(){
         </div>
       </div>
     );
-// return <></>
 };
