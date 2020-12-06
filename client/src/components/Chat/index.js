@@ -9,9 +9,7 @@ const style={
   }
 }
 
-socket.on('time', (timeString) => {
-  console.log(timeString);
-});
+
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
@@ -20,6 +18,9 @@ export default function Chat(){
   // const socket = openSocket('http://localhost/socket.io:'+PORT, {transports: ['websocket']});
   const io = require("socket.io-client");
   const socket = io();
+  socket.on('time', (timeString) => {
+    console.log(timeString);
+  });
   let userId;
   useEffect(() => {
     if (authContext.user) {
