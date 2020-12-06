@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
 import Axios from "axios";
@@ -19,11 +19,6 @@ export default function Chat(){
   const [messages, setMessages] = useState([]);
   //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
 
-  let userId;
-  if (authContext.user) {
-    userId = authContext.user._id;
-  }
- 
 
   function submitMessage(e) {
     e.preventDefault();
@@ -49,6 +44,8 @@ function getMessages(){
     }
     let newArray=response.data.slice(bottom, top);
     setMessages(newArray);
+    let screen = document.getElementById("message-screen");
+    screen.scrollTop = screen.scrollHeight;
   })
   .catch(function(error){
     console.log(error);
@@ -61,7 +58,7 @@ setInterval(getMessages(), 5000);
 
     return (
       <div className="container" id="menucard" style={style.back}>
-        <div className="row mt-4 mb-4 message-screen">
+        <div className="row mt-4 mb-4 message-screen" id="message-screen">
           <ul style={style.ul} className="col-12">
           {messages.map((info, i)=>(
             <li key={i}>{info.sender}: {info.message}</li>
