@@ -63,10 +63,10 @@ const io = socketIO(expressServer,
     methods: ["GET", "POST"]
   }});
 
-setInterval(() => {
-  console.log("Sending...");
+// setInterval(() => {
+//   console.log("Sending...");
   
-  io.emit('time', new Date().toTimeString())}, 1000);
+//   io.emit('time', new Date().toTimeString())}, 1000);
 
   io.on('connection', (socket) => {
     console.log('Client connected');
