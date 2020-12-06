@@ -47,6 +47,15 @@ const expressServer=app.listen(PORT, () => {
   }
 });
 
+// Create socket io using the express server
+// Specify the cors headers, just to be safe.
+// const io=require("socket.io")(expressServer, 
+//   {  cors: {
+//     origin: "http://localhost:"+3000,
+//     methods: ["GET", "POST"]
+//   }}
+// );
+
 const socketIO = require('socket.io');
 const io = socketIO(expressServer, 
     {  cors: {
@@ -55,9 +64,9 @@ const io = socketIO(expressServer,
   }});
 
 setInterval(() => {
-  //console.log("Sending...");
+  console.log("Sending...");
   
-  //io.emit('time', new Date().toTimeString())}, 1000);
+  io.emit('time', new Date().toTimeString())}, 1000);
 
   io.on('connection', (socket) => {
     console.log('Client connected');
