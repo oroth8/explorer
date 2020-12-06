@@ -45,7 +45,7 @@ function getMessages(){
     }
     let top=0;
     if(response.data.length > 0){
-      top=response.data.length-1;
+      top=response.data.length;
     }
     let newArray=response.data.slice(bottom, top);
     setMessages(newArray);
