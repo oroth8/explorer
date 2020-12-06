@@ -49,23 +49,39 @@ const expressServer=app.listen(PORT, () => {
 
 // Create socket io using the express server
 // Specify the cors headers, just to be safe.
-const io=require("socket.io")(expressServer, 
-  {  cors: {
-    origin: "http://localhost:"+3000,
+// const io=require("socket.io")(expressServer, 
+//   {  cors: {
+//     origin: "http://localhost:"+3000,
+//     methods: ["GET", "POST"]
+//   }}
+// );
+
+const socketIO = require('socket.io');
+const io = socketIO(expressServer, 
+    {  cors: {
+    origin: "http://localhost:"+3001,
     methods: ["GET", "POST"]
-  }}
-);
+  }});
 
-io.on('connection', socket => {
-  socket.on("USER_CONNECTED", msg=>{
-    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
-    console.log("User connected: "+msg);
-  })
+setInterval(() => {
+  console.log("Sending...");
+  
+  io.emit('time', new Date().toTimeString())}, 1000);
 
-  socket.on("TELL_EVERYONE", msg=>{
-    console.log("User message: "+msg);
+  io.on('connection', (socket) => {
+    console.log('Client connected');
+    socket.on('disconnect', () => console.log('Client disconnected'));
+  });
+// io.on('connection', socket => {
+//   socket.on("USER_CONNECTED", msg=>{
+//     socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
+//     console.log("User connected: "+msg);
+//   })
+
+//   socket.on("TELL_EVERYONE", msg=>{
+//     console.log("User message: "+msg);
     
-    socket.broadcast.emit("USER_MESSAGE", msg);      
-  })
+//     socket.broadcast.emit("USER_MESSAGE", msg);      
+//   })
  
-});
+// });
