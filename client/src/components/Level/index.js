@@ -42,7 +42,9 @@ function Level() {
     console.log(`Left: ${left}, avatar: ${avatarState.left}`);
     
     // Get the ship name from the path of the file
-    let shipType=(shipSrc.source.split("/")[3]);
+    let shipType;
+    if(shipSrc.source)
+      shipType=(shipSrc.source.split("/")[3]);
 
     let transform="scaleX(1)" 
 
