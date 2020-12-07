@@ -23,10 +23,12 @@ const style={
 function Location(props){
 
   const [displayOptions, setDisplayOptions]=useState({
+    overflow: "scroll",
     position: "fixed",
     top: "10%",
     left: "10%",
     maxWidth: "80%",
+    maxHeight: "80vh",
     zIndex: "2",
     display: "block"
   });
