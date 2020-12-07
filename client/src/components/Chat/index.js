@@ -1,11 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
-<<<<<<< HEAD
-=======
-import Axios from "axios";
-
->>>>>>> main
 const style={
   back: {
     background: "rgba(0,0,0,0)"
