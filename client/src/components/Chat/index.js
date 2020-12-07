@@ -60,7 +60,7 @@ function scrollDown(){
       <div className="container" id="menucard" style={style.back}>
         <div className="row mt-4 mb-4 message-screen" id="message-screen"> 
           <ul style={style.ul} className="col-12">
-          {messages.map((info, i)=>(
+          {messagesString.map((info, i)=>(
             <li key={i}>{info.sender}: {info.message}</li>
           ))}
           </ul>
