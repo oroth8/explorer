@@ -45,9 +45,9 @@ function Level() {
 
     if(left<avatarState.left){      
       transform="scaleX(1)";
+      if(shipType==="rocket.svg") transform="rotate(-90deg)";
     }
-    
-    if(shipType==="rocket.svg") transform="rotate('90deg'), "+transform;
+    else if(shipType==="rocket.svg") transform="rotate(90deg)";
     console.log(transform);
     setAvatarState({ ...avatarState, top, left, transform });
   };
