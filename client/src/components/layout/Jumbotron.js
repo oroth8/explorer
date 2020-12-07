@@ -52,7 +52,7 @@ const TS = styled.div`
   button {
     color: white;
   }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 1300px) {
     button {
       color: #212529;
       font-weight: bold;
