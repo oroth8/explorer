@@ -14,7 +14,7 @@ const CharacterState = (props) => {
       currentYear:2021,
       credits:100,
       maxLevel:0,
-      shipIdArray:[],
+      shipIdArray:["5fc31206388dbcd5aa78646b"],
       birthYear:2001
     },
     loaded:false,
