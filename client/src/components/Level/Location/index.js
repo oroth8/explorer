@@ -13,6 +13,8 @@ const style={
   },
   paragraph: {
     color: "black"
+  }, a: {
+    color: "blue"
   }
 }
 
@@ -70,6 +72,8 @@ function Location(props){
               <img style={style.locationimg} src={locationDetails.imageUrl} />
 
               <p style={style.paragraph}> {locationDetails.description} </p>
+
+              <a style={style.a} href={`https://en.wikipedia.org/wiki/${props.location.name}`}>From Wikipedia</a>
             </div>  
 
           </div>
