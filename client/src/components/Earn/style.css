@@ -6,6 +6,7 @@
     margin: 0 auto;
     float: none; 
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 
@@ -17,7 +18,7 @@
     object-fit: cover;
 }
 
-.level1 {
+.level1img {
     padding: 15px;
 }
 .level2 {
