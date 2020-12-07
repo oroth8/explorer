@@ -39,6 +39,9 @@ function Level() {
   let getLocation = (e) => {    
     let top = e.pageY - 10 + "px";
     let left = e.pageX - 20 + "px";
+    console.log(`Left: ${left}, avatar: ${avatarState.left}`);
+    
+    // Get the ship name from the path of the file
     let shipType=(shipSrc.source.split("/")[3]);
 
     let transform="scaleX(1)" 
