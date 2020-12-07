@@ -33,7 +33,7 @@ const CharacterState = (props) => {
     else 
       // If we don't, then we load the user data. after it's loaded, useEffect will trigger again, and we can load the character
      authContext.loadUser();
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   },[authContext.loading, state.loaded]);
   
   useEffect(()=>{

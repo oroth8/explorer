@@ -1,8 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
+<<<<<<< HEAD
+=======
 import Axios from "axios";
 
+>>>>>>> main
 const style={
   back: {
     background: "rgba(0,0,0,0)"
@@ -12,22 +15,28 @@ const style={
     marginBottom: "25px"
   }
 }
-
-
 export default function Chat(){
   const authContext = useContext(AuthContext);
-  const [messages, setMessages] = useState([]);
-  //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
-
+  const [messagesString, setMessages] = useState("");
+  const io = require("socket.io-client");
+  const socket = io({transports: ['websocket']});
+  useEffect(() => {
+    if (authContext.user) { 
+      socket.once('connect', () => {
+        socket.emit('USER_CONNECTED', authContext.user.name);
+      });
+    }
+    else 
+    authContext.loadUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authContext.loading]);
 
   function submitMessage(e) {
     e.preventDefault();
     if (e.target.message.value) {
-      Axios.post("/api/message/add", { "sender": authContext.user.name, "message": e.target.message.value} )
-      .then(getMessages)
-      .catch(function (error) {
-        console.log(error);
-      });
+      console.log("Trying to send "+e.target.message.value);      
+      socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
+      e.target.message.value="";
     }
   }
 
@@ -38,34 +47,19 @@ function scrollDown(){
 }
  
 
-function getMessages(){
-  Axios.get("/api/message/get").then(function(response){
-    console.log("ran");
-    let bottom=0;
-    if(response.data.length >25){
-      bottom=response.data.length-25;
-    }
-    let top=0;
-    if(response.data.length > 0){
-      top=response.data.length;
-    }
-    let newArray=response.data.slice(bottom, top);
-    setMessages(newArray);
-  })
-  .catch(function(error){
-    console.log(error);
-  })
-}
-
-useEffect(() => {
-  getMessages();
-  setTimeout(scrollDown,100);
-  const interval = setInterval(getMessages, 5000);
-  return () => clearInterval(interval);
-}, []);
-
-
-
+  socket.once('USER_MESSAGE',(msg) => {
+    if(msg){
+      console.log("Received: "+msg);      
+      let temp=messagesString;
+      setMessages(temp+"\n"+msg);
+   }
+  });   
+  socket.on('LOGIN_MESSAGE',(msg) => { 
+    if(msg){
+      let temp=messagesString;
+      setMessages(temp+"\n"+msg);
+   }
+  });
 
     return (
       <div className="container" id="menucard" style={style.back}>
@@ -88,5 +82,4 @@ useEffect(() => {
         </div>
       </div>
     );
-// return <></>
 };
