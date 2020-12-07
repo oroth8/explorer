@@ -36,7 +36,7 @@ function Level() {
     transform:"scaleX(-1)"
   });
 
-  let getLocation = (e) => {
+  let getLocation = (e) => {    
     let top = e.pageY - 10 + "px";
     let left = e.pageX - 20 + "px";
     let shipType=(shipSrc.source.split("/")[3]);
