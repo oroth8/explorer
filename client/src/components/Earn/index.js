@@ -5,10 +5,12 @@ import "./style.css";
 import Wave from "../layout/Wave";
 import Footer from "../layout/Footer";
 
-function Earn({ questions, categories }) {
+function Earn({ categories }) {
+  // Filter of categories prop for respective levels
   const level1 = categories.filter((category) => category.map === "level1");
   const level2 = categories.filter((category) => category.map === "level2");
 
+  // Map to remove level information and leave only the location
   const level1Cat = level1.map(function (item) {
     return item["_id"];
   });
@@ -19,6 +21,7 @@ function Earn({ questions, categories }) {
   let url;
   let link;
 
+  // Function that uses switch statement to assign URL and link for specific location
   const getImageUrls = (category) => {
     switch (category) {
       case "North America":
@@ -122,6 +125,7 @@ function Earn({ questions, categories }) {
           </div>
         </div>
         <Wave />
+        // Map over the level 1 categories and render a card with image and link to quiz
         <div className="row row-cols-3 justify-content-center">
           {level1Cat.map((category) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -145,6 +149,7 @@ function Earn({ questions, categories }) {
         </div>
         <Wave />
         <div className="row row-cols-3 justify-content-center">
+          // // Map over the level 2 categories and render a card with image and link to quiz
           {level2Cat.map((category) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 level2">
               {getImageUrls(category)}
