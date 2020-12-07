@@ -38,9 +38,7 @@ function Play({ questions }) {
         </div>
 
        <div className="col-md-6 col-sm-12">
-          <a href="/chat">
             <Chat />
-          </a>
         </div>
       </div>
       <GameNav />

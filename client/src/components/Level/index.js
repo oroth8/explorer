@@ -35,9 +35,12 @@ function Level() {
     height: "30px",
   });
 
-  let getLocation = (e) => {
+  let getLocation = (e) => {    
     let top = e.pageY - 10 + "px";
     let left = e.pageX - 20 + "px";
+    console.log(left);
+    console.log(avatarState);
+    
     setAvatarState({ ...avatarState, top, left });
   };
 
