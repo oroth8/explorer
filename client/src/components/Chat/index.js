@@ -1,74 +1,82 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
-import openSocket from 'socket.io-client';
+import Axios from "axios";
 
 const style={
   back: {
     background: "rgba(0,0,0,0)"
+  },
+  ul: {
+    listStyle: "none",
+    marginBottom: "25px"
   }
 }
 
+
 export default function Chat(){
   const authContext = useContext(AuthContext);
-  const [messagesString, setMessages] = useState("");
+  const [messages, setMessages] = useState([]);
   //https://stackoverflow.com/questions/63623632/sockets-io-issue-websocket-is-closed-before-the-connection-is-established
-  const PORT = process.env.PORT || 3001;
-  const socket = openSocket('http://localhost:'+PORT, {transports: ['websocket']});
 
-  let userId;
-  useEffect(() => {
-    if (authContext.user) {
-      userId = authContext.user._id;
- socket.once('connect', () => {
-    console.log("CONNECTED");
-    socket.emit('USER_CONNECTED', authContext.user.name);
-    
-   });
-    }
-    else 
-    authContext.loadUser();
-  }, [authContext.loading]);
-
-
- 
 
   function submitMessage(e) {
     e.preventDefault();
     if (e.target.message.value) {
-      console.log("Trying to send "+e.target.message.value);
-      
-      socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
-      e.target.message.value="";
+      Axios.post("/api/message/add", { "sender": authContext.user.name, "message": e.target.message.value} )
+      .then(getMessages)
+      .catch(function (error) {
+        console.log(error);
+      });
     }
   }
+
+function scrollDown(){
+  console.log("scroll");
+  let screen = document.getElementById("message-screen");
+ screen.scrollTop = screen.scrollHeight;
+}
  
 
-  socket.once('USER_MESSAGE',(msg) => {
-    if(msg){
-      console.log("Received: "+msg);
-      
-      let temp=messagesString;
-      setMessages(temp+"\n"+msg);
-   }
-  });   
-  socket.on('LOGIN_MESSAGE',(msg) => { 
-    if(msg){
-      let temp=messagesString;
-      setMessages(temp+"\n"+msg);
-   }
-  });
+function getMessages(){
+  Axios.get("/api/message/get").then(function(response){
+    console.log("ran");
+    let bottom=0;
+    if(response.data.length >25){
+      bottom=response.data.length-25;
+    }
+    let top=0;
+    if(response.data.length > 0){
+      top=response.data.length;
+    }
+    let newArray=response.data.slice(bottom, top);
+    setMessages(newArray);
+  })
+  .catch(function(error){
+    console.log(error);
+  })
+}
+
+useEffect(() => {
+  getMessages();
+  setTimeout(scrollDown,100);
+  const interval = setInterval(getMessages, 5000);
+  return () => clearInterval(interval);
+}, []);
+
+
+
 
     return (
       <div className="container" id="menucard" style={style.back}>
-        <div className="row mt-4 message-screen">
-          <div className="col-12">
-          {messagesString.split("\n").map((elem, i)=>(
-            <li key={i}>{elem}</li>
+        <div className="row mt-4 mb-4 message-screen" id="message-screen"> 
+          <ul style={style.ul} className="col-12">
+          {messages.map((info, i)=>(
+            <li key={i}>{info.sender}: {info.message}</li>
           ))}
-          </div>
+          </ul>
         </div>
-        <div className="row message-input">
+        <div className="row mt-4 message-input">
           <form onSubmit={submitMessage}>
             <div className="col-9">
               <input type="text" name="message" id="message" />
@@ -80,4 +88,5 @@ export default function Chat(){
         </div>
       </div>
     );
+// return <></>
 };
