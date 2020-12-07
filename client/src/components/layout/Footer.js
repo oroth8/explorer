@@ -51,7 +51,7 @@ const Footer = () => {
 
             <ul className="list-unstyled">
               <li>
-                <a href="https://github.com/oroth8/project3">Project Repo</a>
+                <a href="https://github.com/oroth8/explorer">Explorer Repo</a>
               </li>
             </ul>
           </div>
@@ -78,7 +78,7 @@ const Footer = () => {
       <ul className="list-unstyled list-inline text-center">
         <li className="list-inline-item">
           <a
-            href="https://github.com/oroth8/project3"
+            href="https://github.com/oroth8/explorer"
             className="btn-floating btn-github mx-1"
           >
             <i className="fab fa-github"> </i>
