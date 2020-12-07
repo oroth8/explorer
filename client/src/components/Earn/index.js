@@ -125,7 +125,7 @@ function Earn({ categories }) {
           </div>
         </div>
         <Wave />
-        // Map over the level 1 categories and render a card with image and link to quiz
+        {/* Map over the level 1 categories and render a card with image and link to quiz */}
         <div className="row row-cols-3 justify-content-center">
           {level1Cat.map((category) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -149,7 +149,7 @@ function Earn({ categories }) {
         </div>
         <Wave />
         <div className="row row-cols-3 justify-content-center">
-          // // Map over the level 2 categories and render a card with image and link to quiz
+          {/* Map over the level 2 categories and render a card with image and link to quiz */}
           {level2Cat.map((category) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 level2">
               {getImageUrls(category)}
