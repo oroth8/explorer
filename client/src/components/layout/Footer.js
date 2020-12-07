@@ -14,8 +14,8 @@ const Footer = () => {
             <h5 className="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
             <p>
               This is a MERN stack web game that is designed to take the user on
-              an educational journey while interacting with the NASA API to gain
-              explorative knowledge. Gain credits as rewards for answering
+              an educational journey while interacting with NASA information to
+              gain explorative knowledge. Gain credits as rewards for answering
               correct quiz questions while transversing the universe. Purchase
               and upgrade ships throught your journey.
             </p>
