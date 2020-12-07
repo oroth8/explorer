@@ -21,18 +21,15 @@ const style={
   }
 };
 
-
-// Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function Level2(props)  {
-  
-const [location, setLocation]=React.useState({
-  "name":"Earth",
-  "id": 0
-});
+  const [location, setLocation]=React.useState({
+    "name":"Earth",
+    "id": 0
+  });
 
-let getLandingSpot=(name, id) =>{
-  setLocation({...location, name, id});
-};
+  let getLandingSpot=(name, id) =>{
+    setLocation({...location, name, id});
+  };
 
 
 
