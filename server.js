@@ -46,26 +46,3 @@ const expressServer=app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
   }
 });
-
-// Create socket io using the express server
-// Specify the cors headers, just to be safe.
-const io=require("socket.io")(expressServer, 
-  {  cors: {
-    origin: "http://localhost:"+3000,
-    methods: ["GET", "POST"]
-  }}
-);
-
-io.on('connection', socket => {
-  socket.on("USER_CONNECTED", msg=>{
-    socket.broadcast.emit("LOGIN_MESSAGE", msg+" just logged in.");      
-    console.log("User connected: "+msg);
-  })
-
-  socket.on("TELL_EVERYONE", msg=>{
-    console.log("User message: "+msg);
-    
-    socket.broadcast.emit("USER_MESSAGE", msg);      
-  })
- 
-});
