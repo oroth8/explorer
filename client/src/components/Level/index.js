@@ -41,13 +41,13 @@ function Level() {
     let left = e.pageX - 20 + "px";
     let shipType=(shipSrc.source.split("/")[3]);
 
-    let transform="scaleX(-1)" 
+    let transform="scaleX(1)" 
 
     if(left<avatarState.left){      
-      transform="scaleX(1)";
-      if(shipType==="rocket.svg") transform="rotate(-90deg)";
+      transform="scaleX(-1)";
+      if(shipType==="rocket.svg") transform="rotate(90deg)";
     }
-    else if(shipType==="rocket.svg") transform="rotate(90deg)";
+    else if(shipType==="rocket.svg") transform="rotate(-90deg)";
     console.log(transform);
     setAvatarState({ ...avatarState, top, left, transform });
   };

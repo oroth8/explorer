@@ -4,10 +4,6 @@ import AuthContext from "../../context/auth/authContext";
 const style={
   back: {
     background: "rgba(0,0,0,0)"
-  },
-  ul: {
-    listStyle: "none",
-    marginBottom: "25px"
   }
 }
 export default function Chat(){
@@ -34,12 +30,6 @@ export default function Chat(){
       e.target.message.value="";
     }
   }
-
-function scrollDown(){
-  console.log("scroll");
-  let screen = document.getElementById("message-screen");
- screen.scrollTop = screen.scrollHeight;
-}
  
 
   socket.once('USER_MESSAGE',(msg) => {
@@ -58,14 +48,14 @@ function scrollDown(){
 
     return (
       <div className="container" id="menucard" style={style.back}>
-        <div className="row mt-4 mb-4 message-screen" id="message-screen"> 
-          <ul style={style.ul} className="col-12">
-          {messagesString.map((info, i)=>(
-            <li key={i}>{info.sender}: {info.message}</li>
+        <div className="row mt-4 message-screen">
+          <div className="col-12">
+          {messagesString.split("\n").map((elem, i)=>(
+            <li key={i}>{elem}</li>
           ))}
-          </ul>
+          </div>
         </div>
-        <div className="row mt-4 message-input">
+        <div className="row message-input">
           <form onSubmit={submitMessage}>
             <div className="col-9">
               <input type="text" name="message" id="message" />
