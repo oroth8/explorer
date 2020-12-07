@@ -45,6 +45,7 @@ function Level2(props)  {
             }}></div>
           ))}
           </div>
+          <GameNav />
           </React.Fragment>
         );
   }
