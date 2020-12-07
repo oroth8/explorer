@@ -32,24 +32,24 @@ function Level() {
     left: "40%",
     transition: "all 1s",
     width: "60px",
-    height: "30px",
-    transform:"scaleX(-1)"
+    height: "30px"
+    // transform:"scaleX(-1)"
   });
 
   let getLocation = (e) => {    
     let top = e.pageY - 10 + "px";
     let left = e.pageX - 20 + "px";
-    let shipType=(shipSrc.source.split("/")[3]);
+    // let shipType=(shipSrc.source.split("/")[3]);
 
-    let transform="scaleX(1)" 
+    // let transform="scaleX(1)" 
 
-    if(left<avatarState.left){      
-      transform="scaleX(-1)";
-      if(shipType==="rocket.svg") transform="rotate(90deg)";
-    }
-    else if(shipType==="rocket.svg") transform="rotate(-90deg)";
-    console.log(transform);
-    setAvatarState({ ...avatarState, top, left, transform });
+    // if(left<avatarState.left){      
+    //   transform="scaleX(-1)";
+    //   if(shipType==="rocket.svg") transform="rotate(90deg)";
+    // }
+    // else if(shipType==="rocket.svg") transform="rotate(-90deg)";
+    // console.log(transform);
+    setAvatarState({ ...avatarState, top, left});
   };
 
   let handleKey = (e) => {
