@@ -30,7 +30,7 @@ git clone
 npm i
 ```
 
-3.  To run the server locally, you will then need to use
+3.  To run the server locally, you will then need to create a default.config file in the folder config. Add your own mongoDB key and JWT key. Use EXAMPLE.config as a format example. 
 
 ```sh
 npm run dev
