@@ -73,20 +73,23 @@ export default function Chat(){
   }
    
   useEffect(() => {
-    getMessages();
-  }, [messagesString]);
+    getMessages();},[]
+    )
+
 
   socket.once('USER_MESSAGE',(msg) => {
     if(msg){
       console.log("Received: "+msg);      
       let temp=messagesString;
       setMessages(temp+"\n"+msg);
+      getMessages();
    }
   });   
   socket.on('LOGIN_MESSAGE',(msg) => { 
     if(msg){
       let temp=messagesString;
       setMessages(temp+"\n"+msg);
+      getMessages();
    }
   });
 
