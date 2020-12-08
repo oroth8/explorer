@@ -7,7 +7,7 @@ router.post("/add", (req,res)=>{
 });
 
 router.get("/get", (req,res)=>{
-    Message.find({})
+    Message.find({}).sort({ "date": -1}).limit(25)
     .then( results => res.json(results));
 });
 
