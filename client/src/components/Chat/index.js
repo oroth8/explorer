@@ -29,6 +29,14 @@ socket.on('LOGIN_MESSAGE',(msg) => {
 });
 
 
+socket.on('USER_MESSAGE',(msg) => {
+  if(msg){
+    console.log("Received: "+msg);      
+    // let temp=messagesString;
+    console.log(msg);  
+     
+ }
+}); 
 
 
 export default function Chat(){
@@ -45,15 +53,7 @@ export default function Chat(){
     authContext.loadUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authContext.loading]);
-
-  socket.on('USER_MESSAGE',(msg) => {
-    if(msg){
-      console.log("Received: "+msg);      
-      // let temp=messagesString;
-      console.log(msg);  
-       
-   }
-  });   
+  
   function temp(msg){
     let t=messagesString;
     t=t+"\n"+msg;
