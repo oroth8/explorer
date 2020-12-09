@@ -49,9 +49,7 @@ const expressServer=app.listen(PORT, () => {
 
 
 const socketIO = require('socket.io');
-const io = socketIO(expressServer
-
-  );
+const io = socketIO(expressServer);
 
 io.on('connection', socket => {
   socket.on("USER_CONNECTED", msg=>{
