@@ -1,5 +1,6 @@
 const io = require("socket.io-client");
-const socket=io(`https://${window.location.hostname}:3001`, {transports: ['websocket'], secure:true});
+// const socket=io(`https://${window.location.hostname}:3001`, {transports: ['websocket'], secure:true});
+const socket=io();
 
 socket.on('USER_MESSAGE',(msg) => {
     if(msg){
