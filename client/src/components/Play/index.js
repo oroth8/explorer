@@ -20,8 +20,8 @@ function Play({ questions }) {
   let charText = "View Character";
   if (characterContext.missing) charText = "Create Character";
 
-
-  socket.on('USER_MESSAGE',(msg) => {
+if(sockets._events == undefined)
+{  socket.on('USER_MESSAGE',(msg) => {
     if(msg){
       console.log("Received: "+msg);      
       // let temp=messagesString;
@@ -29,7 +29,7 @@ function Play({ questions }) {
       setMsg(msg);
        
    }
-  }); 
+  }); }
 
   // useEffect(() => {
 
