@@ -17,7 +17,7 @@ const style={
     background: "rgba(0,0,0,0)"
   }
 }
-socket.once('USER_MESSAGE',(msg) => {
+socket.on('USER_MESSAGE',(msg) => {
   if(msg){
     console.log("Received: "+msg);      
     // let temp=messagesString;
