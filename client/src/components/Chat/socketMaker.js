@@ -1,6 +1,9 @@
 const io = require("socket.io-client");
-// const socket=io(`https://${window.location.hostname}:3001`, {transports: ['websocket'], secure:true});
-const socket=io();
+let socket;
+
+if(process.env.PORT) socket=io();   // Heroku version
+else socket=io(`http://${window.location.hostname}:3001`, {transports: ['websocket']}); // desktop version
+
 
 socket.on('USER_MESSAGE',(msg) => {
     if(msg){

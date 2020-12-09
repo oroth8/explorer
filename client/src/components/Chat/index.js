@@ -12,8 +12,6 @@ const style={
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
-
-  // const socket = io({transports: ['websocket']});
   
   
   useEffect(() => {
@@ -42,14 +40,15 @@ export default function Chat(){
     if(socket.payload){
       console.log(`Received: ${socket.payload}`);
       let temp=messagesString;
-      setMessages(temp+"\n"+socket.payload);
+      // setMessages(temp+"\n"+socket.payload);
+      setMessages(socket.payload);
       socket.payload="";
     }
 }); 
 
   socket.on('LOGIN_MESSAGE',(msg) => { 
     if(socket.login){
-      console.log(`Login: ${socket.payload}`);
+      console.log(`Login: ${socket.login}`);
       let temp=messagesString;
       setMessages(temp+"\n"+socket.login);
       socket.login="";
