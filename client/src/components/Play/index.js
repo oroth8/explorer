@@ -20,7 +20,7 @@ function Play({ questions }) {
   let charText = "View Character";
   if (characterContext.missing) charText = "Create Character";
 
-if(sockets._events == undefined)
+if(socket._events == undefined)
 {  socket.on('USER_MESSAGE',(msg) => {
     if(msg){
       console.log("Received: "+msg);      
