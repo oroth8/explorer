@@ -7,6 +7,8 @@ import CharacterCreate from "./components/Character/CharacterCreate";
 import ViewCharacter from "./components/Character/ViewCharacter";
 // Character Context
 import CharacterState from "./context/character/CharacterState";
+// Realtime chat context
+import ChatState from "./context/chat/ChatState";
 // Ship Components
 // Pages
 import Landing from "./pages/Landing";
@@ -129,6 +131,8 @@ function App() {
       <AuthState>
         <AlertState>
           <CharacterState>
+            
+          <ChatState>
             <Router>
               <Alert />
               <Switch>
@@ -156,7 +160,8 @@ function App() {
                   path="/viewCharacter"
                   component={ViewCharacter}
                 />
-                <PrivateRoute exact path="/chat" component={Chat} />
+                
+                  <PrivateRoute exact path="/chat" component={Chat} />
                 <PrivateRoute exact path="/ship" component={BuyShip} />
                 <ScrollToTop>
                   <PrivateRoute
@@ -220,6 +225,8 @@ function App() {
 
               </Switch>
             </Router>
+            
+            </ChatState>
           </CharacterState>
         </AlertState>
       </AuthState>
