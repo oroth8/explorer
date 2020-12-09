@@ -8,13 +8,13 @@ const style={
   }
 }
 
-
 export default function Chat(){
   const authContext = useContext(AuthContext);
   const [messagesString, setMessages] = useState("");
   
-  
+ 
   useEffect(() => {
+    
     if (authContext.user) { 
       socket.once('connect', () => {
         socket.emit('USER_CONNECTED', authContext.user.name);
