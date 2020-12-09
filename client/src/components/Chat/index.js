@@ -17,15 +17,7 @@ const style={
     background: "rgba(0,0,0,0)"
   }
 }
-socket.on('USER_MESSAGE',(msg) => {
-  if(msg){
-    console.log("Received: "+msg);      
-    // let temp=messagesString;
-    console.log(msg);
-     
-     
- }
-});   
+
 socket.on('LOGIN_MESSAGE',(msg) => { 
   if(msg){
     // let temp=messagesString;
@@ -54,7 +46,14 @@ export default function Chat(){
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authContext.loading]);
 
-
+  socket.on('USER_MESSAGE',(msg) => {
+    if(msg){
+      console.log("Received: "+msg);      
+      // let temp=messagesString;
+      console.log(msg);  
+       
+   }
+  });   
   function temp(msg){
     let t=messagesString;
     t=t+"\n"+msg;
