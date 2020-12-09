@@ -1,42 +1,21 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
-
-const io = require("socket.io-client");
-let socket = io({transports: ['websocket']});
-
-
-// if (process.env.NODE_ENV === 'production') {
-//   socket=io.connect();
-// } else {
-//   socket=io.connect('http://localhost:3001');
-// }
-
+import socket from "./socketMaker"
 const style={
   back: {
     background: "rgba(0,0,0,0)"
   }
 }
 
-socket.on('LOGIN_MESSAGE',(msg) => { 
-  if(msg){
-    // let temp=messagesString;
-    // setMessages(temp+"\n"+msg);
-    // temp(msg);
-    console.log(msg);
-    
- }
-});
 
-
-
-export default function Chat(props){
-  
-  // const [messagesString, setMessages] = useState("");
+export default function Chat(){
   const authContext = useContext(AuthContext);
+  const [messagesString, setMessages] = useState("");
 
-// setMessages(props.msg);
-
+  // const socket = io({transports: ['websocket']});
+  
+  
   useEffect(() => {
     if (authContext.user) { 
       socket.once('connect', () => {
@@ -47,28 +26,41 @@ export default function Chat(props){
     authContext.loadUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authContext.loading]);
-  
-  // function temp(msg){
-  //   let t=messagesString;
-  //   t=t+"\n"+msg;
-  //   setMessages(t);
-  // }
 
   function submitMessage(e) {
     e.preventDefault();
     if (e.target.message.value) {
       console.log("Trying to send "+e.target.message.value);      
-      // socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
-      socket.emit('TELL_EVERYONE', e.target.message.value);
+      socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
+      
+      let temp=messagesString;
+      setMessages(temp+"\n"+authContext.user.name+": "+e.target.message.value);
       e.target.message.value="";
     }
   }
+ socket.on('USER_MESSAGE',(msg) => {
+    if(socket.payload){
+      console.log(`Received: ${socket.payload}`);
+      let temp=messagesString;
+      setMessages(temp+"\n"+socket.payload);
+      socket.payload="";
+    }
+}); 
+
+  socket.on('LOGIN_MESSAGE',(msg) => { 
+    if(socket.login){
+      console.log(`Login: ${socket.payload}`);
+      let temp=messagesString;
+      setMessages(temp+"\n"+socket.login);
+      socket.login="";
+   }
+  });
 
     return (
       <div className="container" id="menucard" style={style.back}>
         <div className="row mt-4 message-screen">
           <div className="col-12">
-          {props.msg.split("\n").map((elem, i)=>(
+          {messagesString.split("\n").map((elem, i)=>(
             <li key={i}>{elem}</li>
           ))}
           </div>
@@ -86,7 +78,3 @@ export default function Chat(props){
       </div>
     );
 };
-
-
-
-
