@@ -9,8 +9,6 @@ import Wave from "../layout/Wave";
 import GameNav from "../layout/GameNav";
 
 import {useState} from "react";
-const io = require("socket.io-client");
-let socket = io({transports: ['websocket']});
 
 
 
@@ -19,23 +17,6 @@ function Play({ questions }) {
   const [msg, setMsg] = useState("");
   let charText = "View Character";
   if (characterContext.missing) charText = "Create Character";
-
-if(socket._events == undefined)
-{  socket.on('USER_MESSAGE',(msg) => {
-    if(msg){
-      console.log("Received: "+msg);      
-      // let temp=messagesString;
-      // console.log(msg);  
-      setMsg(msg);
-       
-   }
-  }); }
-
-  // useEffect(() => {
-
-  // },[])
-
-
 
   return (
     <div>
