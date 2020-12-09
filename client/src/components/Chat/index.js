@@ -29,20 +29,14 @@ socket.on('LOGIN_MESSAGE',(msg) => {
 });
 
 
-socket.on('USER_MESSAGE',(msg) => {
-  if(msg){
-    console.log("Received: "+msg);      
-    // let temp=messagesString;
-    console.log(msg);  
-     
- }
-}); 
 
-
-export default function Chat(){
+export default function Chat(props){
   
-  const [messagesString, setMessages] = useState("");
+  // const [messagesString, setMessages] = useState("");
   const authContext = useContext(AuthContext);
+
+// setMessages(props.msg);
+
   useEffect(() => {
     if (authContext.user) { 
       socket.once('connect', () => {
@@ -54,11 +48,11 @@ export default function Chat(){
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authContext.loading]);
   
-  function temp(msg){
-    let t=messagesString;
-    t=t+"\n"+msg;
-    setMessages(t);
-  }
+  // function temp(msg){
+  //   let t=messagesString;
+  //   t=t+"\n"+msg;
+  //   setMessages(t);
+  // }
 
   function submitMessage(e) {
     e.preventDefault();
@@ -74,7 +68,7 @@ export default function Chat(){
       <div className="container" id="menucard" style={style.back}>
         <div className="row mt-4 message-screen">
           <div className="col-12">
-          {messagesString.split("\n").map((elem, i)=>(
+          {props.msg.split("\n").map((elem, i)=>(
             <li key={i}>{elem}</li>
           ))}
           </div>
@@ -92,3 +86,7 @@ export default function Chat(){
       </div>
     );
 };
+
+
+
+
