@@ -1,17 +1,24 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./style.css";
 import AuthContext from "../../context/auth/authContext";
+import ChatContext from "../../context/chat/chatContext";
+import socket from "./socketMaker"
 const style={
   back: {
     background: "rgba(0,0,0,0)"
   }
 }
+
 export default function Chat(){
   const authContext = useContext(AuthContext);
-  const [messagesString, setMessages] = useState("");
-  const io = require("socket.io-client");
-  const socket = io({transports: ['websocket']});
+  const chatContext = useContext(ChatContext);
+
+  
+//  const [messagesString, setMessages] = useState("");
+  
+ 
   useEffect(() => {
+    
     if (authContext.user) { 
       socket.once('connect', () => {
         socket.emit('USER_CONNECTED', authContext.user.name);
@@ -27,22 +34,25 @@ export default function Chat(){
     if (e.target.message.value) {
       console.log("Trying to send "+e.target.message.value);      
       socket.emit('TELL_EVERYONE', authContext.user.name+": "+e.target.message.value);
+      
+      // let temp=messagesString;
+      chatContext.receivedNewMsg("\n"+authContext.user.name+": "+e.target.message.value);
       e.target.message.value="";
     }
   }
- 
+ socket.on('USER_MESSAGE',(msg) => {
+    if(socket.payload){
+      // console.log(`Received: ${socket.payload}`);
+      chatContext.receivedNewMsg(socket.payload);
+      socket.payload="";
+    }
+}); 
 
-  socket.once('USER_MESSAGE',(msg) => {
-    if(msg){
-      console.log("Received: "+msg);      
-      let temp=messagesString;
-      setMessages(temp+"\n"+msg);
-   }
-  });   
   socket.on('LOGIN_MESSAGE',(msg) => { 
-    if(msg){
-      let temp=messagesString;
-      setMessages(temp+"\n"+msg);
+    if(socket.login){
+      // console.log(`Login: ${socket.login}`);
+      chatContext.login(socket.login);
+      socket.payload="";
    }
   });
 
@@ -50,7 +60,7 @@ export default function Chat(){
       <div className="container" id="menucard" style={style.back}>
         <div className="row mt-4 message-screen">
           <div className="col-12">
-          {messagesString.split("\n").map((elem, i)=>(
+          {chatContext.messageState.split("\n").map((elem, i)=>(
             <li key={i}>{elem}</li>
           ))}
           </div>

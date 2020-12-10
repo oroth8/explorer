@@ -8,8 +8,13 @@ import "./style.css";
 import Wave from "../layout/Wave";
 import GameNav from "../layout/GameNav";
 
+import {useState} from "react";
+
+
+
 function Play({ questions }) {
   const characterContext = useContext(CharacterContext);
+  const [msg, setMsg] = useState("");
   let charText = "View Character";
   if (characterContext.missing) charText = "Create Character";
 
@@ -38,7 +43,7 @@ function Play({ questions }) {
         </div>
 
        <div className="col-md-6 col-sm-12">
-            <a><Chat /></a>
+            <a><Chat msg={msg}/></a>
         </div>
       </div>
       <GameNav />

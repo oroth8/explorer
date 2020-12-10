@@ -7,27 +7,27 @@ export const GameNav = () => {
   return (
     <GameNavStyle>
       <ul className="list-group">
-        <li className={pathname === "/" && "active"}>
+        <li className={pathname === "/" ? "active" : "inactive"}>
           <Link to="/">
             <i className="fas fa-home" />
           </Link>
         </li>
-        <li className={pathname === "/play" && "active"}>
+        <li className={pathname === "/play" ? "active" : "inactive"}>
           <Link to="/play">
             <i className="fas fa-bars" />
           </Link>
         </li>
-        <li className={pathname === "/viewCharacter" && "active"}>
+        <li className={pathname === "/viewCharacter" ? "active" : "inactive"}>
           <Link to="/viewCharacter">
             <i className="fas fa-user-plus" />
           </Link>
         </li>
-        <li className={pathname === "/level" && "active"}>
+        <li className={pathname === "/level" ? "active" : "inactive"}>
           <Link to="/level">
             <i className="fas fa-globe-americas" />
           </Link>
         </li>
-        <li className={pathname === "/earn" && "active"}>
+        <li className={pathname === "/earn" ? "active" : "inactive"}>
           <Link to="/earn">
             <i className="fas fa-money-bill-wave" />
           </Link>
