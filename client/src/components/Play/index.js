@@ -7,7 +7,7 @@ import React, { useContext } from "react";
 import "./style.css";
 import Wave from "../layout/Wave";
 import GameNav from "../layout/GameNav";
-
+import { Link } from "react-router-dom";
 import {useState} from "react";
 
 
@@ -23,23 +23,29 @@ function Play({ questions }) {
       <Wave />
       <div className="row mb-4">
         <div className="col-md-6 col-sm-12">
-          <a href="/viewCharacter">
+        <Link to="/viewCharacter">
+          <a>
             <License />
           </a>
+        </Link>
         </div>
 
         <div className="col-md-6 col-sm-12">
-          <a href="/level">
+          <Link to="/level">
+            <a>
             <Level />
           </a>
+          </Link>
         </div>
       </div>
 
       <div className="row mb-4">
       <div className="col-md-6 col-sm-12">
-          <a href="/earn">
+          <Link to="/earn">
+            <a>
             <Quiz />
           </a>
+          </Link>
         </div>
 
        <div className="col-md-6 col-sm-12">
