@@ -73,8 +73,12 @@ export default function Chat(){
   }
    
   useEffect(() => {
-    getMessages();},[]
-    )
+    getMessages();
+    setTimeout(scrollDown,100);
+    const interval = setInterval(getMessages, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  
 
 
   socket.once('USER_MESSAGE',(msg) => {
